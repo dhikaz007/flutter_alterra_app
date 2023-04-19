@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/widgets/alta_login_background.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_logo.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
-import '../../../../../utils/widgets/alta_sizedbox.dart';
 import '../../../../../utils/widgets/alta_text_button.dart';
 import '../../../../../utils/widgets/alta_text_field.dart';
 import '../../../../home_page/view/ui/home_page.dart';
@@ -40,35 +40,35 @@ class LoginPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const AltaSizedBox(height: AltaSpacing.space72),
+                    const SizedBox(height: AltaSpacing.space72),
                     const AltaLogo(
-                      imgPath: 'assets/images/png/logo_academy_blue.png',
+                      imgPath: 'assets/images/png/alterra_blue_logo.png',
                       width: 164,
                       height: 99,
                       alignment: Alignment.center,
                     ),
-                    const AltaSizedBox(height: AltaSpacing.space56),
+                    const SizedBox(height: AltaSpacing.space56),
                     AltaText(
                       context: context,
                       text: 'Selamat Datang',
                       style: AltaTextStyle.headlineH2,
                       color: AltaColor.black,
                     ),
-                    const AltaSizedBox(height: AltaSpacing.space16),
+                    const SizedBox(height: AltaSpacing.space16),
                     AltaText(
                       context: context,
                       text: 'Masukkan akun Alterra Academy',
                       style: AltaTextStyle.titleH2,
                       color: AltaColor.darkBlue,
                     ),
-                    const AltaSizedBox(height: AltaSpacing.space16),
+                    const SizedBox(height: AltaSpacing.space16),
                     AltaText(
                       context: context,
                       text: 'Masukkan Email',
                       style: AltaTextStyle.bodyH1,
                       color: AltaColor.darkGray,
                     ),
-                    const AltaSizedBox(height: AltaSpacing.space8),
+                    const SizedBox(height: AltaSpacing.space8),
                     ValueListenableBuilder<String>(
                       valueListenable: email,
                       builder: (BuildContext context, nameValue, _) =>
@@ -84,18 +84,19 @@ class LoginPage extends StatelessWidget {
                         },
                       ),
                     ),
-                    const AltaSizedBox(height: AltaSpacing.space16),
+                    const SizedBox(height: AltaSpacing.space16),
                     AltaText(
                       context: context,
                       text: 'Kata Sandi',
                       style: AltaTextStyle.bodyH1,
                       color: AltaColor.darkGray,
                     ),
-                    const AltaSizedBox(height: AltaSpacing.space8),
+                    const SizedBox(height: AltaSpacing.space8),
                     ValueListenableBuilder(
                       valueListenable: pass,
                       builder: (BuildContext context, passValue, _) =>
                           AltaTextField(
+                            obscureText: true,
                         hintText: 'Masukkan kata sandi',
                         onChanged: (value) {
                           pass.value = value;
@@ -107,7 +108,7 @@ class LoginPage extends StatelessWidget {
                         },
                       ),
                     ),
-                    const AltaSizedBox(height: AltaSpacing.space20),
+                    const SizedBox(height: AltaSpacing.space20),
                     AltaTextButton(
                       onPressed: () => Navigator.of(context).push(
                         MaterialPageRoute(
@@ -120,7 +121,7 @@ class LoginPage extends StatelessWidget {
                         color: AltaColor.tangerine,
                       ),
                     ),
-                    const AltaSizedBox(height: AltaSpacing.space16),
+                    const SizedBox(height: AltaSpacing.space16),
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -130,19 +131,15 @@ class LoginPage extends StatelessWidget {
                             builder:
                                 (BuildContext context, isFilledValue, child) =>
                                     AltaPrimaryButton(
-                              style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStateProperty.resolveWith(
-                                    (states) => isFilledValue == true
-                                        ? AltaColor.darkBlue
-                                        : AltaColor.altGray2,
-                                  ),
-                                  padding: MaterialStateProperty.all(
-                                    const EdgeInsets.symmetric(
-                                      horizontal: AltaSpacing.space144,
-                                      vertical: AltaSpacing.space20,
-                                    ),
-                                  )),
+                              backgroundColor:
+                                  MaterialStateProperty.resolveWith(
+                                (states) => isFilledValue == true
+                                    ? AltaColor.darkBlue
+                                    : AltaColor.altGray2,
+                              ),
+                              borderRadius: AltaBorderRadius.radius8,
+                              paddingVertical: AltaSpacing.space20,
+                              paddingHorizontal: AltaSpacing.space28,
                               onPressed: () => isFilled.value == true &&
                                       email.value.contains(emailData) &&
                                       pass.value.contains(passData)
@@ -162,7 +159,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const AltaSizedBox(height: AltaSpacing.space16),
+                    const SizedBox(height: AltaSpacing.space16),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

@@ -5,30 +5,33 @@ import '../constant/alta_color.dart';
 import '../constant/alta_spacing.dart';
 
 class AltaTextField extends StatelessWidget {
+  final TextEditingController? controller;
+  final bool? obscureText;
   final String hintText;
   final ValueChanged<String>? onChanged;
-  final TextEditingController? controller;
+
   const AltaTextField({
     super.key,
+    this.controller,
+    this.obscureText,
     required this.hintText,
     this.onChanged,
-    this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      obscureText: obscureText ?? false,
       controller: controller,
       onChanged: onChanged,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(
-          horizontal: AltaSpacing.space12,
-          vertical: AltaSpacing.space8,
+          horizontal: AltaSpacing.space16,
+          vertical: AltaSpacing.space12,
         ),
         hintText: hintText,
         hintStyle: const TextStyle(
           color: AltaColor.altGray,
-          fontWeight: FontWeight.w600,
           fontSize: 16,
         ),
         border: OutlineInputBorder(

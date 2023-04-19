@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../utils/constant/alta_color.dart';
 import '../../../../utils/constant/alta_spacing.dart';
-import '../../../../utils/widgets/alta_sizedbox.dart';
 import '../../../../utils/widgets/alta_homepage_background.dart';
 import '../../../../utils/widgets/alta_text.dart';
 
@@ -28,9 +27,9 @@ class HomePage extends StatelessWidget {
                   children: [
                     const CircleAvatar(
                       backgroundImage:
-                          AssetImage('assets/images/png/ellipse_11.png'),
+                          AssetImage('assets/images/png/profile_avatar.png'),
                     ),
-                    const AltaSizedBox(width: AltaSpacing.space12),
+                    const SizedBox(width: AltaSpacing.space12),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
