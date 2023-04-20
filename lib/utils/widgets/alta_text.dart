@@ -7,7 +7,8 @@ enum AltaTextStyle {
   titleH1,
   titleH2,
   bodyH1,
-  bodyH2
+  bodyH2,
+  hyperlinkText
 }
 
 class AltaText extends StatelessWidget {
@@ -68,6 +69,13 @@ class AltaText extends StatelessWidget {
             color: color,
             fontWeight: FontWeight.normal,
             fontSize: 12,
+          );
+        case AltaTextStyle.hyperlinkText:
+          return TextStyle(
+            color: color,
+            fontWeight: FontWeight.w600,
+            fontSize: 16,
+            decoration: TextDecoration.underline,
           );
       }
     }
