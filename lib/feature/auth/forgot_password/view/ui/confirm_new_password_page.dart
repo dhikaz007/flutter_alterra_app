@@ -1,73 +1,78 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/constant/alta_color.dart';
+import '../../../login/view/ui/login_page.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_primary_button.dart';
+import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/widgets/alta_text_field.dart';
+import '../../../../../utils/constant/alta_border_radius.dart';
+import '../../../../../utils/constant/alta_color.dart';
+import '../../../../../utils/widgets/alta_primary_button.dart';
 
-import 'forgot_password_page_2.dart';
-
-class ForgotPasswordPage extends StatelessWidget {
-  const ForgotPasswordPage({Key? key}) : super(key: key);
+class ConfirmNewPasswordPage extends StatelessWidget {
+  const ConfirmNewPasswordPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final ValueNotifier<String> email = ValueNotifier('');
+    final ValueNotifier<String> pass = ValueNotifier('');
+    final ValueNotifier<String> confirmPass = ValueNotifier('');
     final ValueNotifier<bool> isFilled = ValueNotifier(false);
 
     return Container(
       color: AltaColor.white,
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: IconButton(
-            color: AltaColor.black,
-            icon: SvgPicture.asset('assets/icon/svg/close_icon.svg'),
-            iconSize: 14,
-            onPressed: () => Navigator.of(context).pop(true),
-          ),
-        ),
         body: Padding(
           padding: const EdgeInsets.only(
-            left: AltaSpacing.space16,
-            right: AltaSpacing.space16,
-          ),
+              left: AltaSpacing.space16, right: AltaSpacing.space16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: AltaSpacing.space56),
+              const SizedBox(height: AltaSpacing.space96),
               AltaText(
                 context: context,
-                text: 'Langkah 1/2',
-                style: AltaTextStyle.titleH2,
-                color: AltaColor.black,
-              ),
-              const SizedBox(height: AltaSpacing.space16),
-              AltaText(
-                context: context,
-                text: 'Masukkan email untuk mengubah kata sandi',
+                text: 'Buat kata sandi baru',
                 style: AltaTextStyle.headlineH1,
                 color: AltaColor.black,
               ),
               const SizedBox(height: AltaSpacing.space24),
               AltaText(
                 context: context,
-                text: 'Masukkan email',
+                text: 'Kata sandi baru',
                 style: AltaTextStyle.bodyH1,
                 color: AltaColor.darkGray,
               ),
               const SizedBox(height: AltaSpacing.space8),
               ValueListenableBuilder(
-                valueListenable: email,
-                builder: (BuildContext context, emailValue, _) => AltaTextField(
-                  hintText: 'Masukkan email anda',
+                valueListenable: pass,
+                builder: (BuildContext context, passValue, _) => AltaTextField(
+                  obscureText: true,
+                  hintText: 'Masukkan kata sandi',
                   onChanged: (value) {
-                    email.value = value;
-                    if (email.value.isNotEmpty) {
+                    pass.value = value;
+                    if (pass.value.isNotEmpty && confirmPass.value.isNotEmpty) {
+                      isFilled.value = true;
+                    } else {
+                      isFilled.value = false;
+                    }
+                  },
+                ),
+              ),
+              const SizedBox(height: AltaSpacing.space24),
+              AltaText(
+                context: context,
+                text: 'Konfirmasi kata sandi',
+                style: AltaTextStyle.bodyH1,
+                color: AltaColor.darkGray,
+              ),
+              const SizedBox(height: AltaSpacing.space8),
+              ValueListenableBuilder(
+                valueListenable: confirmPass,
+                builder: (BuildContext context, confirmPassValue, _) =>
+                    AltaTextField(
+                  obscureText: true,
+                  hintText: 'Masukkan ulang kata sandi',
+                  onChanged: (value) {
+                    confirmPass.value = value;
+                    if (confirmPass.value.isNotEmpty && pass.value.isNotEmpty) {
                       isFilled.value = true;
                     } else {
                       isFilled.value = false;
@@ -77,6 +82,7 @@ class ForgotPasswordPage extends StatelessWidget {
               ),
               const SizedBox(height: AltaSpacing.space24),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Expanded(
                     child: ValueListenableBuilder(
@@ -91,15 +97,14 @@ class ForgotPasswordPage extends StatelessWidget {
                         borderRadius: AltaBorderRadius.radius8,
                         paddingVertical: AltaSpacing.space20,
                         paddingHorizontal: AltaSpacing.space28,
-                        onPressed: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                ForgotPasswordPage2(email: email.value),
-                          ),
-                        ),
+                        onPressed: () => isFilled.value == true
+                            ? Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => const LoginPage()))
+                            : isFilled.value == false,
                         child: AltaText(
                           context: context,
-                          text: 'KIRIM KODE / TAUTAN',
+                          text: 'SIMPAN',
                           style: AltaTextStyle.titleH1,
                           color: AltaColor.white,
                         ),
@@ -107,7 +112,7 @@ class ForgotPasswordPage extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

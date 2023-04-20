@@ -13,6 +13,7 @@ class AltaSpacing {
   static const space44 = 44.0;
   static const space56 = 56.0;
   static const space72 = 72.0;
+  static const space96 = 96.0;
   static const space144 = 144.0;
   static const space260 = 260.0;
   static const space300 = 300.0;
