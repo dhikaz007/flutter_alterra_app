@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 import '../../../../../utils/constant/alta_border_radius.dart';
@@ -42,7 +43,7 @@ class LoginPage extends StatelessWidget {
                   children: [
                     const SizedBox(height: AltaSpacing.space72),
                     const AltaLogo(
-                      imgPath: 'assets/images/png/alterra_blue_logo.png',
+                      imgPath: 'assets/images/login_section/png/alterra_blue_logo.png',
                       width: 164,
                       height: 99,
                       alignment: Alignment.center,
@@ -96,7 +97,7 @@ class LoginPage extends StatelessWidget {
                       valueListenable: pass,
                       builder: (BuildContext context, passValue, _) =>
                           AltaTextField(
-                            obscureText: true,
+                        obscureText: true,
                         hintText: 'Masukkan kata sandi',
                         onChanged: (value) {
                           pass.value = value;
@@ -147,7 +148,7 @@ class LoginPage extends StatelessWidget {
                                       MaterialPageRoute(
                                           builder: (context) =>
                                               const HomePage()))
-                                  : isFilled.value == false,
+                                  : isFilled.value == false ,
                               child: AltaText(
                                 context: context,
                                 text: 'LOGIN',

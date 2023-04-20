@@ -45,7 +45,7 @@ class _SplashPageState extends State<SplashPage> {
               const Align(
                 alignment: Alignment.center,
                 child: AltaLogo(
-                  imgPath: 'assets/images/png/alterra_white_logo.png',
+                  imgPath: 'assets/images/login_section/png/alterra_white_logo.png',
                   width: 267,
                   height: 161,
                   alignment: Alignment.center,
