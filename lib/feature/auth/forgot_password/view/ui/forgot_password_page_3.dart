@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'confirm_new_password_page.dart';
 
+import '../../../../../utils/widgets/alta_text_button.dart';
 import '../../../../../utils/widgets/alta_logo.dart';
 import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/widgets/alta_text.dart';
@@ -15,6 +17,17 @@ class ForgotPasswordPage3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Uri url = Uri.parse(
+        'https://flexiprogram-api.alterraacademy.id/api/v1/auth/email-verification/eyJpdiI6IjYxSnJKTWRHYzd1ckFEcHo1Y2VQV3c9PSIsInZhbHVlIjoiT3RKd0RSVWxqdU1GWjhHUCtGTlwvcXU4TnlvOHZCKzFOUElqaVk0NnlRTlZQWjhpS3RKRVNcLzFRK3JHWE41eVwvaCIsIm1hYyI6ImFmYmY4OGE0NmNmZDQ0N2JjM2M3OWE5NmY2NTEzYTMwMjg1YjRlNjQ3YzY5NGE2YzI3OTA5NWQyYjJkYmIwOGUifQ==');
+
+    Future<void> launch() async {
+      if (await launchUrl(url)) {
+        await launchUrl(url);
+      } else {
+        throw Exception('Could not launch $url');
+      }
+    }
+
     return Container(
       color: AltaColor.white,
       child: Scaffold(
@@ -196,10 +209,21 @@ class ForgotPasswordPage3 extends StatelessWidget {
                 AltaText(
                   context: context,
                   text:
-                      'Jika anda mengalami kendala ketika klik tombol "Verifikasi Akun Alterra", klik link URL di bawah ini: \nhttps://flexiprogram-api.alterraacademy.id/api/v1/auth/email-verification/eyJpdiI6IjYxSnJKTWRHYzd1ckFEcHo1Y2VQV3c9PSIsInZhbHVlIjoiT3RKd0RSVWxqdU1GWjhHUCtGTlwvcXU4TnlvOHZCKzFOUElqaVk0NnlRTlZQWjhpS3RKRVNcLzFRK3JHWE41eVwvaCIsIm1hYyI6ImFmYmY4OGE0NmNmZDQ0N2JjM2M3OWE5NmY2NTEzYTMwMjg1YjRlNjQ3YzY5NGE2YzI3OTA5NWQyYjJkYmIwOGUifQ==',
+                      'Jika anda mengalami kendala ketika klik tombol "Verifikasi Akun Alterra", klik link URL di bawah ini:',
                   style: AltaTextStyle.titleH2,
                   color: AltaColor.black,
                   textAlign: TextAlign.left,
+                ),
+                AltaTextButton(
+                  onPressed: () => launch(),
+                  child: AltaText(
+                    context: context,
+                    text:
+                        'https://flexiprogram-api.alterraacademy.id/api/v1/auth/email-verification/eyJpdiI6IjYxSnJKTWRHYzd1ckFEcHo1Y2VQV3c9PSIsInZhbHVlIjoiT3RKd0RSVWxqdU1GWjhHUCtGTlwvcXU4TnlvOHZCKzFOUElqaVk0NnlRTlZQWjhpS3RKRVNcLzFRK3JHWE41eVwvaCIsIm1hYyI6ImFmYmY4OGE0NmNmZDQ0N2JjM2M3OWE5NmY2NTEzYTMwMjg1YjRlNjQ3YzY5NGE2YzI3OTA5NWQyYjJkYmIwOGUifQ==',
+                    style: AltaTextStyle.hyperlinkText,
+                    color: AltaColor.darkBlue,
+                    textAlign: TextAlign.left,
+                  ),
                 ),
               ],
             ),
