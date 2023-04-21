@@ -26,7 +26,8 @@ class ForgotPasswordPage extends StatelessWidget {
           elevation: 0,
           leading: IconButton(
             color: AltaColor.black,
-            icon: SvgPicture.asset('assets/icon/svg/close_icon.svg'),
+            icon: SvgPicture.asset(
+                'assets/icon/login_section/svg/close_icon.svg'),
             iconSize: 14,
             onPressed: () => Navigator.of(context).pop(true),
           ),
@@ -91,12 +92,12 @@ class ForgotPasswordPage extends StatelessWidget {
                         borderRadius: AltaBorderRadius.radius8,
                         paddingVertical: AltaSpacing.space20,
                         paddingHorizontal: AltaSpacing.space28,
-                        onPressed: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                ForgotPasswordPage2(email: email.value),
-                          ),
-                        ),
+                        onPressed: () => isFilledValue == true
+                            ? Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    ForgotPasswordPage2(email: email.value),
+                              ))
+                            : null,
                         child: AltaText(
                           context: context,
                           text: 'KIRIM KODE / TAUTAN',

@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/widgets/alta_text.dart';
@@ -22,8 +22,9 @@ class LoginPage extends StatelessWidget {
     final ValueNotifier<String> email = ValueNotifier('');
     final ValueNotifier<String> pass = ValueNotifier('');
     final ValueNotifier<bool> isFilled = ValueNotifier(false);
+    final ValueNotifier<bool> isValid = ValueNotifier(true);
 
-    const String emailData = 'alterra';
+    const String emailData = 'nadewa@alterra.com';
     const String passData = 'flexi123';
 
     return GestureDetector(
@@ -43,7 +44,8 @@ class LoginPage extends StatelessWidget {
                   children: [
                     const SizedBox(height: AltaSpacing.space72),
                     const AltaLogo(
-                      imgPath: 'assets/images/login_section/png/alterra_blue_logo.png',
+                      imgPath:
+                          'assets/images/login_section/png/alterra_blue_logo.png',
                       width: 164,
                       height: 99,
                       alignment: Alignment.center,
@@ -56,11 +58,38 @@ class LoginPage extends StatelessWidget {
                       color: AltaColor.black,
                     ),
                     const SizedBox(height: AltaSpacing.space16),
-                    AltaText(
-                      context: context,
-                      text: 'Masukkan akun Alterra Academy',
-                      style: AltaTextStyle.titleH2,
-                      color: AltaColor.darkBlue,
+                    ValueListenableBuilder(
+                      valueListenable: isValid,
+                      builder: (context, isValidValue, _) => Visibility(
+                        visible: isValidValue,
+                        replacement: Wrap(
+                          children: [
+                            AltaText(
+                              context: context,
+                              text: 'Mungkin username atau password yang',
+                              style: AltaTextStyle.titleH2,
+                              color: AltaColor.red,
+                              textAlign: TextAlign.left,
+                            ),
+                            AltaText(
+                              context: context,
+                              text: 'anda masukkan salah ',
+                              style: AltaTextStyle.titleH2,
+                              color: AltaColor.red,
+                              textAlign: TextAlign.left,
+                            ),
+                            SvgPicture.asset(
+                              'assets/icon/login_section/svg/error_icon.svg',
+                            ),
+                          ],
+                        ),
+                        child: AltaText(
+                          context: context,
+                          text: 'Masukkan akun Alterra Academy',
+                          style: AltaTextStyle.titleH2,
+                          color: AltaColor.darkBlue,
+                        ),
+                      ),
                     ),
                     const SizedBox(height: AltaSpacing.space16),
                     AltaText(
@@ -72,15 +101,19 @@ class LoginPage extends StatelessWidget {
                     const SizedBox(height: AltaSpacing.space8),
                     ValueListenableBuilder<String>(
                       valueListenable: email,
-                      builder: (BuildContext context, nameValue, _) =>
+                      builder: (BuildContext context, emailValue, _) =>
                           AltaTextField(
                         hintText: 'Masukkan email anda',
                         onChanged: (value) {
                           email.value = value;
-                          if (email.value.isNotEmpty && pass.value.isNotEmpty) {
-                            isFilled.value = true;
-                          } else {
+                          if (email.value.isEmpty && pass.value.isEmpty) {
                             isFilled.value = false;
+                            isValid.value = true;
+                          } else if (email.value.contains(' ')) {
+                            isValid.value = false;
+                          } else {
+                            isFilled.value = true;
+                            isValid.value = true;
                           }
                         },
                       ),
@@ -101,10 +134,14 @@ class LoginPage extends StatelessWidget {
                         hintText: 'Masukkan kata sandi',
                         onChanged: (value) {
                           pass.value = value;
-                          if (pass.value.isNotEmpty && email.value.isNotEmpty) {
-                            isFilled.value = true;
-                          } else {
+                          if (pass.value.isEmpty && email.value.isEmpty) {
                             isFilled.value = false;
+                            isValid.value = true;
+                          } else if (pass.value.contains(' ')) {
+                            isValid.value = false;
+                          } else {
+                            isFilled.value = true;
+                            isValid.value = true;
                           }
                         },
                       ),
@@ -143,12 +180,13 @@ class LoginPage extends StatelessWidget {
                               paddingHorizontal: AltaSpacing.space28,
                               onPressed: () => isFilled.value == true &&
                                       email.value.contains(emailData) &&
-                                      pass.value.contains(passData)
+                                      pass.value.contains(passData) &&
+                                      isValid.value == true
                                   ? Navigator.of(context).push(
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const HomePage()))
-                                  : isFilled.value == false ,
+                                              HomePage(email: email.value)))
+                                  : isFilled.value == false,
                               child: AltaText(
                                 context: context,
                                 text: 'LOGIN',
@@ -171,10 +209,10 @@ class LoginPage extends StatelessWidget {
                           color: AltaColor.black,
                         ),
                         TextButton(
-                          onPressed: () => Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) => const RegisterPage()),
-                          ),
+                          onPressed: () =>
+                              Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const RegisterPage(),
+                          )),
                           child: AltaText(
                             context: context,
                             text: 'Daftar disini',
