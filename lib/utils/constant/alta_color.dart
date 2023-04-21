@@ -6,6 +6,7 @@ class AltaColor {
   static const gray = Color(0xffD0D5DD);
   static const darkGray = Color(0xff344054);
   static const altGray = Color(0xff344054);
+  static const altGray2 = Color(0xffC2C2C2);
   static const black = Color(0xff101828);
   static const white = Color(0xffFFFFFF);
   static const red = Color(0xffFF0000);
