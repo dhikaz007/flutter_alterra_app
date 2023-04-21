@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/constant/alta_color.dart';
@@ -23,7 +24,7 @@ class RegisterPage extends StatelessWidget {
           elevation: 0,
           leading: IconButton(
             color: AltaColor.black,
-            icon: const Icon(Icons.close),
+            icon: SvgPicture.asset('assets/icon/login_section/svg/close_icon.svg'),
             iconSize: 14,
             onPressed: () => Navigator.of(context).pop(true),
           ),

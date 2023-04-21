@@ -6,7 +6,8 @@ import '../../../../utils/widgets/alta_homepage_background.dart';
 import '../../../../utils/widgets/alta_text.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final String email;
+  const HomePage({Key? key, required this.email}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +27,8 @@ class HomePage extends StatelessWidget {
                 Row(
                   children: [
                     const CircleAvatar(
-                      backgroundImage:
-                          AssetImage('assets/images/login_section/png/profile_avatar.png'),
+                      backgroundImage: AssetImage(
+                          'assets/images/login_section/png/profile_avatar.png'),
                     ),
                     const SizedBox(width: AltaSpacing.space12),
                     Column(
@@ -41,7 +42,7 @@ class HomePage extends StatelessWidget {
                         ),
                         AltaText(
                           context: context,
-                          text: 'nadewa@alterra.com',
+                          text: email,
                           style: AltaTextStyle.bodyH2,
                           color: AltaColor.white,
                         ),
