@@ -4,7 +4,6 @@ import 'package:flutter_alterra_app/feature/auth/login/view/ui/login_page.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
-import '../../../../../utils/widgets/alta_sizedbox.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/widgets/alta_text_field.dart';
 import 'register_page2.dart';
@@ -38,28 +37,28 @@ class RegisterPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const AltaSizedBox(height: AltaSpacing.space28),
+              const SizedBox(height: AltaSpacing.space28),
               AltaText(
                 context: context,
                 text: 'Langkah 1/3',
                 style: AltaTextStyle.titleH2,
                 color: AltaColor.black.withOpacity(0.5),
               ),
-              const AltaSizedBox(height: AltaSpacing.space28),
+              const SizedBox(height: AltaSpacing.space28),
               AltaText(
                 context: context,
                 text: 'Daftar Akun untuk Jelajahi Alterra Academy',
                 style: AltaTextStyle.headlineH1,
                 color: AltaColor.black,
               ),
-              const AltaSizedBox(height: AltaSpacing.space28),
+              const SizedBox(height: AltaSpacing.space28),
               AltaText(
                 context: context,
                 text: 'Masukkan email',
                 style: AltaTextStyle.bodyH1,
                 color: AltaColor.darkGray,
               ),
-              const AltaSizedBox(height: AltaSpacing.space6),
+              const SizedBox(height: AltaSpacing.space6),
               ValueListenableBuilder(
                 valueListenable: email,
                 builder: (BuildContext context, emailValue, _) => AltaTextField(
@@ -74,7 +73,7 @@ class RegisterPage extends StatelessWidget {
                   },
                 ),
               ),
-              const AltaSizedBox(height: AltaSpacing.space28),
+              const SizedBox(height: AltaSpacing.space28),
               Row(
                 children: [
                   Expanded(
@@ -82,22 +81,18 @@ class RegisterPage extends StatelessWidget {
                       valueListenable: isFilled,
                       builder: (BuildContext context, isFilledValue, child) =>
                           AltaPrimaryButton(
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.resolveWith(
-                              (states) => isFilledValue == true
-                                  ? AltaColor.darkBlue
-                                  : AltaColor.altGray2,
-                            ),
-                            padding: MaterialStateProperty.all(
-                              const EdgeInsets.symmetric(
-                                horizontal: AltaSpacing.space72,
-                                vertical: AltaSpacing.space20,
-                              ),
-                            )),
+                        backgroundColor: MaterialStateProperty.resolveWith(
+                          (states) => isFilledValue == true
+                              ? AltaColor.darkBlue
+                              : AltaColor.altGray2,
+                        ),
                         onPressed: () => Navigator.of(context).push(
                           MaterialPageRoute(
                               builder: (context) => const RegisterPage2()),
                         ),
+                        borderRadius: 8,
+                        paddingHorizontal: AltaSpacing.space72,
+                        paddingVertical: AltaSpacing.space20,
                         child: AltaText(
                           context: context,
                           text: 'SELANJUTNYA',

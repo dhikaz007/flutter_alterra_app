@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
-import '../../../../../utils/widgets/alta_sizedbox.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/widgets/alta_text_field.dart';
 import 'register_page3.dart';
@@ -39,21 +38,21 @@ class RegisterPage2 extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const AltaSizedBox(height: AltaSpacing.space28),
+              const SizedBox(height: AltaSpacing.space28),
               AltaText(
                 context: context,
                 text: 'Langkah 2/3',
                 style: AltaTextStyle.titleH2,
                 color: AltaColor.black.withOpacity(0.5),
               ),
-              const AltaSizedBox(height: AltaSpacing.space28),
+              const SizedBox(height: AltaSpacing.space28),
               AltaText(
                 context: context,
                 text: 'Lengkapi Data Akun',
                 style: AltaTextStyle.headlineH1,
                 color: AltaColor.black,
               ),
-              const AltaSizedBox(height: AltaSpacing.space28),
+              const SizedBox(height: AltaSpacing.space28),
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
@@ -65,7 +64,7 @@ class RegisterPage2 extends StatelessWidget {
                         style: AltaTextStyle.bodyH1,
                         color: AltaColor.darkGray,
                       ),
-                      const AltaSizedBox(height: AltaSpacing.space6),
+                      const SizedBox(height: AltaSpacing.space6),
                       ValueListenableBuilder(
                         valueListenable: name,
                         builder: (BuildContext context, nameValue, _) =>
@@ -83,14 +82,14 @@ class RegisterPage2 extends StatelessWidget {
                           },
                         ),
                       ),
-                      const AltaSizedBox(height: AltaSpacing.space18),
+                      const SizedBox(height: AltaSpacing.space18),
                       AltaText(
                         context: context,
                         text: 'Kata Sandi',
                         style: AltaTextStyle.bodyH1,
                         color: AltaColor.darkGray,
                       ),
-                      const AltaSizedBox(height: AltaSpacing.space6),
+                      const SizedBox(height: AltaSpacing.space6),
                       ValueListenableBuilder(
                         valueListenable: pass,
                         builder: (BuildContext context, passValue, _) =>
@@ -108,14 +107,14 @@ class RegisterPage2 extends StatelessWidget {
                           },
                         ),
                       ),
-                      const AltaSizedBox(height: AltaSpacing.space18),
+                      const SizedBox(height: AltaSpacing.space18),
                       AltaText(
                         context: context,
                         text: 'Konfirmasi Kata Sandi',
                         style: AltaTextStyle.bodyH1,
                         color: AltaColor.darkGray,
                       ),
-                      const AltaSizedBox(height: AltaSpacing.space6),
+                      const SizedBox(height: AltaSpacing.space6),
                       ValueListenableBuilder(
                         valueListenable: pass,
                         builder: (BuildContext context, passValue, _) =>
@@ -133,7 +132,7 @@ class RegisterPage2 extends StatelessWidget {
                           },
                         ),
                       ),
-                      const AltaSizedBox(height: AltaSpacing.space18),
+                      const SizedBox(height: AltaSpacing.space18),
                       Row(
                         children: [
                           Expanded(
@@ -142,25 +141,20 @@ class RegisterPage2 extends StatelessWidget {
                               builder: (BuildContext context, isFilledValue,
                                       child) =>
                                   AltaPrimaryButton(
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStateProperty.resolveWith(
-                                    (states) => isFilledValue == true
-                                        ? AltaColor.darkBlue
-                                        : AltaColor.altGray2,
-                                  ),
-                                  padding: MaterialStateProperty.all(
-                                    const EdgeInsets.symmetric(
-                                      horizontal: AltaSpacing.space72,
-                                      vertical: AltaSpacing.space20,
-                                    ),
-                                  ),
+                                backgroundColor:
+                                    MaterialStateProperty.resolveWith(
+                                  (states) => isFilledValue == true
+                                      ? AltaColor.darkBlue
+                                      : AltaColor.altGray2,
                                 ),
                                 onPressed: () => Navigator.of(context).push(
                                   MaterialPageRoute(
                                       builder: (context) =>
                                           const RegisterPage3()),
                                 ),
+                                borderRadius: 8,
+                                paddingHorizontal: AltaSpacing.space72,
+                                paddingVertical: AltaSpacing.space20,
                                 child: AltaText(
                                   context: context,
                                   text: 'DAFTAR',
@@ -172,7 +166,7 @@ class RegisterPage2 extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const AltaSizedBox(height: AltaSpacing.space18),
+                      const SizedBox(height: AltaSpacing.space18),
                       AltaText(
                         context: context,
                         text: 'Dengan menekan tombol "DAFTAR", saya',

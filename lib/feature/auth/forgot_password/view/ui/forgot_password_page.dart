@@ -4,7 +4,6 @@ import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
-import '../../../../../utils/widgets/alta_sizedbox.dart';
 import '../../../../../utils/widgets/alta_text_field.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
@@ -36,28 +35,28 @@ class ForgotPasswordPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const AltaSizedBox(height: AltaSpacing.space56),
+              const SizedBox(height: AltaSpacing.space56),
               AltaText(
                 context: context,
                 text: 'Langkah 1/2',
                 style: AltaTextStyle.titleH2,
                 color: AltaColor.black,
               ),
-              const AltaSizedBox(height: AltaSpacing.space16),
+              const SizedBox(height: AltaSpacing.space16),
               AltaText(
                 context: context,
                 text: 'Masukkan email untuk mengubah kata sandi',
                 style: AltaTextStyle.headlineH1,
                 color: AltaColor.black,
               ),
-              const AltaSizedBox(height: AltaSpacing.space24),
+              const SizedBox(height: AltaSpacing.space24),
               AltaText(
                 context: context,
                 text: 'Masukkan email',
                 style: AltaTextStyle.bodyH1,
                 color: AltaColor.darkGray,
               ),
-              const AltaSizedBox(height: AltaSpacing.space8),
+              const SizedBox(height: AltaSpacing.space8),
               ValueListenableBuilder(
                 valueListenable: email,
                 builder: (BuildContext context, emailValue, _) => AltaTextField(
@@ -72,7 +71,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   },
                 ),
               ),
-              const AltaSizedBox(height: AltaSpacing.space24),
+              const SizedBox(height: AltaSpacing.space24),
               Row(
                 children: [
                   Expanded(
@@ -80,19 +79,15 @@ class ForgotPasswordPage extends StatelessWidget {
                       valueListenable: isFilled,
                       builder: (BuildContext context, isFilledValue, child) =>
                           AltaPrimaryButton(
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.resolveWith(
-                              (states) => isFilledValue == true
-                                  ? AltaColor.darkBlue
-                                  : AltaColor.altGray2,
-                            ),
-                            padding: MaterialStateProperty.all(
-                              const EdgeInsets.symmetric(
-                                horizontal: AltaSpacing.space72,
-                                vertical: AltaSpacing.space20,
-                              ),
-                            )),
+                        backgroundColor: MaterialStateProperty.resolveWith(
+                          (states) => isFilledValue == true
+                              ? AltaColor.darkBlue
+                              : AltaColor.altGray2,
+                        ),
                         onPressed: () {},
+                        borderRadius: 8,
+                        paddingHorizontal: AltaSpacing.space72,
+                        paddingVertical: AltaSpacing.space20,
                         child: AltaText(
                           context: context,
                           text: 'KIRIM KODE / TAUTAN',

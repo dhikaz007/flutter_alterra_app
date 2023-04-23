@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_sizedbox.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 
 class RegisterPage3 extends StatelessWidget {
@@ -31,14 +30,14 @@ class RegisterPage3 extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const AltaSizedBox(height: AltaSpacing.space28),
+              const SizedBox(height: AltaSpacing.space28),
               AltaText(
                 context: context,
                 text: 'Langkah 3/3',
                 style: AltaTextStyle.titleH2,
                 color: AltaColor.black.withOpacity(0.5),
               ),
-              const AltaSizedBox(height: AltaSpacing.space28),
+              const SizedBox(height: AltaSpacing.space28),
               AltaText(
                 context: context,
                 text:
@@ -46,7 +45,7 @@ class RegisterPage3 extends StatelessWidget {
                 style: AltaTextStyle.headlineH1,
                 color: AltaColor.black,
               ),
-              const AltaSizedBox(height: AltaSpacing.space18),
+              const SizedBox(height: AltaSpacing.space18),
               Row(
                 children: [
                   AltaText(
@@ -54,7 +53,7 @@ class RegisterPage3 extends StatelessWidget {
                       text: 'Email yang dimasukkan salah?',
                       style: AltaTextStyle.titleH3,
                       color: Colors.black),
-                  const AltaSizedBox(width: AltaSpacing.space5),
+                  const SizedBox(width: AltaSpacing.space5),
                   AltaText(
                       context: context,
                       text: 'Ubah Email',
@@ -62,14 +61,14 @@ class RegisterPage3 extends StatelessWidget {
                       color: AltaColor.tangerine),
                 ],
               ),
-              const AltaSizedBox(height: AltaSpacing.space18),
+              const SizedBox(height: AltaSpacing.space18),
               AltaText(
                   context: context,
                   text:
                       'Belum menerima tautan verifikasi?\nKirim ulang dalam 00:24',
                   style: AltaTextStyle.titleH3,
                   color: Colors.black),
-              const AltaSizedBox(height: AltaSpacing.space28),
+              const SizedBox(height: AltaSpacing.space28),
               Row(
                 children: [
                   Expanded(
