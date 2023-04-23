@@ -85,10 +85,10 @@ class ForgotPasswordPage extends StatelessWidget {
                               ? AltaColor.darkBlue
                               : AltaColor.altGray2,
                         ),
-                        borderRadius: AltaBorderRadius.radius8,
+                        onPressed: () {},
+                        bborderRadius: AltaBorderRadius.radius8,
                         paddingVertical: AltaSpacing.space20,
                         paddingHorizontal: AltaSpacing.space28,
-                        onPressed: () {},
                         child: AltaText(
                           context: context,
                           text: 'KIRIM KODE / TAUTAN',

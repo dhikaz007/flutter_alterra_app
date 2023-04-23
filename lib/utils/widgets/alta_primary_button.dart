@@ -21,6 +21,8 @@ class AltaPrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+
         padding: MaterialStateProperty.all(
           EdgeInsets.symmetric(
             vertical: paddingVertical,

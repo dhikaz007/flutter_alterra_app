@@ -137,10 +137,7 @@ class LoginPage extends StatelessWidget {
                                     ? AltaColor.darkBlue
                                     : AltaColor.altGray2,
                               ),
-                              borderRadius: AltaBorderRadius.radius8,
-                              paddingVertical: AltaSpacing.space20,
-                              paddingHorizontal: AltaSpacing.space28,
-                              onPressed: () => isFilled.value == true &&
+                                      onPressed: () => isFilled.value == true &&
                                       email.value.contains(emailData) &&
                                       pass.value.contains(passData)
                                   ? Navigator.of(context).push(
@@ -148,6 +145,9 @@ class LoginPage extends StatelessWidget {
                                           builder: (context) =>
                                               const HomePage()))
                                   : isFilled.value == false,
+                              borderRadius: AltaBorderRadius.radius8,
+                              paddingVertical: AltaSpacing.space20,
+                              paddingHorizontal: AltaSpacing.space28,
                               child: AltaText(
                                 context: context,
                                 text: 'LOGIN',
