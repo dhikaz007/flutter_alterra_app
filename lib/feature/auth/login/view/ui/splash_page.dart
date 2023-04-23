@@ -7,6 +7,7 @@ import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_splash_background.dart';
 import '../../../../../utils/widgets/alta_logo.dart';
+
 import 'login_page.dart';
 
 class SplashPage extends StatefulWidget {
@@ -39,30 +40,28 @@ class _SplashPageState extends State<SplashPage> {
         const AltaSplashBackground(),
         Scaffold(
           backgroundColor: Colors.transparent,
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+          body: Stack(
             children: [
-              const Divider(
-                height: 300,
-              ),
-              const AltaLogo(
-                imgPath: 'assets/images/png/logo_academy_white.png',
-                width: 267,
-                height: 161,
+              const Align(
                 alignment: Alignment.center,
+                child: AltaLogo(
+                  imgPath: 'assets/images/png/alterra_white_logo.png',
+                  width: 267,
+                  height: 161,
+                  alignment: Alignment.center,
+                ),
               ),
-              const Divider(
-                height: 260,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: AltaSpacing.space24),
-                child: AltaText(
-                  context: context,
-                  text: 'Copyright by Flexiclass\n@2023',
-                  style: AltaTextStyle.bodyH2,
-                  color: AltaColor.white,
-                  textAlign: TextAlign.center,
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: AltaSpacing.space20),
+                  child: AltaText(
+                    context: context,
+                    text: 'Copyright by Flexiclass\n@2023',
+                    style: AltaTextStyle.bodyH2,
+                    color: AltaColor.white,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
             ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
@@ -85,9 +86,9 @@ class ForgotPasswordPage extends StatelessWidget {
                               : AltaColor.altGray2,
                         ),
                         onPressed: () {},
-                        borderRadius: 8,
-                        paddingHorizontal: AltaSpacing.space72,
+                        bborderRadius: AltaBorderRadius.radius8,
                         paddingVertical: AltaSpacing.space20,
+                        paddingHorizontal: AltaSpacing.space28,
                         child: AltaText(
                           context: context,
                           text: 'KIRIM KODE / TAUTAN',

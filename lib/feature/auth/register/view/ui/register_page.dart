@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_alterra_app/feature/auth/login/view/ui/login_page.dart';
 
+import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
@@ -37,7 +38,7 @@ class RegisterPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: AltaSpacing.space28),
+              const SizedBox(height: AltaSpacing.space32),
               AltaText(
                 context: context,
                 text: 'Langkah 1/3',
@@ -58,7 +59,8 @@ class RegisterPage extends StatelessWidget {
                 style: AltaTextStyle.bodyH1,
                 color: AltaColor.darkGray,
               ),
-              const SizedBox(height: AltaSpacing.space6),
+              const SizedBox(height: AltaSpacing.space8),
+              
               ValueListenableBuilder(
                 valueListenable: email,
                 builder: (BuildContext context, emailValue, _) => AltaTextField(
@@ -86,13 +88,16 @@ class RegisterPage extends StatelessWidget {
                               ? AltaColor.darkBlue
                               : AltaColor.altGray2,
                         ),
+                            
                         onPressed: () => Navigator.of(context).push(
                           MaterialPageRoute(
                               builder: (context) => const RegisterPage2()),
                         ),
-                        borderRadius: 8,
-                        paddingHorizontal: AltaSpacing.space72,
+                        borderRadius: AltaBorderRadius.radius8,
                         paddingVertical: AltaSpacing.space20,
+                        paddingHorizontal: AltaSpacing.space28,
+                        onPressed: () {},
+
                         child: AltaText(
                           context: context,
                           text: 'SELANJUTNYA',

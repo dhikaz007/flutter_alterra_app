@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/widgets/alta_login_background.dart';
 import '../../../../../utils/constant/alta_color.dart';
@@ -41,7 +42,7 @@ class LoginPage extends StatelessWidget {
                   children: [
                     const SizedBox(height: AltaSpacing.space72),
                     const AltaLogo(
-                      imgPath: 'assets/images/png/logo_academy_blue.png',
+                      imgPath: 'assets/images/png/alterra_blue_logo.png',
                       width: 164,
                       height: 99,
                       alignment: Alignment.center,
@@ -95,6 +96,7 @@ class LoginPage extends StatelessWidget {
                       valueListenable: pass,
                       builder: (BuildContext context, passValue, _) =>
                           AltaTextField(
+                            obscureText: true,
                         hintText: 'Masukkan kata sandi',
                         onChanged: (value) {
                           pass.value = value;
@@ -135,7 +137,7 @@ class LoginPage extends StatelessWidget {
                                     ? AltaColor.darkBlue
                                     : AltaColor.altGray2,
                               ),
-                              onPressed: () => isFilled.value == true &&
+                                      onPressed: () => isFilled.value == true &&
                                       email.value.contains(emailData) &&
                                       pass.value.contains(passData)
                                   ? Navigator.of(context).push(
@@ -143,9 +145,9 @@ class LoginPage extends StatelessWidget {
                                           builder: (context) =>
                                               const HomePage()))
                                   : isFilled.value == false,
-                              borderRadius: 8,
-                              paddingHorizontal: AltaSpacing.space72,
+                              borderRadius: AltaBorderRadius.radius8,
                               paddingVertical: AltaSpacing.space20,
+                              paddingHorizontal: AltaSpacing.space28,
                               child: AltaText(
                                 context: context,
                                 text: 'LOGIN',
