@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../utils/constant/alta_border_radius.dart';
+import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
@@ -18,20 +18,13 @@ class ForgotPasswordPage extends StatelessWidget {
     final ValueNotifier<String> email = ValueNotifier('');
     final ValueNotifier<bool> isFilled = ValueNotifier(false);
 
-    return Container(
-      color: AltaColor.white,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: IconButton(
-            color: AltaColor.black,
-            icon: SvgPicture.asset(
-                'assets/icon/login_section/svg/close_icon.svg'),
-            iconSize: 14,
-            onPressed: () => Navigator.of(context).pop(true),
-          ),
-        ),
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: AltaScaffold(
+        leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
+        leadingHeight: 14,
+        leadingWidth: 14,
+        onPressed: () => Navigator.of(context).pop(true),
         body: Padding(
           padding: const EdgeInsets.only(
             left: AltaSpacing.space16,

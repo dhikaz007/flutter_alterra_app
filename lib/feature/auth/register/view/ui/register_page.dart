@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
+import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/widgets/alta_text_field.dart';
 
@@ -16,19 +16,13 @@ class RegisterPage extends StatelessWidget {
     final ValueNotifier<String> email = ValueNotifier('');
     final ValueNotifier<bool> isFilled = ValueNotifier(false);
 
-    return Container(
-      color: AltaColor.white,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: IconButton(
-            color: AltaColor.black,
-            icon: SvgPicture.asset('assets/icon/login_section/svg/close_icon.svg'),
-            iconSize: 14,
-            onPressed: () => Navigator.of(context).pop(true),
-          ),
-        ),
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: AltaScaffold(
+        leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
+        leadingHeight: 14,
+        leadingWidth: 14,
+        onPressed: () => Navigator.of(context).pop(true),
         body: Padding(
           padding: const EdgeInsets.only(
             left: AltaSpacing.space16,
@@ -48,7 +42,7 @@ class RegisterPage extends StatelessWidget {
               AltaText(
                 context: context,
                 text: 'Daftar Akun untuk Jelajahi Alterra Academy',
-                style: AltaTextStyle.titleH2,
+                style: AltaTextStyle.headlineH1,
                 color: AltaColor.black,
               ),
               const SizedBox(height: AltaSpacing.space28),

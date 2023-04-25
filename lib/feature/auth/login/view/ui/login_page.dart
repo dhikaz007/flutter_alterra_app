@@ -38,6 +38,7 @@ class LoginPage extends StatelessWidget {
               padding: const EdgeInsets.all(AltaSpacing.space16),
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
+                reverse: true,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
