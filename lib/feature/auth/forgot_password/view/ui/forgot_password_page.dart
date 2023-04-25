@@ -86,7 +86,7 @@ class ForgotPasswordPage extends StatelessWidget {
                               : AltaColor.altGray2,
                         ),
                         onPressed: () {},
-                        bborderRadius: AltaBorderRadius.radius8,
+                        borderRadius: AltaBorderRadius.radius8,
                         paddingVertical: AltaSpacing.space20,
                         paddingHorizontal: AltaSpacing.space28,
                         child: AltaText(

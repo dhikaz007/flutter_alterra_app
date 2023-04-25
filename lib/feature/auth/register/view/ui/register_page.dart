@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/feature/auth/login/view/ui/login_page.dart';
 
+import '../../../login/view/ui/login_page.dart';
 import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/widgets/alta_text_field.dart';
+
 import 'register_page2.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -60,7 +61,6 @@ class RegisterPage extends StatelessWidget {
                 color: AltaColor.darkGray,
               ),
               const SizedBox(height: AltaSpacing.space8),
-              
               ValueListenableBuilder(
                 valueListenable: email,
                 builder: (BuildContext context, emailValue, _) => AltaTextField(
@@ -88,7 +88,6 @@ class RegisterPage extends StatelessWidget {
                               ? AltaColor.darkBlue
                               : AltaColor.altGray2,
                         ),
-                            
                         onPressed: () => Navigator.of(context).push(
                           MaterialPageRoute(
                               builder: (context) => const RegisterPage2()),
@@ -96,8 +95,6 @@ class RegisterPage extends StatelessWidget {
                         borderRadius: AltaBorderRadius.radius8,
                         paddingVertical: AltaSpacing.space20,
                         paddingHorizontal: AltaSpacing.space28,
-                        onPressed: () {},
-
                         child: AltaText(
                           context: context,
                           text: 'SELANJUTNYA',
