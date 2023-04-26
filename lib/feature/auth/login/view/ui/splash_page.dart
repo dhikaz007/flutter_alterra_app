@@ -24,12 +24,12 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
   }
 
-  _startSplashPage() {
-    var duration = const Duration(seconds: 2);
-    return Timer(
-      duration,
-      () => Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => const LoginPage())),
+  void _startSplashPage() {
+    Timer(
+      const Duration(seconds: 2),
+      () => Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const LoginPage(),
+      )),
     );
   }
 
@@ -45,7 +45,8 @@ class _SplashPageState extends State<SplashPage> {
               const Align(
                 alignment: Alignment.center,
                 child: AltaLogo(
-                  imgPath: 'assets/images/png/alterra_white_logo.png',
+                  imgPath:
+                      'assets/images/login_section/png/alterra_white_logo.png',
                   width: 267,
                   height: 161,
                   alignment: Alignment.center,

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../utils/constant/alta_border_radius.dart';
+import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
 import '../../../../../utils/widgets/alta_text_field.dart';
+
+import 'forgot_password_page_2.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({Key? key}) : super(key: key);
@@ -15,19 +18,13 @@ class ForgotPasswordPage extends StatelessWidget {
     final ValueNotifier<String> email = ValueNotifier('');
     final ValueNotifier<bool> isFilled = ValueNotifier(false);
 
-    return Container(
-      color: AltaColor.white,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: IconButton(
-            color: AltaColor.black,
-            icon: const Icon(Icons.close),
-            iconSize: 14,
-            onPressed: () => Navigator.of(context).pop(true),
-          ),
-        ),
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: AltaScaffold(
+        leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
+        leadingHeight: 14,
+        leadingWidth: 14,
+        onPressed: () => Navigator.of(context).pop(true),
         body: Padding(
           padding: const EdgeInsets.only(
             left: AltaSpacing.space16,
@@ -60,14 +57,14 @@ class ForgotPasswordPage extends StatelessWidget {
               const SizedBox(height: AltaSpacing.space8),
               ValueListenableBuilder(
                 valueListenable: email,
-                builder: (BuildContext context, emailValue, _) => AltaTextField(
+                builder: (context, emailValue, _) => AltaTextField(
                   hintText: 'Masukkan email anda',
                   onChanged: (value) {
                     email.value = value;
-                    if (email.value.isNotEmpty) {
-                      isFilled.value = true;
-                    } else {
+                    if (email.value.isEmpty) {
                       isFilled.value = false;
+                    } else {
+                      isFilled.value = true;
                     }
                   },
                 ),
@@ -78,17 +75,22 @@ class ForgotPasswordPage extends StatelessWidget {
                   Expanded(
                     child: ValueListenableBuilder(
                       valueListenable: isFilled,
-                      builder: (BuildContext context, isFilledValue, child) =>
+                      builder: (context, isFilledValue, child) =>
                           AltaPrimaryButton(
                         backgroundColor: MaterialStateProperty.resolveWith(
                           (states) => isFilledValue == true
                               ? AltaColor.darkBlue
                               : AltaColor.altGray2,
                         ),
-                        onPressed: () {},
-                        bborderRadius: AltaBorderRadius.radius8,
+                        borderRadius: AltaBorderRadius.radius8,
                         paddingVertical: AltaSpacing.space20,
                         paddingHorizontal: AltaSpacing.space28,
+                        onPressed: () => isFilledValue == true
+                            ? Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    ForgotPasswordPage2(email: email.value),
+                              ))
+                            : null,
                         child: AltaText(
                           context: context,
                           text: 'KIRIM KODE / TAUTAN',
