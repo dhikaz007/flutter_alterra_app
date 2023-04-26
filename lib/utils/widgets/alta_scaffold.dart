@@ -9,16 +9,22 @@ class AltaScaffold extends StatelessWidget {
   final String? leadingAsset;
   final double? leadingWidth;
   final double? leadingHeight;
+  final Widget? title;
+  final Color? appBarColor;
   final VoidCallback? onPressed;
   final List<Widget>? actions;
+  final Widget? floatingActionButton;
   const AltaScaffold({
     Key? key,
     required this.body,
     this.leadingAsset,
     this.leadingWidth,
     this.leadingHeight,
+    this.title,
+    this.appBarColor,
     this.onPressed,
     this.actions,
+    this.floatingActionButton,
   }) : super(key: key);
 
   @override
@@ -27,7 +33,8 @@ class AltaScaffold extends StatelessWidget {
       color: AltaColor.white,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          title: title,
+          backgroundColor: appBarColor,
           elevation: 0,
           leading: AltaIconButton(
             color: AltaColor.black,
@@ -39,6 +46,7 @@ class AltaScaffold extends StatelessWidget {
           actions: actions,
         ),
         body: body,
+        floatingActionButton: floatingActionButton,
       ),
     );
   }

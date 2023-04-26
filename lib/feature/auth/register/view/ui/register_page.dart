@@ -25,6 +25,7 @@ class RegisterPage extends StatelessWidget {
         leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
         leadingHeight: 14,
         leadingWidth: 14,
+        appBarColor: Colors.transparent,
         onPressed: () => Navigator.of(context).pop(true),
         body: Padding(
           padding: const EdgeInsets.only(

@@ -47,6 +47,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
       leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
       leadingHeight: 14,
       leadingWidth: 14,
+      appBarColor: Colors.transparent,
       onPressed: () => Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => const LoginPage(),
       )),

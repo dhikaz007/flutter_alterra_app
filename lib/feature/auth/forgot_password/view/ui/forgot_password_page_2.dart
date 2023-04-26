@@ -50,6 +50,7 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
       leadingAsset: 'assets/icon/login_section/svg/arrow_back_icon.svg',
       leadingHeight: 17,
       leadingWidth: 15,
+      appBarColor: Colors.transparent,
       onPressed: () => Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => const LoginPage(),
       )),

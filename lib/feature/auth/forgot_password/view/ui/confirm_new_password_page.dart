@@ -19,6 +19,7 @@ class ConfirmNewPasswordPage extends StatelessWidget {
     final ValueNotifier<bool> isFilled = ValueNotifier(false);
 
     return AltaScaffold(
+      appBarColor: Colors.transparent,
       body: Padding(
         padding: const EdgeInsets.only(
             left: AltaSpacing.space16, right: AltaSpacing.space16),

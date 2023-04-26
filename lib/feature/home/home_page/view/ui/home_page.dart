@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../utils/constant/alta_color.dart';
-import '../../../../utils/constant/alta_spacing.dart';
-import '../../../../utils/widgets/alta_homepage_background.dart';
-import '../../../../utils/widgets/alta_text.dart';
+import '../../../../../utils/constant/alta_color.dart';
+import '../../../../../utils/constant/alta_spacing.dart';
+import '../../../../../utils/widgets/alta_homepage_background.dart';
+import '../../../../../utils/widgets/alta_text.dart';
 
 class HomePage extends StatelessWidget {
   final String email;

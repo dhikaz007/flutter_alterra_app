@@ -35,6 +35,7 @@ class ForgotPasswordPage3 extends StatelessWidget {
       leadingAsset: 'assets/icon/login_section/svg/arrow_back_icon.svg',
       leadingHeight: 17,
       leadingWidth: 15,
+      appBarColor: Colors.transparent,
       onPressed: () {},
       actions: const [
         AltaIconButton(

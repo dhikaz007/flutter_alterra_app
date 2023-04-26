@@ -67,6 +67,8 @@ flutter:
       - assets/images/login_section/svg/
       - assets/icon/login_section/png/
       - assets/icon/login_section/svg/
+      - assets/icon/homepage_section/svg/
+      - assets/icon/homepage_section/png/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
