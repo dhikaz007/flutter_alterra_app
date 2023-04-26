@@ -67,10 +67,10 @@ class RegisterPage extends StatelessWidget {
                   hintText: 'Masukkan email anda',
                   onChanged: (value) {
                     email.value = value;
-                    if (email.value.isNotEmpty) {
-                      isFilled.value = true;
-                    } else {
+                    if (email.value.isEmpty) {
                       isFilled.value = false;
+                    } else {
+                      isFilled.value = true;
                     }
                   },
                 ),
