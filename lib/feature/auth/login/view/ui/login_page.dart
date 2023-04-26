@@ -179,7 +179,7 @@ class LoginPage extends StatelessWidget {
                               borderRadius: AltaBorderRadius.radius8,
                               paddingVertical: AltaSpacing.space20,
                               paddingHorizontal: AltaSpacing.space28,
-                              onPressed: () => isFilled.value == true &&
+                              onPressed: () => isFilledValue == true &&
                                       email.value.contains(emailData) &&
                                       pass.value.contains(passData) &&
                                       isValid.value == true
