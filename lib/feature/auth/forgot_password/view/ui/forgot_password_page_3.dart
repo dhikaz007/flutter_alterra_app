@@ -6,6 +6,7 @@ import 'confirm_new_password_page.dart';
 
 import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/widgets/alta_icon_button.dart';
+
 import '../../../../../utils/widgets/alta_text_button.dart';
 import '../../../../../utils/widgets/alta_logo.dart';
 import '../../../../../utils/constant/alta_border_radius.dart';
