@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/utils/widgets/alta_icon_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../../utils/widgets/alta_scaffold.dart';
 import 'confirm_new_password_page.dart';
 
+import '../../../../../utils/widgets/alta_scaffold.dart';
+import '../../../../../utils/widgets/alta_icon_button.dart';
 import '../../../../../utils/widgets/alta_text_button.dart';
 import '../../../../../utils/widgets/alta_logo.dart';
 import '../../../../../utils/constant/alta_border_radius.dart';
@@ -81,7 +81,8 @@ class ForgotPasswordPage3 extends StatelessWidget {
                   ),
                   const SizedBox(width: AltaSpacing.space4),
                   SvgPicture.asset(
-                      'assets/icon/login_section/svg/starred_icon.svg'),
+                    'assets/icon/login_section/svg/starred_icon.svg',
+                  ),
                 ],
               ),
               const SizedBox(height: AltaSpacing.space32),
@@ -118,7 +119,8 @@ class ForgotPasswordPage3 extends StatelessWidget {
                     ),
                     const SizedBox(width: AltaSpacing.space8),
                     SvgPicture.asset(
-                        'assets/icon/login_section/svg/vert_down_icon.svg'),
+                      'assets/icon/login_section/svg/vert_down_icon.svg',
+                    ),
                   ],
                 ),
                 trailing: Row(
@@ -183,10 +185,10 @@ class ForgotPasswordPage3 extends StatelessWidget {
                       borderRadius: AltaBorderRadius.radius8,
                       paddingVertical: AltaSpacing.space20,
                       paddingHorizontal: AltaSpacing.space28,
-                      onPressed: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const ConfirmNewPasswordPage())),
+                      onPressed: () =>
+                          Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ConfirmNewPasswordPage(),
+                      )),
                       child: AltaText(
                         context: context,
                         text: 'Ubah Kata Sandi',

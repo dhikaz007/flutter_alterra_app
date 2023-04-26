@@ -57,7 +57,7 @@ class ForgotPasswordPage extends StatelessWidget {
               const SizedBox(height: AltaSpacing.space8),
               ValueListenableBuilder(
                 valueListenable: email,
-                builder: (BuildContext context, emailValue, _) => AltaTextField(
+                builder: (context, emailValue, _) => AltaTextField(
                   hintText: 'Masukkan email anda',
                   onChanged: (value) {
                     email.value = value;
@@ -75,7 +75,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   Expanded(
                     child: ValueListenableBuilder(
                       valueListenable: isFilled,
-                      builder: (BuildContext context, isFilledValue, child) =>
+                      builder: (context, isFilledValue, child) =>
                           AltaPrimaryButton(
                         backgroundColor: MaterialStateProperty.resolveWith(
                           (states) => isFilledValue == true

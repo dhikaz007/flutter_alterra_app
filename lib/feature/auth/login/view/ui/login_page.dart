@@ -81,6 +81,8 @@ class LoginPage extends StatelessWidget {
                             ),
                             SvgPicture.asset(
                               'assets/icon/login_section/svg/error_icon.svg',
+                              width: 16,
+                              height: 16,
                             ),
                           ],
                         ),
@@ -102,8 +104,7 @@ class LoginPage extends StatelessWidget {
                     const SizedBox(height: AltaSpacing.space8),
                     ValueListenableBuilder<String>(
                       valueListenable: email,
-                      builder: (BuildContext context, emailValue, _) =>
-                          AltaTextField(
+                      builder: (context, emailValue, _) => AltaTextField(
                         hintText: 'Masukkan email anda',
                         onChanged: (value) {
                           email.value = value;
@@ -149,10 +150,10 @@ class LoginPage extends StatelessWidget {
                     ),
                     const SizedBox(height: AltaSpacing.space20),
                     AltaTextButton(
-                      onPressed: () => Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => const ForgotPasswordPage()),
-                      ),
+                      onPressed: () =>
+                          Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ForgotPasswordPage(),
+                      )),
                       child: AltaText(
                         context: context,
                         text: 'Lupa Password',
@@ -167,9 +168,8 @@ class LoginPage extends StatelessWidget {
                         Expanded(
                           child: ValueListenableBuilder(
                             valueListenable: isFilled,
-                            builder:
-                                (BuildContext context, isFilledValue, child) =>
-                                    AltaPrimaryButton(
+                            builder: (context, isFilledValue, child) =>
+                                AltaPrimaryButton(
                               backgroundColor:
                                   MaterialStateProperty.resolveWith(
                                 (states) => isFilledValue == true
@@ -183,11 +183,12 @@ class LoginPage extends StatelessWidget {
                                       email.value.contains(emailData) &&
                                       pass.value.contains(passData) &&
                                       isValid.value == true
-                                  ? Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              HomePage(email: email.value)))
-                                  : isFilled.value == false,
+                                  ? Navigator.of(context)
+                                      .push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          HomePage(email: email.value),
+                                    ))
+                                  : null,
                               child: AltaText(
                                 context: context,
                                 text: 'LOGIN',

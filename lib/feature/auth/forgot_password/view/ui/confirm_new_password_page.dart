@@ -42,7 +42,7 @@ class ConfirmNewPasswordPage extends StatelessWidget {
             const SizedBox(height: AltaSpacing.space8),
             ValueListenableBuilder(
               valueListenable: pass,
-              builder: (BuildContext context, passValue, _) => AltaTextField(
+              builder: (context, passValue, _) => AltaTextField(
                 obscureText: true,
                 hintText: 'Masukkan kata sandi',
                 onChanged: (value) {
@@ -65,8 +65,7 @@ class ConfirmNewPasswordPage extends StatelessWidget {
             const SizedBox(height: AltaSpacing.space8),
             ValueListenableBuilder(
               valueListenable: confirmPass,
-              builder: (BuildContext context, confirmPassValue, _) =>
-                  AltaTextField(
+              builder: (context, confirmPassValue, _) => AltaTextField(
                 obscureText: true,
                 hintText: 'Masukkan ulang kata sandi',
                 onChanged: (value) {
@@ -86,7 +85,7 @@ class ConfirmNewPasswordPage extends StatelessWidget {
                 Expanded(
                   child: ValueListenableBuilder(
                     valueListenable: isFilled,
-                    builder: (BuildContext context, isFilledValue, child) =>
+                    builder: (context, isFilledValue, child) =>
                         AltaPrimaryButton(
                       backgroundColor: MaterialStateProperty.resolveWith(
                         (states) => isFilledValue == true
@@ -97,9 +96,10 @@ class ConfirmNewPasswordPage extends StatelessWidget {
                       paddingVertical: AltaSpacing.space20,
                       paddingHorizontal: AltaSpacing.space28,
                       onPressed: () => isFilled.value == true
-                          ? Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                  builder: (context) => const LoginPage()))
+                          ? Navigator.of(context)
+                              .pushReplacement(MaterialPageRoute(
+                              builder: (context) => const LoginPage(),
+                            ))
                           : isFilled.value == false,
                       child: AltaText(
                         context: context,

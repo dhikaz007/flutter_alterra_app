@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/feature/auth/login/view/ui/login_page.dart';
 
+import 'register_page_2.dart';
+
+import '../../../login/view/ui/login_page.dart';
 import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
+import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/widgets/alta_text_field.dart';
-import 'register_page2.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -17,19 +19,13 @@ class RegisterPage extends StatelessWidget {
     final ValueNotifier<String> email = ValueNotifier('');
     final ValueNotifier<bool> isFilled = ValueNotifier(false);
 
-    return Container(
-      color: AltaColor.white,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: IconButton(
-            color: AltaColor.black,
-            icon: const Icon(Icons.close),
-            iconSize: 14,
-            onPressed: () => Navigator.of(context).pop(true),
-          ),
-        ),
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: AltaScaffold(
+        leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
+        leadingHeight: 14,
+        leadingWidth: 14,
+        onPressed: () => Navigator.of(context).pop(true),
         body: Padding(
           padding: const EdgeInsets.only(
             left: AltaSpacing.space16,
@@ -43,7 +39,7 @@ class RegisterPage extends StatelessWidget {
                 context: context,
                 text: 'Langkah 1/3',
                 style: AltaTextStyle.titleH2,
-                color: AltaColor.black.withOpacity(0.5),
+                color: AltaColor.black,
               ),
               const SizedBox(height: AltaSpacing.space28),
               AltaText(
@@ -60,10 +56,9 @@ class RegisterPage extends StatelessWidget {
                 color: AltaColor.darkGray,
               ),
               const SizedBox(height: AltaSpacing.space8),
-              
               ValueListenableBuilder(
                 valueListenable: email,
-                builder: (BuildContext context, emailValue, _) => AltaTextField(
+                builder: (context, emailValue, _) => AltaTextField(
                   hintText: 'Masukkan email anda',
                   onChanged: (value) {
                     email.value = value;
@@ -81,23 +76,22 @@ class RegisterPage extends StatelessWidget {
                   Expanded(
                     child: ValueListenableBuilder(
                       valueListenable: isFilled,
-                      builder: (BuildContext context, isFilledValue, child) =>
+                      builder: (context, isFilledValue, child) =>
                           AltaPrimaryButton(
                         backgroundColor: MaterialStateProperty.resolveWith(
                           (states) => isFilledValue == true
                               ? AltaColor.darkBlue
                               : AltaColor.altGray2,
                         ),
-                            
-                        onPressed: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) => const RegisterPage2()),
-                        ),
                         borderRadius: AltaBorderRadius.radius8,
                         paddingVertical: AltaSpacing.space20,
                         paddingHorizontal: AltaSpacing.space28,
-                        onPressed: () {},
-
+                        onPressed: () =>
+                            isFilledValue == true && email.value.isNotEmpty
+                                ? Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const RegisterPage2(),
+                                  ))
+                                : null,
                         child: AltaText(
                           context: context,
                           text: 'SELANJUTNYA',
@@ -109,6 +103,7 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: AltaSpacing.space16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -116,13 +111,13 @@ class RegisterPage extends StatelessWidget {
                     context: context,
                     text: 'Sudah punya akun?',
                     style: AltaTextStyle.titleH3,
-                    color: AltaColor.darkGray,
+                    color: AltaColor.black,
                   ),
                   TextButton(
-                    onPressed: () => Navigator.of(context).push(
-                      MaterialPageRoute(
-                          builder: (context) => const LoginPage()),
-                    ),
+                    onPressed: () =>
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const LoginPage(),
+                        )),
                     child: AltaText(
                       context: context,
                       text: 'Masuk disini',

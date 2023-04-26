@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'forgot_password_page_3.dart';
-
 import '../../../login/view/ui/login_page.dart';
 import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/widgets/alta_text_button.dart';
@@ -13,15 +11,15 @@ import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
 
-class ForgotPasswordPage2 extends StatefulWidget {
+class RegisterPage3 extends StatefulWidget {
   final String email;
-  const ForgotPasswordPage2({Key? key, required this.email}) : super(key: key);
+  const RegisterPage3({Key? key, required this.email}) : super(key: key);
 
   @override
-  State<ForgotPasswordPage2> createState() => _ForgotPasswordPage2State();
+  State<RegisterPage3> createState() => _RegisterPage3State();
 }
 
-class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
+class _RegisterPage3State extends State<RegisterPage3> {
   static const maxSeconds = 30;
   Timer? timer;
 
@@ -46,9 +44,9 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
-      leadingAsset: 'assets/icon/login_section/svg/arrow_back_icon.svg',
-      leadingHeight: 17,
-      leadingWidth: 15,
+      leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
+      leadingHeight: 14,
+      leadingWidth: 14,
       onPressed: () => Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => const LoginPage(),
       )),
@@ -60,22 +58,22 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: AltaSpacing.space56),
+            const SizedBox(height: AltaSpacing.space32),
             AltaText(
               context: context,
-              text: 'Langkah 2/2',
+              text: 'Langkah 3/3',
               style: AltaTextStyle.titleH2,
               color: AltaColor.black,
             ),
-            const SizedBox(height: AltaSpacing.space16),
+            const SizedBox(height: AltaSpacing.space28),
             AltaText(
               context: context,
               text:
-                  'Klik tautan lupa kata sandi yang telah kami kirim ke ${widget.email}',
+              'Klik tautan lupa kata sandi yang telah kami kirim ke ${widget.email}',
               style: AltaTextStyle.headlineH1,
               color: AltaColor.black,
             ),
-            const SizedBox(height: AltaSpacing.space24),
+            const SizedBox(height: AltaSpacing.space20),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -97,18 +95,18 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
                 ),
               ],
             ),
-            const SizedBox(height: AltaSpacing.space8),
+            const SizedBox(height: AltaSpacing.space20),
             ValueListenableBuilder(
               valueListenable: seconds,
               builder: (context, secondsValue, _) => AltaText(
                 context: context,
                 text:
-                    'Belum menerima tautan verifikasi? Kirim ulang dalam ${secondsValue.toString()}',
+                'Belum menerima tautan verifikasi? Kirim ulang dalam ${secondsValue.toString()}',
                 style: AltaTextStyle.titleH2,
                 color: AltaColor.darkGray,
               ),
             ),
-            const SizedBox(height: AltaSpacing.space24),
+            const SizedBox(height: AltaSpacing.space28),
             Row(
               children: [
                 Expanded(
@@ -116,26 +114,24 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
                     valueListenable: seconds,
                     builder: (context, secondsValue, child) =>
                         AltaPrimaryButton(
-                      backgroundColor: MaterialStateProperty.resolveWith(
-                        (states) => secondsValue == 0
-                            ? AltaColor.darkBlue
-                            : AltaColor.altGray2,
-                      ),
-                      borderRadius: AltaBorderRadius.radius8,
-                      paddingVertical: AltaSpacing.space20,
-                      paddingHorizontal: AltaSpacing.space28,
-                      onPressed: () => secondsValue == 0
-                          ? Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => const ForgotPasswordPage3(),
-                            ))
-                          : null,
-                      child: AltaText(
-                        context: context,
-                        text: 'KIRIM ULANG TAUTAN',
-                        style: AltaTextStyle.titleH1,
-                        color: AltaColor.white,
-                      ),
-                    ),
+                          backgroundColor: MaterialStateProperty.resolveWith(
+                                (states) => secondsValue == 0
+                                ? AltaColor.darkBlue
+                                : AltaColor.altGray2,
+                          ),
+                          borderRadius: AltaBorderRadius.radius8,
+                          paddingVertical: AltaSpacing.space20,
+                          paddingHorizontal: AltaSpacing.space28,
+                          onPressed: () => secondsValue == 0
+                              ? {}
+                              : null,
+                          child: AltaText(
+                            context: context,
+                            text: 'KIRIM ULANG TAUTAN',
+                            style: AltaTextStyle.titleH1,
+                            color: AltaColor.white,
+                          ),
+                        ),
                   ),
                 ),
               ],
