@@ -60,7 +60,6 @@ class RegisterPage extends StatelessWidget {
                 color: AltaColor.darkGray,
               ),
               const SizedBox(height: AltaSpacing.space8),
-              
               ValueListenableBuilder(
                 valueListenable: email,
                 builder: (BuildContext context, emailValue, _) => AltaTextField(
@@ -88,7 +87,6 @@ class RegisterPage extends StatelessWidget {
                               ? AltaColor.darkBlue
                               : AltaColor.altGray2,
                         ),
-                            
                         onPressed: () => Navigator.of(context).push(
                           MaterialPageRoute(
                               builder: (context) => const RegisterPage2()),
@@ -96,8 +94,6 @@ class RegisterPage extends StatelessWidget {
                         borderRadius: AltaBorderRadius.radius8,
                         paddingVertical: AltaSpacing.space20,
                         paddingHorizontal: AltaSpacing.space28,
-                        onPressed: () {},
-
                         child: AltaText(
                           context: context,
                           text: 'SELANJUTNYA',
