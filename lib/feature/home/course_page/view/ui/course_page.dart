@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../utils/constant/alta_color.dart';
@@ -71,29 +72,45 @@ class CoursePage extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width,
               height: 380,
-              child: ListView(
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                children: const [
-                  CourseCardLargeWidget(
-                    imgAsset: 'assets/icon/homepage_section/png/backend_icon.png',
-                    headtitle: 'Backend \nEngineering',
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  height: 380,
+                  enableInfiniteScroll: false,
+                  initialPage: 1,
+                  enlargeCenterPage: true,
+                  enlargeStrategy: CenterPageEnlargeStrategy.height,
+                ),
+                items: [
+                  const CourseCardLargeWidget(
+                    imgAsset:
+                        'assets/icon/homepage_section/png/backend_icon.png',
+                    headtitle: 'Frontend \nEngineering',
                     subtitle:
                         'Kelas ini akan membimbing kamu untuk menjadi seorang Frontend Engineer. Kamu akan belajar HTML, CSS, Javascript, cara membangun website yang responsif dan menarik.',
                   ),
-                  CourseCardLargeWidget(
-                    imgAsset: 'assets/icon/homepage_section/png/backend_icon.png',
+                  const CourseCardLargeWidget(
+                    imgAsset:
+                        'assets/icon/homepage_section/png/backend_icon.png',
                     headtitle: 'Backend \nEngineering',
                     subtitle:
                         'Wujudkan mimpimu menjadi Backend Engineer. Kamu akan dibekali ilmu tentang Backend Engineering menggunakan bahasa GO yang sedang diminati oleh banyak perusahaan didunia.',
                   ),
-                  CourseCardLargeWidget(
-                    imgAsset: 'assets/icon/homepage_section/png/backend_icon.png',
-                    headtitle: 'Backend \nEngineering',
+                  const CourseCardLargeWidget(
+                    imgAsset:
+                        'assets/icon/homepage_section/png/backend_icon.png',
+                    headtitle: 'Quality Assurance Engineering',
                     subtitle:
                         'Kamu akan dilatih menjadi Quality Assurance Engineer yang dapat menjamin kualitas sebuah perangkat lunak agar dapat berfungsi secara optimal.',
                   ),
-                ],
+                ]
+                    .map(
+                      (e) => Padding(
+                        padding:
+                            const EdgeInsets.only(right: AltaSpacing.space12),
+                        child: e,
+                      ),
+                    )
+                    .toList(),
               ),
             ),
           ],

@@ -42,6 +42,7 @@ class ContentCardLargeWidget extends StatelessWidget {
                   text: headtitle,
                   style: AltaTextStyle.headlineH2,
                   color: AltaColor.white,
+                  textAlign: TextAlign.center,
                 ),
               ),
             ],
