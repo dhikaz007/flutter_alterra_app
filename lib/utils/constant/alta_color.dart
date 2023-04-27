@@ -10,4 +10,5 @@ class AltaColor {
   static const black = Color(0xff101828);
   static const white = Color(0xffFFFFFF);
   static const red = Color(0xffFF0000);
+  static const green = Color(0xff1CC800);
 }

@@ -9,6 +9,9 @@ enum AltaTextStyle {
   titleH3,
   bodyH1,
   bodyH2,
+  bodyH3,
+  bodyH4,
+  bodyH5,
   hyperlinkText
 }
 
@@ -76,6 +79,24 @@ class AltaText extends StatelessWidget {
             color: color,
             fontWeight: FontWeight.normal,
             fontSize: 12,
+          );
+        case AltaTextStyle.bodyH3:
+          return TextStyle(
+            color: color,
+            fontWeight: FontWeight.w500,
+            fontSize: 12,
+          );
+        case AltaTextStyle.bodyH4:
+          return TextStyle(
+            color: color,
+            fontWeight: FontWeight.bold,
+            fontSize: 12,
+          );
+        case AltaTextStyle.bodyH5:
+          return TextStyle(
+            color: color,
+            fontWeight: FontWeight.normal,
+            fontSize: 10,
           );
         case AltaTextStyle.hyperlinkText:
           return TextStyle(
