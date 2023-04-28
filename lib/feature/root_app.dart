@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../utils/alta_constants.dart';
+import '../utils/alta_widgets.dart';
 import 'course_page/view/ui/course_page.dart';
 import 'faq_page/view/ui/faq_page.dart';
 import 'home_page/view/ui/home_page.dart';
-import '.././utils/widgets/scroll_to_hide_widget.dart';
 import 'profile_page/view/ui/profile_page.dart';
 
 class RootApp extends StatelessWidget {
@@ -81,8 +82,8 @@ class RootApp extends StatelessWidget {
               ),
             ],
             currentIndex: selectedIndexValue,
-            selectedItemColor: Colors.blue[900],
-            unselectedItemColor: Colors.blue[900],
+            selectedItemColor: AltaColor.darkBlue,
+            unselectedItemColor: AltaColor.darkBlue,
             showUnselectedLabels: true,
             onTap: (index) => selectedIndex.value = index,
           ),

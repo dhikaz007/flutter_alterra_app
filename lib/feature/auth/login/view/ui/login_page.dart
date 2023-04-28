@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/widgets/alta_login_background.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_logo.dart';
-import '../../../../../utils/widgets/alta_primary_button.dart';
-import '../../../../../utils/widgets/alta_text_button.dart';
-import '../../../../../utils/widgets/alta_text_field.dart';
+import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_widgets.dart';
 import '../../../../home_page/view/ui/home_page.dart';
 import '../../../register/view/ui/register_page.dart';
 import '../../../forgot_password/view/ui/forgot_password_page.dart';
@@ -96,7 +89,7 @@ class LoginPage extends StatelessWidget {
                       valueListenable: pass,
                       builder: (BuildContext context, passValue, _) =>
                           AltaTextField(
-                            obscureText: true,
+                        obscureText: true,
                         hintText: 'Masukkan kata sandi',
                         onChanged: (value) {
                           pass.value = value;
@@ -137,7 +130,7 @@ class LoginPage extends StatelessWidget {
                                     ? AltaColor.darkBlue
                                     : AltaColor.altGray2,
                               ),
-                                      onPressed: () => isFilled.value == true &&
+                              onPressed: () => isFilled.value == true &&
                                       email.value.contains(emailData) &&
                                       pass.value.contains(passData)
                                   ? Navigator.of(context).push(

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_primary_button.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/widgets/alta_text_field.dart';
+import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_widgets.dart';
 import 'register_page3.dart';
 
 class RegisterPage2 extends StatelessWidget {

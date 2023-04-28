@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+
+import '../alta_constants.dart';
+import 'alta_text.dart';
+
+class AltaHeaderProfile extends StatelessWidget {
+  const AltaHeaderProfile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const Padding(
+          padding: EdgeInsets.only(top: 88),
+          child: Align(alignment: Alignment.center),
+        ),
+        const CircleAvatar(
+          backgroundColor: AltaColor.tangerine,
+          radius: 62,
+          child: CircleAvatar(
+            backgroundImage: AssetImage('assets/images/png/profile_avatar.png'),
+            radius: 60,
+          ),
+        ),
+        const SizedBox(width: AltaSpacing.space12),
+        AltaText(
+          context: context,
+          text: 'Nahdy Dailamy Batewa',
+          style: AltaTextStyle.titleH2,
+          color: AltaColor.white,
+        ),
+        AltaText(
+          context: context,
+          text: 'nadewa@alterra.com',
+          style: AltaTextStyle.bodyH2,
+          color: AltaColor.white,
+        ),
+      ],
+    );
+  }
+}

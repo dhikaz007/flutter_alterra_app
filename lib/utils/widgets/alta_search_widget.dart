@@ -17,6 +17,7 @@ class AltaSearchWidget extends StatelessWidget {
           filled: filled,
           prefixIcon: prefixIcon,
           border: const OutlineInputBorder(
+            borderSide: BorderSide.none,
             borderRadius: BorderRadius.all(
               Radius.circular(8),
             ),

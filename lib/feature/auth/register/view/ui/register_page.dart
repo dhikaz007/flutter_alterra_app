@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_alterra_app/feature/auth/login/view/ui/login_page.dart';
 
-import '../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_primary_button.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/widgets/alta_text_field.dart';
+import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_widgets.dart';
 import 'register_page2.dart';
 
 class RegisterPage extends StatelessWidget {

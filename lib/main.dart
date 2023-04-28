@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'feature/auth/login/view/ui/splash_page.dart';
 import 'feature/home_page/view/ui/home_page.dart';
+import 'feature/profile_page/view/ui/profile_page.dart';
 import 'feature/root_app.dart';
 
 void main() {
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: const SplashPage(),
       home: const RootApp(),
+      // home: const ProfilePage(),
     );
   }
 }

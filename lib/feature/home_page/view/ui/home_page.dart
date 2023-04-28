@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../utils/constant/alta_color.dart';
-import '../../../../utils/constant/alta_spacing.dart';
-import '../../../../utils/widgets/alta_feature_courses.dart';
-import '../../../../utils/widgets/alta_homepage_background.dart';
-import '../../../../utils/widgets/alta_search_widget.dart';
-import '../../../../utils/widgets/alta_text.dart';
+import '../../../../utils/alta_constants.dart';
+import '../../../../utils/alta_widgets.dart';
 
 class HomePage extends StatelessWidget {
   final ScrollController? scrollController;
@@ -72,13 +68,7 @@ class HomePage extends StatelessWidget {
                       color: AltaColor.black),
                 ),
                 const SizedBox(height: AltaSpacing.space20),
-                const AltaFeatureCourses(
-                  name: 'assets/images/png/ui_ux.png',
-                  // ),
-                  // const SizedBox(width: AltaSpacing.space5),
-                  // const AltaFeatureCourses(
-                  //   name: 'assets/images/png/flutter.png',
-                ),
+                // AltaFeatureCourses(),
               ],
             ),
           ),

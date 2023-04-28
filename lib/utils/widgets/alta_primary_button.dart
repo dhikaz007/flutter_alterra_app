@@ -7,6 +7,7 @@ class AltaPrimaryButton extends StatelessWidget {
   final double paddingHorizontal;
   final VoidCallback onPressed;
   final Widget child;
+  final MaterialStateProperty<BorderSide?>? side;
   const AltaPrimaryButton({
     super.key,
     this.backgroundColor,
@@ -15,14 +16,15 @@ class AltaPrimaryButton extends StatelessWidget {
     required this.paddingHorizontal,
     required this.onPressed,
     required this.child,
+    this.side,
   });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
+        side: side,
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-
         padding: MaterialStateProperty.all(
           EdgeInsets.symmetric(
             vertical: paddingVertical,

@@ -1,55 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/utils/widgets/alta_text.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-import '../constant/alta_spacing.dart';
+import '../alta_constants.dart';
+import '../alta_widgets.dart';
 
 class AltaFeatureCourses extends StatelessWidget {
-  final String name;
-  const AltaFeatureCourses({super.key, required this.name});
+  final String textCourse;
+  final String textDetail;
+  final String assetsCourse;
+  const AltaFeatureCourses(
+      {super.key,
+      required this.textCourse,
+      required this.textDetail,
+      required this.assetsCourse});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-        height: 300,
-        // width: double.infinity,
-        child: Card(
-          clipBehavior: Clip.antiAlias,
-          elevation: 5,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Image.asset(
-                  name,
-                ),
+    return Card(
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: 202,
+              height: 116,
+              child: Image.asset(
+                assetsCourse,
               ),
-            ],
-          ),
-        ));
+            ),
+            const SizedBox(height: AltaSpacing.space6),
+            AltaText(
+                context: context,
+                text: textCourse,
+                style: AltaTextStyle.titleH2,
+                color: AltaColor.black),
+            const SizedBox(height: AltaSpacing.space6),
+            InkWell(
+              onTap: () {},
+              child: Row(
+                children: [
+                  AltaText(
+                      context: context,
+                      text: textDetail,
+                      style: AltaTextStyle.bodyH3,
+                      color: AltaColor.tangerine),
+                  const SizedBox(width: AltaSpacing.space6),
+                  SvgPicture.asset('assets/images/svg/icons/arrow.svg'),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
-
-// Row(
-//                   children: [
-//                     Card(
-//                       child: Column(
-//                         children: [
-//                           Image.asset(
-//                             'assets/images/png/ui_ux.png',
-//                             width: 202,
-//                             height: 116,
-//                           ),
-//                           AltaText(
-//                               context: context,
-//                               text: 'Program Flexi UI/UX',
-//                               style: AltaTextStyle.titleH2,
-//                               color: AltaColor.black),
-//                           const SizedBox(height: AltaSpacing.space5),
-//                         ],
-//                       ),
-//                     ),
-//                   ],
-//                 ),

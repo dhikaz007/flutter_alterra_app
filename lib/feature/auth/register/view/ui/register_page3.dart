@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_text.dart';
+import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_widgets.dart';
 
 class RegisterPage3 extends StatelessWidget {
   const RegisterPage3({super.key});
