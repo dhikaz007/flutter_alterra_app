@@ -11,4 +11,6 @@ class AltaColor {
   static const white = Color(0xffFFFFFF);
   static const red = Color(0xffFF0000);
   static const green = Color(0xff1CC800);
+  static const gradientTop = Color(0xff3357D7);
+  static const gradientDown = Color(0xff17345F);
 }
