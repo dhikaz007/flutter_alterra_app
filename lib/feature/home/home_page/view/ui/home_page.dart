@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../utils/alta_constants.dart';
-import '../../../../utils/alta_widgets.dart';
-import '../../../../utils/widgets/alta_program_courses.dart';
+import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_widgets.dart';
+import '../../../../../utils/widgets/alta_program_courses.dart';
+import '../../../course_page/view/ui/course_promo_page.dart';
 
 class HomePage extends StatelessWidget {
   final ScrollController? scrollController;
@@ -62,7 +63,10 @@ class HomePage extends StatelessWidget {
                     height: 163,
                     width: MediaQuery.of(context).size.width,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => const CoursePromoPage()));
+                      },
                       child: Image.asset(
                         'assets/images/png/flash_sale.png',
                         fit: BoxFit.fill,

@@ -7,10 +7,12 @@ enum AltaTextStyle {
   titleH1,
   titleH2,
   titleH3,
+  titleH4,
   bodyH1,
   bodyH2,
+  bodyH2a,
   bodyH3,
-  bodyH4
+  bodyH4,
 }
 
 class AltaText extends StatelessWidget {
@@ -66,11 +68,23 @@ class AltaText extends StatelessWidget {
             fontWeight: FontWeight.w400,
             fontSize: 16,
           );
+        case AltaTextStyle.titleH4:
+          return TextStyle(
+            color: color,
+            fontWeight: FontWeight.w900,
+            fontSize: 14,
+          );
         case AltaTextStyle.bodyH1:
           return TextStyle(
             color: color,
             fontWeight: FontWeight.w500,
             fontSize: 14,
+          );
+        case AltaTextStyle.bodyH2a:
+          return TextStyle(
+            color: color,
+            fontWeight: FontWeight.w600,
+            fontSize: 12,
           );
         case AltaTextStyle.bodyH2:
           return TextStyle(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../utils/alta_constants.dart';
 import '../../../../../utils/alta_widgets.dart';
-import '../../../../home_page/view/ui/home_page.dart';
+import '../../../../home/home_page/view/ui/home_page.dart';
 import '../../../register/view/ui/register_page.dart';
 import '../../../forgot_password/view/ui/forgot_password_page.dart';
 
