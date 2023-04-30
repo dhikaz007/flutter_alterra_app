@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'feature/auth/login/view/ui/splash_page.dart';
-import 'feature/home_page/view/ui/home_page.dart';
-import 'feature/profile_page/view/ui/profile_page.dart';
-import 'feature/root_app.dart';
+import 'feature/profile/profile_page/view/ui/profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,9 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Inter',
       ),
-      // home: const SplashPage(),
-      home: const RootApp(),
-      // home: const ProfilePage(),
+      home: const ProfilePage(),
     );
   }
 }

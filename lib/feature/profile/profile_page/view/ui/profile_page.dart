@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../utils/alta_constants.dart';
-import '../../../../utils/alta_widgets.dart';
-import '../../../../utils/widgets/alta_dialogs.dart';
+import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_widgets.dart';
+import '../../../../../utils/widgets/alta_dialogs.dart';
+import '../../../edit_profile_page/view/ui/edit_profile_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -36,9 +37,18 @@ class ProfilePage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const AltaProfileComponent(
+                          AltaProfileComponent(
                             text: 'Edit Profile',
                             style: AltaTextStyle.titleH2,
+                            iconArrowBlue:
+                                'assets/images/svg/icons/arrow_blue.svg',
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => const EditProfilePage(),
+                                ),
+                              );
+                            },
                           ),
                           const SizedBox(height: AltaSpacing.space12),
                           const AltaDivider(),
@@ -59,16 +69,16 @@ class ProfilePage extends StatelessWidget {
                   child: Column(
                     children: const [
                       AltaListProfile(
-                        svgPicture: 'assets/images/svg/icons/class_icon.svg',
+                        iconProfiles: 'assets/images/svg/icons/class_icon.svg',
                         text: 'Kelas Saya',
                       ),
                       AltaListProfile(
-                        svgPicture:
+                        iconProfiles:
                             'assets/images/svg/icons/sertificate_icon.svg',
                         text: 'Sertifikat Saya',
                       ),
                       AltaListProfile(
-                        svgPicture: 'assets/images/svg/icons/about_icon.svg',
+                        iconProfiles: 'assets/images/svg/icons/about_icon.svg',
                         text: 'Tentang Alterra',
                       ),
                     ],
@@ -117,7 +127,7 @@ class ProfilePage extends StatelessWidget {
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }
