@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 enum AltaTextStyle {
   none,
+  displayH1,
   headlineH1,
   headlineH2,
   titleH1,
@@ -38,7 +39,12 @@ class AltaText extends StatelessWidget {
           return Theme.of(context).textTheme.titleLarge?.copyWith(
                 color: Colors.white,
               );
-        case AltaTextStyle.headlineH1:
+        case AltaTextStyle.displayH1:
+          return TextStyle(
+            color: color,
+            fontWeight: FontWeight.normal,
+            fontSize: 28,
+          );case AltaTextStyle.headlineH1:
           return TextStyle(
             color: color,
             fontWeight: FontWeight.w600,

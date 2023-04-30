@@ -14,6 +14,7 @@ class AltaScaffold extends StatelessWidget {
   final VoidCallback? onPressed;
   final List<Widget>? actions;
   final Widget? floatingActionButton;
+  final Widget? bottomNavigationBar;
   const AltaScaffold({
     Key? key,
     required this.body,
@@ -25,6 +26,7 @@ class AltaScaffold extends StatelessWidget {
     this.onPressed,
     this.actions,
     this.floatingActionButton,
+    this.bottomNavigationBar,
   }) : super(key: key);
 
   @override
@@ -47,6 +49,7 @@ class AltaScaffold extends StatelessWidget {
         ),
         body: body,
         floatingActionButton: floatingActionButton,
+        bottomNavigationBar: bottomNavigationBar,
       ),
     );
   }
