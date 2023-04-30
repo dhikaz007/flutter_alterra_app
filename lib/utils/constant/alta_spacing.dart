@@ -1,4 +1,5 @@
 class AltaSpacing {
+  static const space2 = 2.0;
   static const space4 = 4.0;
   static const space5 = 5.0;
   static const space6 = 6.0;
@@ -13,6 +14,7 @@ class AltaSpacing {
   static const space22 = 22.0;
   static const space23 = 23.0;
   static const space24 = 24.0;
+  static const space26 = 26.0;
   static const space28 = 28.0;
   static const space32 = 32.0;
   static const space43 = 43.0;

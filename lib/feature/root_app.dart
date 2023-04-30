@@ -6,7 +6,7 @@ import '../utils/alta_widgets.dart';
 import 'course_page/view/ui/course_page.dart';
 import 'faq_page/view/ui/faq_page.dart';
 import 'home_page/view/ui/home_page.dart';
-import 'profile_page/view/ui/profile_page.dart';
+import 'profile/profile_page/view/ui/profile_page.dart';
 
 class RootApp extends StatelessWidget {
   const RootApp({super.key});

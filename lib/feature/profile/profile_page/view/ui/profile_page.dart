@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../utils/alta_constants.dart';
-import '../../../../utils/alta_widgets.dart';
-import '../../../../utils/widgets/alta_dialogs.dart';
+import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_widgets.dart';
+import '../../../../../utils/widgets/alta_dialogs.dart';
+import '../../../about_alterra_page/view/ui/about_alterra_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -60,12 +61,12 @@ class ProfilePage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 16, right: 24),
                   child: Column(
-                    children: const [
-                      AltaListProfile(
+                    children: [
+                      const AltaListProfile(
                         iconProfiles: 'assets/images/svg/icons/class_icon.svg',
                         text: 'Kelas Saya',
                       ),
-                      AltaListProfile(
+                      const AltaListProfile(
                         iconProfiles:
                             'assets/images/svg/icons/sertificate_icon.svg',
                         text: 'Sertifikat Saya',
@@ -73,6 +74,13 @@ class ProfilePage extends StatelessWidget {
                       AltaListProfile(
                         iconProfiles: 'assets/images/svg/icons/about_icon.svg',
                         text: 'Tentang Alterra',
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const AboutAlterraPage(),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
