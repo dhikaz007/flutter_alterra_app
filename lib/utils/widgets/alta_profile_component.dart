@@ -7,8 +7,14 @@ import 'alta_text.dart';
 class AltaProfileComponent extends StatelessWidget {
   final String text;
   final AltaTextStyle style;
+  final String iconArrowBlue;
+  final VoidCallback? onTap;
   const AltaProfileComponent(
-      {super.key, required this.text, required this.style});
+      {super.key,
+      required this.text,
+      required this.style,
+      required this.iconArrowBlue,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +27,9 @@ class AltaProfileComponent extends StatelessWidget {
             style: style,
             color: AltaColor.darkBlue),
         InkWell(
-            onTap: () {},
-            child: SvgPicture.asset('assets/images/svg/icons/arrow_blue.svg')),
+          onTap: onTap,
+          child: SvgPicture.asset(iconArrowBlue),
+        ),
       ],
     );
   }
