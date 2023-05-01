@@ -43,7 +43,8 @@ class CardScheduleWidget extends StatelessWidget {
                 child: AltaText(
                   context: context,
                   text: titleCourse,
-                  style: AltaTextStyle.bodyH1,
+                  style: AltaTextStyle.body1,
+                  fontWeight: CustomFontWeight.semiBold,
                   color: AltaColor.black,
                 ),
               ),
@@ -52,7 +53,8 @@ class CardScheduleWidget extends StatelessWidget {
                 child: AltaText(
                   context: context,
                   text: numberBatch,
-                  style: AltaTextStyle.bodyH2,
+                  style: AltaTextStyle.body2,
+                  fontWeight: CustomFontWeight.normal,
                   color: AltaColor.darkGray,
                 ),
               ),
@@ -61,16 +63,18 @@ class CardScheduleWidget extends StatelessWidget {
                 child: AltaText(
                   context: context,
                   text: 'Start:',
-                  style: AltaTextStyle.bodyH1,
+                  style: AltaTextStyle.body3,
+                  fontWeight: CustomFontWeight.medium,
                   color: AltaColor.black,
                 ),
               ),
               Align(
-                alignment: const Alignment(-0.65, 1),
+                alignment: const Alignment(-0.77, 1),
                 child: AltaText(
                   context: context,
                   text: startDate,
-                  style: AltaTextStyle.bodyH2,
+                  style: AltaTextStyle.body3,
+                  fontWeight: CustomFontWeight.light,
                   color: AltaColor.darkGray,
                 ),
               ),
@@ -79,7 +83,8 @@ class CardScheduleWidget extends StatelessWidget {
                 child: AltaText(
                   context: context,
                   text: 'Senin - Jumat:',
-                  style: AltaTextStyle.bodyH1,
+                  style: AltaTextStyle.body3,
+                  fontWeight: CustomFontWeight.medium,
                   color: AltaColor.black,
                 ),
               ),
@@ -88,7 +93,8 @@ class CardScheduleWidget extends StatelessWidget {
                 child: AltaText(
                   context: context,
                   text: timeCourse,
-                  style: AltaTextStyle.bodyH2,
+                  style: AltaTextStyle.body3,
+                  fontWeight: CustomFontWeight.light,
                   color: AltaColor.darkGray,
                 ),
               ),
@@ -104,7 +110,8 @@ class CardScheduleWidget extends StatelessWidget {
                   child: AltaText(
                     context: context,
                     text: 'Daftar',
-                    style: AltaTextStyle.bodyH1,
+                    style: AltaTextStyle.body1,
+                    fontWeight: CustomFontWeight.medium,
                     color: AltaColor.white,
                   ),
                 ),

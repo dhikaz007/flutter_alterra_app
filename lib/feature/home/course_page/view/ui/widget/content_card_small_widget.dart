@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../../../utils/widgets/alta_svg.dart';
+import '../../../../../../utils/widgets/alta_primary_button.dart';
 import '../../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../../utils/widgets/alta_text.dart';
@@ -26,7 +27,7 @@ class ContentCardSmallWidget extends StatelessWidget {
         Align(
           alignment: const Alignment(1, -0.9),
           child: Container(
-            padding: EdgeInsets.all(AltaSpacing.space4),
+            padding: const EdgeInsets.all(AltaSpacing.space4),
             width: 72,
             height: 20,
             decoration: const BoxDecoration(
@@ -41,7 +42,8 @@ class ContentCardSmallWidget extends StatelessWidget {
               child: AltaText(
                 context: context,
                 text: 'Rekomendasi',
-                style: AltaTextStyle.bodyH5,
+                style: AltaTextStyle.body3,
+                fontWeight: CustomFontWeight.medium,
                 color: AltaColor.white,
               ),
             ),
@@ -52,10 +54,10 @@ class ContentCardSmallWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Align(
-                alignment: const Alignment(-1, -1.1),
-                child: SvgPicture.asset(
-                  'assets/icon/homepage_section/svg/flexi_icon.svg',
+              const Align(
+                alignment: Alignment(-1, -1.1),
+                child: AltaSvg(
+                  svgPath: 'assets/icon/homepage_section/svg/flexi_icon.svg',
                   width: 88,
                   height: 80,
                 ),
@@ -65,7 +67,8 @@ class ContentCardSmallWidget extends StatelessWidget {
                 child: AltaText(
                   context: context,
                   text: headtitle,
-                  style: AltaTextStyle.titleH2,
+                  style: AltaTextStyle.title3,
+                  fontWeight: CustomFontWeight.semiBold,
                   color: AltaColor.white,
                 ),
               ),
@@ -79,7 +82,8 @@ class ContentCardSmallWidget extends StatelessWidget {
             child: AltaText(
               context: context,
               text: title,
-              style: AltaTextStyle.bodyH3,
+              style: AltaTextStyle.body2,
+              fontWeight: CustomFontWeight.medium,
               color: AltaColor.black,
             ),
           ),
@@ -91,7 +95,8 @@ class ContentCardSmallWidget extends StatelessWidget {
             child: AltaText(
               context: context,
               text: subtitle,
-              style: AltaTextStyle.bodyH5,
+              style: AltaTextStyle.body3,
+              fontWeight: CustomFontWeight.normal,
               color: AltaColor.darkGray,
             ),
           ),
@@ -106,29 +111,22 @@ class ContentCardSmallWidget extends StatelessWidget {
                 AltaText(
                   context: context,
                   text: priceTitle,
-                  style: AltaTextStyle.bodyH4,
+                  style: AltaTextStyle.body2,
+                  fontWeight: CustomFontWeight.bold,
                   color: AltaColor.black,
                 ),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      AltaColor.tangerine,
-                    ),
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(AltaBorderRadius.radius8),
-                      ),
-                    ),
-                    padding: MaterialStateProperty.all(
-                      const EdgeInsets.all(AltaSpacing.space4),
-                    ),
-                  ),
+                AltaPrimaryButton(
+                  backgroundColor:
+                      MaterialStateProperty.all(AltaColor.tangerine),
+                  borderRadius: AltaBorderRadius.radius8,
+                  paddingHorizontal: AltaSpacing.space4,
+                  paddingVertical: AltaSpacing.space4,
                   onPressed: () => debugPrint('TAP DAFTAR SEKARANG'),
                   child: AltaText(
                     context: context,
                     text: 'Daftar Sekarang',
-                    style: AltaTextStyle.bodyH3,
+                    style: AltaTextStyle.body2,
+                    fontWeight: CustomFontWeight.medium,
                     color: AltaColor.white,
                   ),
                 ),

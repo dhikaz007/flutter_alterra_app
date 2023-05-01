@@ -16,14 +16,20 @@ class CoursePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
-      leadingAsset: null,
+      isAppbar: AppBarVisibility.on,
+      scaffoldColor: AltaColor.white,
+      appBarColor: AltaColor.darkBlue,
+      leadingAsset: 'assets/icon/homepage_section/svg/back_icon.svg',
+      leadingWidth: 24,
+      leadingHeight: 24,
+      onPressed: () => Navigator.of(context).pop(true),
       title: AltaText(
         context: context,
         text: 'Course',
-        style: AltaTextStyle.headlineH2,
+        style: AltaTextStyle.title1,
+        fontWeight: CustomFontWeight.veryBold,
         color: AltaColor.white,
       ),
-      appBarColor: AltaColor.darkBlue,
       body: Padding(
         padding: const EdgeInsets.only(
           left: AltaSpacing.space16,
@@ -38,12 +44,12 @@ class CoursePage extends StatelessWidget {
               AltaText(
                 context: context,
                 text: 'Flexi Program',
-                style: AltaTextStyle.titleH2,
+                style: AltaTextStyle.title2,
+                fontWeight: CustomFontWeight.semiBold,
                 color: AltaColor.black,
               ),
               const SizedBox(height: AltaSpacing.space16),
               SizedBox(
-                width: MediaQuery.of(context).size.width,
                 height: 200,
                 child: ListView(
                   physics: const BouncingScrollPhysics(),
@@ -68,12 +74,12 @@ class CoursePage extends StatelessWidget {
               AltaText(
                 context: context,
                 text: 'Immersive Program',
-                style: AltaTextStyle.titleH2,
+                style: AltaTextStyle.title2,
+                fontWeight: CustomFontWeight.semiBold,
                 color: AltaColor.black,
               ),
               const SizedBox(height: AltaSpacing.space20),
               SizedBox(
-                width: MediaQuery.of(context).size.width,
                 height: 380,
                 child: CarouselSlider(
                   options: CarouselOptions(
@@ -112,7 +118,8 @@ class CoursePage extends StatelessWidget {
               AltaText(
                 context: context,
                 text: 'Schedule',
-                style: AltaTextStyle.titleH2,
+                style: AltaTextStyle.title2,
+                fontWeight: CustomFontWeight.semiBold,
                 color: AltaColor.black,
               ),
               const SizedBox(height: AltaSpacing.space20),

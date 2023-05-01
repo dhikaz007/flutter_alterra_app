@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../../utils/widgets/alta_logo.dart';
+import '../../../../../../utils/widgets/alta_primary_button.dart';
 import '../../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../../utils/widgets/alta_text.dart';
@@ -28,10 +30,11 @@ class ContentCardLargeWidget extends StatelessWidget {
             children: [
               Align(
                 alignment: Alignment.topCenter,
-                child: Image.asset(
-                  imgAsset ?? '',
+                child: AltaLogo(
+                  imgPath: imgAsset ?? '',
                   width: 88,
                   height: 80,
+                  alignment: Alignment.center,
                 ),
               ),
               const SizedBox(height: AltaSpacing.space16),
@@ -40,7 +43,8 @@ class ContentCardLargeWidget extends StatelessWidget {
                 child: AltaText(
                   context: context,
                   text: headtitle,
-                  style: AltaTextStyle.headlineH2,
+                  style: AltaTextStyle.title1,
+                  fontWeight: CustomFontWeight.bold,
                   color: AltaColor.white,
                   textAlign: TextAlign.center,
                 ),
@@ -55,7 +59,8 @@ class ContentCardLargeWidget extends StatelessWidget {
             child: AltaText(
               context: context,
               text: subtitle,
-              style: AltaTextStyle.bodyH2,
+              style: AltaTextStyle.body2,
+              fontWeight: CustomFontWeight.normal,
               color: AltaColor.darkGray,
             ),
           ),
@@ -67,29 +72,19 @@ class ContentCardLargeWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      AltaColor.tangerine,
-                    ),
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(AltaBorderRadius.radius4),
-                      ),
-                    ),
-                    padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(
-                        horizontal: AltaSpacing.space12,
-                        vertical: AltaSpacing.space8,
-                      ),
-                    ),
+                AltaPrimaryButton(
+                  backgroundColor: MaterialStateProperty.all(
+                    AltaColor.tangerine,
                   ),
+                  borderRadius: AltaBorderRadius.radius4,
+                  paddingVertical: AltaSpacing.space8,
+                  paddingHorizontal: AltaSpacing.space12,
                   onPressed: () => debugPrint('TAP LIHAT SILABUS'),
                   child: AltaText(
                     context: context,
                     text: 'Lihat Silabus',
-                    style: AltaTextStyle.bodyH2,
+                    style: AltaTextStyle.body2,
+                    fontWeight: CustomFontWeight.normal,
                     color: AltaColor.white,
                   ),
                 ),
