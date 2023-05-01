@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../../../utils/widgets/alta_svg.dart';
 import '../../../../../../utils/constant/alta_spacing.dart';
 
 class FaqTileWidget extends StatelessWidget {
@@ -22,10 +22,12 @@ class FaqTileWidget extends StatelessWidget {
         top: AltaSpacing.space4,
         bottom: AltaSpacing.space8,
       ),
-      leading: Padding(
-        padding: const EdgeInsets.only(left: AltaSpacing.space16),
-        child: SvgPicture.asset(
-          'assets/icon/homepage_section/svg/leading_faq_icon.svg',
+      leading: const Padding(
+        padding: EdgeInsets.only(left: AltaSpacing.space16),
+        child: AltaSvg(
+          svgPath: 'assets/icon/homepage_section/svg/leading_faq_icon.svg',
+          width: 8,
+          height: 16,
         ),
       ),
       title: title,

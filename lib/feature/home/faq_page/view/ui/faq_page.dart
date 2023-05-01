@@ -14,13 +14,16 @@ class FaqPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
+      isAppbar: AppBarVisibility.on,
+      appBarColor: AltaColor.darkBlue,
+      scaffoldColor: AltaColor.white,
       title: AltaText(
         context: context,
         text: 'FAQ',
-        style: AltaTextStyle.headlineH2,
+        style: AltaTextStyle.title1,
+        fontWeight: CustomFontWeight.bold,
         color: AltaColor.white,
       ),
-      appBarColor: AltaColor.darkBlue,
       body: Padding(
         padding: const EdgeInsets.only(
           left: AltaSpacing.space16,
@@ -36,7 +39,8 @@ class FaqPage extends StatelessWidget {
                   AltaText(
                     context: context,
                     text: 'Pertanyaan Umum',
-                    style: AltaTextStyle.headlineH2,
+                    style: AltaTextStyle.title1,
+                    fontWeight: CustomFontWeight.bold,
                     color: AltaColor.black,
                   ),
                   const SizedBox(height: AltaSpacing.space12),
@@ -45,14 +49,16 @@ class FaqPage extends StatelessWidget {
                       context: context,
                       text:
                           'Apakah saya harus mempunyai background IT untuk mengikuti program ini?',
-                      style: AltaTextStyle.bodyH1,
+                      style: AltaTextStyle.body1,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkBlue,
                     ),
                     content: AltaText(
                       context: context,
                       text:
                           'Tidak, kamu tidak harus berasal dari jurusan IT. Program ini terbuka untuk kamu yang berasal dari jurusan IT, non-IT, atau mau pindah karir!',
-                      style: AltaTextStyle.bodyH2,
+                      style: AltaTextStyle.body2,
+                      fontWeight: CustomFontWeight.normal,
                       color: AltaColor.darkGray,
                     ),
                   ),
@@ -61,14 +67,16 @@ class FaqPage extends StatelessWidget {
                       context: context,
                       text:
                           'Apakah ada persyaratan usia untuk mengikuti program ini?',
-                      style: AltaTextStyle.bodyH1,
+                      style: AltaTextStyle.body1,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkBlue,
                     ),
                     content: AltaText(
                       context: context,
                       text:
                           'Ada. Peserta minimal berusia 18 tahun dan maksimal 28 tahun.',
-                      style: AltaTextStyle.bodyH2,
+                      style: AltaTextStyle.body2,
+                      fontWeight: CustomFontWeight.normal,
                       color: AltaColor.darkGray,
                     ),
                   ),
@@ -77,14 +85,16 @@ class FaqPage extends StatelessWidget {
                       context: context,
                       text:
                           'Saya tidak mempunyai dana sebesar biaya program, apakah saya tetap bisa mengikuti program ini?',
-                      style: AltaTextStyle.bodyH1,
+                      style: AltaTextStyle.body1,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkBlue,
                     ),
                     content: AltaText(
                       context: context,
                       text:
                           'Tentu! Kami ingin semua orang punya akses yang sama untuk bisa mencapai mimpinya. Kamu bisa bayar biaya program setelah dapat kerja. Selain itu, kamu juga bisa menggunakan metode cicilan dengan bunga 0%.',
-                      style: AltaTextStyle.bodyH2,
+                      style: AltaTextStyle.body2,
+                      fontWeight: CustomFontWeight.normal,
                       color: AltaColor.darkGray,
                     ),
                   ),
@@ -93,13 +103,15 @@ class FaqPage extends StatelessWidget {
                       context: context,
                       text:
                           'Apakah program ini akan diadakan offline atau online?',
-                      style: AltaTextStyle.bodyH1,
+                      style: AltaTextStyle.body1,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkBlue,
                     ),
                     content: AltaText(
                       context: context,
                       text: 'content',
-                      style: AltaTextStyle.bodyH2,
+                      style: AltaTextStyle.body2,
+                      fontWeight: CustomFontWeight.normal,
                       color: AltaColor.darkGray,
                     ),
                   ),
@@ -108,13 +120,15 @@ class FaqPage extends StatelessWidget {
                       context: context,
                       text:
                           'Apakah saya membutuhkan laptop sendiri atau disediakan oleh pihak Alterra Academy?',
-                      style: AltaTextStyle.bodyH1,
+                      style: AltaTextStyle.body1,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkBlue,
                     ),
                     content: AltaText(
                       context: context,
                       text: 'content',
-                      style: AltaTextStyle.bodyH2,
+                      style: AltaTextStyle.body2,
+                      fontWeight: CustomFontWeight.normal,
                       color: AltaColor.darkGray,
                     ),
                   ),
@@ -123,13 +137,15 @@ class FaqPage extends StatelessWidget {
                       context: context,
                       text:
                           'Apakah ada spesifikasi laptop untuk mengikuti program ini?',
-                      style: AltaTextStyle.bodyH1,
+                      style: AltaTextStyle.body1,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkBlue,
                     ),
                     content: AltaText(
                       context: context,
                       text: 'content',
-                      style: AltaTextStyle.bodyH2,
+                      style: AltaTextStyle.body2,
+                      fontWeight: CustomFontWeight.normal,
                       color: AltaColor.darkGray,
                     ),
                   ),
@@ -137,13 +153,15 @@ class FaqPage extends StatelessWidget {
                     title: AltaText(
                       context: context,
                       text: 'Metode cicilan apa saja yang disediakan?',
-                      style: AltaTextStyle.bodyH1,
+                      style: AltaTextStyle.body1,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkBlue,
                     ),
                     content: AltaText(
                       context: context,
                       text: 'content',
-                      style: AltaTextStyle.bodyH2,
+                      style: AltaTextStyle.body2,
+                      fontWeight: CustomFontWeight.normal,
                       color: AltaColor.darkGray,
                     ),
                   ),
@@ -158,7 +176,8 @@ class FaqPage extends StatelessWidget {
                   AltaText(
                     context: context,
                     text: 'Pendaftaran',
-                    style: AltaTextStyle.headlineH2,
+                    style: AltaTextStyle.title1,
+                    fontWeight: CustomFontWeight.bold,
                     color: AltaColor.black,
                   ),
                   const SizedBox(height: AltaSpacing.space12),
@@ -167,13 +186,15 @@ class FaqPage extends StatelessWidget {
                       context: context,
                       text:
                           'Saya sudah melakukan pendaftaran, proses selanjutnya bagaimana?',
-                      style: AltaTextStyle.bodyH1,
+                      style: AltaTextStyle.body1,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkBlue,
                     ),
                     content: AltaText(
                       context: context,
                       text: 'content',
-                      style: AltaTextStyle.bodyH2,
+                      style: AltaTextStyle.body2,
+                      fontWeight: CustomFontWeight.normal,
                       color: AltaColor.darkGray,
                     ),
                   ),
@@ -182,13 +203,15 @@ class FaqPage extends StatelessWidget {
                       context: context,
                       text:
                           'Sudah 7 hari setelah saya daftar, kenapa belum dikirimkan email?',
-                      style: AltaTextStyle.bodyH1,
+                      style: AltaTextStyle.body1,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkBlue,
                     ),
                     content: AltaText(
                       context: context,
                       text: 'content',
-                      style: AltaTextStyle.bodyH2,
+                      style: AltaTextStyle.body2,
+                      fontWeight: CustomFontWeight.normal,
                       color: AltaColor.darkGray,
                     ),
                   ),
@@ -197,13 +220,15 @@ class FaqPage extends StatelessWidget {
                       context: context,
                       text:
                           'Bagaimana gambaran proses interview pada tahap seleksi?',
-                      style: AltaTextStyle.bodyH1,
+                      style: AltaTextStyle.body1,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkBlue,
                     ),
                     content: AltaText(
                       context: context,
                       text: 'content',
-                      style: AltaTextStyle.bodyH2,
+                      style: AltaTextStyle.body2,
+                      fontWeight: CustomFontWeight.normal,
                       color: AltaColor.darkGray,
                     ),
                   ),

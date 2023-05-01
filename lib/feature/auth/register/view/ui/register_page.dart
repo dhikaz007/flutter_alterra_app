@@ -22,10 +22,12 @@ class RegisterPage extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: AltaScaffold(
+        scaffoldColor: AltaColor.white,
+        appBarColor: AltaColor.white,
+        isAppbar: AppBarVisibility.on,
         leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
         leadingHeight: 14,
         leadingWidth: 14,
-        appBarColor: Colors.transparent,
         onPressed: () => Navigator.of(context).pop(true),
         body: Padding(
           padding: const EdgeInsets.only(
@@ -39,21 +41,24 @@ class RegisterPage extends StatelessWidget {
               AltaText(
                 context: context,
                 text: 'Langkah 1/3',
-                style: AltaTextStyle.titleH2,
+                style: AltaTextStyle.title3,
+                fontWeight: CustomFontWeight.semiBold,
                 color: AltaColor.black,
               ),
               const SizedBox(height: AltaSpacing.space28),
               AltaText(
                 context: context,
                 text: 'Daftar Akun untuk Jelajahi Alterra Academy',
-                style: AltaTextStyle.headlineH1,
+                style: AltaTextStyle.headline2,
+                fontWeight: CustomFontWeight.semiBold,
                 color: AltaColor.black,
               ),
               const SizedBox(height: AltaSpacing.space28),
               AltaText(
                 context: context,
                 text: 'Masukkan email',
-                style: AltaTextStyle.bodyH1,
+                style: AltaTextStyle.body1,
+                fontWeight: CustomFontWeight.medium,
                 color: AltaColor.darkGray,
               ),
               const SizedBox(height: AltaSpacing.space8),
@@ -96,7 +101,8 @@ class RegisterPage extends StatelessWidget {
                         child: AltaText(
                           context: context,
                           text: 'SELANJUTNYA',
-                          style: AltaTextStyle.titleH1,
+                          style: AltaTextStyle.title2,
+                          fontWeight: CustomFontWeight.semiBold,
                           color: AltaColor.white,
                         ),
                       ),
@@ -111,18 +117,20 @@ class RegisterPage extends StatelessWidget {
                   AltaText(
                     context: context,
                     text: 'Sudah punya akun?',
-                    style: AltaTextStyle.titleH3,
+                    style: AltaTextStyle.title3,
+                    fontWeight: CustomFontWeight.normal,
                     color: AltaColor.black,
                   ),
                   TextButton(
                     onPressed: () =>
                         Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const LoginPage(),
-                        )),
+                      builder: (context) => const LoginPage(),
+                    )),
                     child: AltaText(
                       context: context,
                       text: 'Masuk disini',
-                      style: AltaTextStyle.titleH2,
+                      style: AltaTextStyle.title3,
+                      fontWeight: CustomFontWeight.bold,
                       color: AltaColor.tangerine,
                     ),
                   ),

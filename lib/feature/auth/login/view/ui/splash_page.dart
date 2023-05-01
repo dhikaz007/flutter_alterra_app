@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
@@ -38,10 +39,12 @@ class _SplashPageState extends State<SplashPage> {
     return Stack(
       children: [
         const AltaSplashBackground(),
-        Scaffold(
-          backgroundColor: Colors.transparent,
-          body: Stack(
+        AltaScaffold(
+          scaffoldColor: Colors.transparent,
+          isAppbar: AppBarVisibility.off,
+          body: Column(
             children: [
+              const Spacer(flex: 1),
               const Align(
                 alignment: Alignment.center,
                 child: AltaLogo(
@@ -52,6 +55,7 @@ class _SplashPageState extends State<SplashPage> {
                   alignment: Alignment.center,
                 ),
               ),
+              const Spacer(flex: 1),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
@@ -59,7 +63,8 @@ class _SplashPageState extends State<SplashPage> {
                   child: AltaText(
                     context: context,
                     text: 'Copyright by Flexiclass\n@2023',
-                    style: AltaTextStyle.bodyH2,
+                    style: AltaTextStyle.body2,
+                    fontWeight: CustomFontWeight.normal,
                     color: AltaColor.white,
                     textAlign: TextAlign.center,
                   ),
