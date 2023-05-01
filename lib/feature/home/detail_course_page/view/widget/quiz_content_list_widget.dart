@@ -41,7 +41,8 @@ class QuizContentListWidget extends StatelessWidget {
         AltaText(
           context: context,
           text: titleQuiz,
-          style: AltaTextStyle.bodyH1,
+          style: AltaTextStyle.body1,
+          fontWeight: CustomFontWeight.medium,
           color: AltaColor.darkBlue,
         ),
         const SizedBox(height: AltaSpacing.space12),
@@ -56,7 +57,8 @@ class QuizContentListWidget extends StatelessWidget {
           title: AltaText(
             context: context,
             text: firstValueQuiz,
-            style: AltaTextStyle.bodyH1,
+            style: AltaTextStyle.body1,
+            fontWeight: CustomFontWeight.semiBold,
             color: AltaColor.darkBlue,
           ),
           onChanged: onChanged,
@@ -73,7 +75,8 @@ class QuizContentListWidget extends StatelessWidget {
           title: AltaText(
             context: context,
             text: secondValueQuiz,
-            style: AltaTextStyle.bodyH1,
+            style: AltaTextStyle.body1,
+            fontWeight: CustomFontWeight.semiBold,
             color: AltaColor.darkBlue,
           ),
           onChanged: onChanged,
@@ -90,7 +93,8 @@ class QuizContentListWidget extends StatelessWidget {
           title: AltaText(
             context: context,
             text: thirdValueQuiz,
-            style: AltaTextStyle.bodyH1,
+            style: AltaTextStyle.body1,
+            fontWeight: CustomFontWeight.semiBold,
             color: AltaColor.darkBlue,
           ),
           onChanged: onChanged,
@@ -107,7 +111,8 @@ class QuizContentListWidget extends StatelessWidget {
           title: AltaText(
             context: context,
             text: fourthValueQuiz,
-            style: AltaTextStyle.bodyH1,
+            style: AltaTextStyle.body1,
+            fontWeight: CustomFontWeight.semiBold,
             color: AltaColor.darkBlue,
           ),
           onChanged: onChanged,

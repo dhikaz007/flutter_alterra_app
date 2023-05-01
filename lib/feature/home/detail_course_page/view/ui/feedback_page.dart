@@ -27,35 +27,40 @@ class FeedbackPage extends StatelessWidget {
         AltaText(
           context: context,
           text: 'The Material',
-          style: AltaTextStyle.bodyH1,
+          style: AltaTextStyle.body1,
+          fontWeight: CustomFontWeight.bold,
           color: AltaColor.darkBlue,
         ),
         const SizedBox(height: AltaSpacing.space8),
         AltaText(
           context: context,
           text: 'Introdaction to UI/UX',
-          style: AltaTextStyle.bodyH1,
+          style: AltaTextStyle.body1,
+          fontWeight: CustomFontWeight.normal,
           color: AltaColor.black,
         ),
         const SizedBox(height: AltaSpacing.space4),
         AltaText(
           context: context,
           text: 'Tuesday, 18 April 2023',
-          style: AltaTextStyle.bodyH2,
+          style: AltaTextStyle.body2,
+          fontWeight: CustomFontWeight.normal,
           color: AltaColor.black,
         ),
         const SizedBox(height: AltaSpacing.space36),
         AltaText(
           context: context,
           text: 'Rate Your Experience.',
-          style: AltaTextStyle.displayH1,
+          style: AltaTextStyle.headline1,
+          fontWeight: CustomFontWeight.normal,
           color: AltaColor.black,
         ),
         const SizedBox(height: AltaSpacing.space16),
         AltaText(
           context: context,
           text: 'Are you Satisfied with the Material?',
-          style: AltaTextStyle.bodyH1,
+          style: AltaTextStyle.body1,
+          fontWeight: CustomFontWeight.light,
           color: AltaColor.darkBlue,
         ),
         const SizedBox(height: AltaSpacing.space20),
@@ -66,7 +71,8 @@ class FeedbackPage extends StatelessWidget {
         AltaText(
           context: context,
           text: 'How was the Material?',
-          style: AltaTextStyle.bodyH1,
+          style: AltaTextStyle.body1,
+          fontWeight: CustomFontWeight.bold,
           color: AltaColor.darkBlue,
         ),
         const SizedBox(height: AltaSpacing.space16),
@@ -147,39 +153,6 @@ class FeedbackPage extends StatelessWidget {
             }
           },
         ),
-        // TextField(
-        //   maxLines: 10,
-        //   decoration: InputDecoration(
-        //     contentPadding: const EdgeInsets.symmetric(
-        //       vertical: 12,
-        //       horizontal: 14,
-        //     ),
-        //     border: OutlineInputBorder(
-        //       borderRadius: BorderRadius.circular(AltaBorderRadius.zero),
-        //       borderSide: BorderSide(color: AltaColor.darkBlue),
-        //     ),
-        //     focusedBorder: OutlineInputBorder(
-        //       borderRadius: BorderRadius.circular(AltaBorderRadius.zero),
-        //       borderSide: BorderSide(color: AltaColor.darkBlue),
-        //     ),
-        //     filled: true,
-        //     fillColor: Colors.grey,
-        //     hintText: 'Tell us how can you improve...',
-        //     hintStyle: const TextStyle(
-        //       fontSize: 12,
-        //       fontWeight: FontWeight.normal,
-        //       color: Colors.black,
-        //     ),
-        //   ),
-        //   onChanged: (value) {
-        //     feedback = value;
-        //     if (value.isEmpty) {
-        //       isDone.value = false;
-        //     } else {
-        //       isDone.value = true;
-        //     }
-        //   },
-        // ),
         const SizedBox(height: 16),
         Row(
           children: [
@@ -202,8 +175,9 @@ class FeedbackPage extends StatelessWidget {
                       : null,
                   child: AltaText(
                     context: context,
-                    text: 'COMPLETE',
-                    style: AltaTextStyle.titleH1,
+                    text: 'Submit',
+                    style: AltaTextStyle.body1,
+                    fontWeight: CustomFontWeight.bold,
                     color: AltaColor.white,
                   ),
                 ),

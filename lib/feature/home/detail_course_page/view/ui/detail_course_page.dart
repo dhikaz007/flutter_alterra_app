@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../../utils/widgets/alta_icon_button.dart';
 import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/widgets/alta_primary_icon_button.dart';
 
 import 'feedback_page.dart';
 import 'lesson_content_page.dart';
@@ -35,16 +34,32 @@ class DetailCoursePage extends StatelessWidget {
     ];
 
     return AltaScaffold(
+      isAppbar: AppBarVisibility.on,
+      scaffoldColor: AltaColor.white,
       appBarColor: AltaColor.darkBlue,
+      centerTitle: true,
       leadingWidth: 24,
       leadingHeight: 24,
       leadingAsset: 'assets/icon/homepage_section/svg/circle_left_icon.svg',
+      onPressed: () =>
+          currentTab.value == 0 ? currentTab.value : currentTab.value--,
       title: AltaText(
         context: context,
         text: 'Introdaction to UI/UX',
-        style: AltaTextStyle.headlineH2,
+        style: AltaTextStyle.title1,
+        fontWeight: CustomFontWeight.semiBold,
         color: AltaColor.white,
       ),
+      actions: [
+        AltaIconButton(
+          svgAsset: 'assets/icon/homepage_section/svg/circle_right_icon.svg',
+          iconHeight: 24,
+          iconWidth: 24,
+          onPressed: () => currentTab.value <= 0 || currentTab.value < 3
+              ? currentTab.value++
+              : currentTab.value,
+        ),
+      ],
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -77,7 +92,8 @@ class DetailCoursePage extends StatelessWidget {
                         child: AltaText(
                           context: context,
                           text: titleTab[index],
-                          style: AltaTextStyle.bodyH1,
+                          style: AltaTextStyle.body1,
+                          fontWeight: CustomFontWeight.semiBold,
                           color: currentTabValue == index
                               ? AltaColor.white
                               : AltaColor.darkBlue,
@@ -108,63 +124,63 @@ class DetailCoursePage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        width: 376,
-        height: 72,
-        decoration: BoxDecoration(
-          color: AltaColor.white,
-          boxShadow: [
-            BoxShadow(
-              color: AltaColor.gray.withOpacity(0.8),
-              blurRadius: 24,
-              offset: const Offset(0, -4), // changes position of shadow
-            ),
-          ],
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: AltaSpacing.space16,
-            horizontal: AltaSpacing.space36,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              AltaPrimaryIconButton(
-                icon: SvgPicture.asset(
-                  'assets/icon/homepage_section/svg/previous_icon.svg',
-                  width: 24,
-                  height: 24,
-                ),
-                label: AltaText(
-                  context: context,
-                  text: 'PREVIOUS TOPIC',
-                  style: AltaTextStyle.bodyH3,
-                  color: AltaColor.white,
-                ),
-                onPressed: () => currentTab.value == 0
-                    ? currentTab.value
-                    : currentTab.value--,
-              ),
-              AltaPrimaryIconButton(
-                label: SvgPicture.asset(
-                  'assets/icon/homepage_section/svg/next_icon.svg',
-                  width: 24,
-                  height: 24,
-                ),
-                icon: AltaText(
-                  context: context,
-                  text: 'NEXT TOPIC',
-                  style: AltaTextStyle.bodyH3,
-                  color: AltaColor.white,
-                ),
-                onPressed: () => currentTab.value <= 0 || currentTab.value < 3
-                    ? currentTab.value++
-                    : currentTab.value,
-              ),
-            ],
-          ),
-        ),
-      ),
+      // bottomNavigationBar: Container(
+      //   width: 376,
+      //   height: 72,
+      //   decoration: BoxDecoration(
+      //     color: AltaColor.white,
+      //     boxShadow: [
+      //       BoxShadow(
+      //         color: AltaColor.gray.withOpacity(0.8),
+      //         blurRadius: 24,
+      //         offset: const Offset(0, -4), // changes position of shadow
+      //       ),
+      //     ],
+      //   ),
+      //   child: Padding(
+      //     padding: const EdgeInsets.symmetric(
+      //       vertical: AltaSpacing.space16,
+      //       horizontal: AltaSpacing.space36,
+      //     ),
+      //     child: Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //       children: [
+      //         AltaPrimaryIconButton(
+      //           icon: SvgPicture.asset(
+      //             'assets/icon/homepage_section/svg/previous_icon.svg',
+      //             width: 24,
+      //             height: 24,
+      //           ),
+      //           label: AltaText(
+      //             context: context,
+      //             text: 'PREVIOUS TOPIC',
+      //             style: AltaTextStyle.bodyH3,
+      //             color: AltaColor.white,
+      //           ),
+      //           onPressed: () => currentTab.value == 0
+      //               ? currentTab.value
+      //               : currentTab.value--,
+      //         ),
+      //         AltaPrimaryIconButton(
+      //           label: SvgPicture.asset(
+      //             'assets/icon/homepage_section/svg/next_icon.svg',
+      //             width: 24,
+      //             height: 24,
+      //           ),
+      //           icon: AltaText(
+      //             context: context,
+      //             text: 'NEXT TOPIC',
+      //             style: AltaTextStyle.bodyH3,
+      //             color: AltaColor.white,
+      //           ),
+      //           onPressed: () => currentTab.value <= 0 || currentTab.value < 3
+      //               ? currentTab.value++
+      //               : currentTab.value,
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 }

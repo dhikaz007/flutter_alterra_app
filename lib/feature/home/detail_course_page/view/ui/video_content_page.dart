@@ -13,7 +13,8 @@ class VideoContentPage extends StatelessWidget {
         AltaText(
           context: context,
           text: 'ADD VIDEO HERE',
-          style: AltaTextStyle.headlineH1,
+          style: AltaTextStyle.headline1,
+          fontWeight: CustomFontWeight.bold,
           color: AltaColor.black,
         ),
       ],

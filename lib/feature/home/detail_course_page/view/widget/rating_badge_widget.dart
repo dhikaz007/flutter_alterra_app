@@ -40,7 +40,8 @@ class RatingBadgeWidget extends StatelessWidget {
             child: AltaText(
               context: context,
               text: title,
-              style: AltaTextStyle.bodyH4,
+              style: AltaTextStyle.body2,
+              fontWeight: CustomFontWeight.bold,
               color: !isSelectedValue ? AltaColor.black : AltaColor.white,
             ),
           ),

@@ -13,7 +13,8 @@ class LessonContentPage extends StatelessWidget {
         AltaText(
           context: context,
           text: 'ADD PPTX HERE',
-          style: AltaTextStyle.headlineH1,
+          style: AltaTextStyle.headline1,
+          fontWeight: CustomFontWeight.bold,
           color: AltaColor.black,
         ),
       ],

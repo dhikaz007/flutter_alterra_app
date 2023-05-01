@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../../utils/widgets/alta_svg.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 
 class StarRatingWidget extends StatelessWidget {
@@ -22,13 +22,14 @@ class StarRatingWidget extends StatelessWidget {
             builder: (context, ratingSelectedValue, child) => InkWell(
               onTap: () => ratingSelected.value = index,
               child: index <= ratingSelectedValue
-                  ? SvgPicture.asset(
-                      'assets/icon/homepage_section/svg/star_fill_icon.svg',
+                  ? const AltaSvg(
+                      svgPath:
+                          'assets/icon/homepage_section/svg/star_fill_icon.svg',
                       width: 28,
                       height: 28,
                     )
-                  : SvgPicture.asset(
-                      'assets/icon/homepage_section/svg/star_icon.svg',
+                  : const AltaSvg(
+                      svgPath: 'assets/icon/homepage_section/svg/star_icon.svg',
                       width: 28,
                       height: 28,
                     ),

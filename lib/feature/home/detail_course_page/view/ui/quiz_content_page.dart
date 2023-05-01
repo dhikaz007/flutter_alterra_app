@@ -5,6 +5,7 @@ import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/constant/alta_color.dart';
+
 import '../widget/quiz_content_list_widget.dart';
 
 class QuizContentPage extends StatelessWidget {
@@ -109,7 +110,8 @@ class QuizContentPage extends StatelessWidget {
                   child: AltaText(
                     context: context,
                     text: 'COMPLETE',
-                    style: AltaTextStyle.titleH1,
+                    style: AltaTextStyle.title2,
+                    fontWeight: CustomFontWeight.bold,
                     color: AltaColor.white,
                   ),
                 ),
