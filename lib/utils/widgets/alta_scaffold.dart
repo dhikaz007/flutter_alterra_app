@@ -18,7 +18,9 @@ extension AppbarIndicator on AppBarVisibility {
 }
 
 class AltaScaffold extends StatelessWidget {
+  final Color? scaffoldColor;
   final AppBarVisibility isAppbar;
+  final bool? centerTitle;
   final Widget body;
   final String? leadingAsset;
   final double? leadingWidth;
@@ -30,7 +32,9 @@ class AltaScaffold extends StatelessWidget {
   final Widget? floatingActionButton;
   const AltaScaffold({
     Key? key,
+    this.scaffoldColor,
     required this.isAppbar,
+    this.centerTitle,
     required this.body,
     this.leadingAsset,
     this.leadingWidth,
@@ -44,27 +48,27 @@ class AltaScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: AltaColor.white,
-      child: Scaffold(
-        appBar: isAppbar.valueAppbar == true
-            ? AppBar(
-                title: title,
-                backgroundColor: appBarColor,
-                elevation: 0,
-                leading: AltaIconButton(
-                  color: AltaColor.black,
-                  svgAsset: leadingAsset ?? '',
-                  onPressed: onPressed,
-                  iconWidth: leadingWidth,
-                  iconHeight: leadingHeight,
-                ),
-                actions: actions,
-              )
-            : null,
-        body: body,
-        floatingActionButton: floatingActionButton,
-      ),
+    return Scaffold(
+      backgroundColor: scaffoldColor,
+      appBar: isAppbar.valueAppbar == true
+          ? AppBar(
+              title: title,
+              backgroundColor: appBarColor,
+              elevation: 0,
+              leading: AltaIconButton(
+                color: AltaColor.black,
+                svgAsset: leadingAsset ?? '',
+                onPressed: onPressed,
+                iconWidth: leadingWidth,
+                iconHeight: leadingHeight,
+              ),
+              titleSpacing: 0,
+              centerTitle: centerTitle ?? false,
+              actions: actions,
+            )
+          : null,
+      body: body,
+      floatingActionButton: floatingActionButton,
     );
   }
 }

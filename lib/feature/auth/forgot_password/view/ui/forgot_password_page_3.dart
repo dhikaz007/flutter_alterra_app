@@ -32,11 +32,12 @@ class ForgotPasswordPage3 extends StatelessWidget {
     }
 
     return AltaScaffold(
+      scaffoldColor: AltaColor.white,
+      appBarColor: AltaColor.white,
       isAppbar: AppBarVisibility.on,
       leadingAsset: 'assets/icon/login_section/svg/arrow_back_icon.svg',
       leadingHeight: 17,
       leadingWidth: 15,
-      appBarColor: Colors.transparent,
       onPressed: () {},
       actions: const [
         AltaIconButton(
@@ -78,7 +79,8 @@ class ForgotPasswordPage3 extends StatelessWidget {
                     context: context,
                     text:
                         'Verifikasi email Anda untuk \nmerubah kata sandi \nAlterra Academy',
-                    style: AltaTextStyle.headlineH2,
+                    style: AltaTextStyle.title1,
+                    fontWeight: CustomFontWeight.semiBold,
                     color: AltaColor.black,
                     textAlign: TextAlign.justify,
                   ),
@@ -100,14 +102,16 @@ class ForgotPasswordPage3 extends StatelessWidget {
                     AltaText(
                       context: context,
                       text: 'Alterra Admin',
-                      style: AltaTextStyle.titleH2,
+                      style: AltaTextStyle.title3,
+                      fontWeight: CustomFontWeight.semiBold,
                       color: AltaColor.darkGray,
                     ),
                     const SizedBox(width: AltaSpacing.space8),
                     AltaText(
                       context: context,
                       text: 'May 6',
-                      style: AltaTextStyle.bodyH2,
+                      style: AltaTextStyle.body2,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkGray,
                     ),
                   ],
@@ -117,7 +121,8 @@ class ForgotPasswordPage3 extends StatelessWidget {
                     AltaText(
                       context: context,
                       text: 'to me',
-                      style: AltaTextStyle.bodyH1,
+                      style: AltaTextStyle.body1,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkGray,
                     ),
                     const SizedBox(width: AltaSpacing.space8),
@@ -131,25 +136,20 @@ class ForgotPasswordPage3 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    IconButton(
+                    AltaIconButton(
                       splashRadius: 15,
-                      padding: EdgeInsets.zero,
                       onPressed: () {},
-                      icon: SvgPicture.asset(
-                        'assets/icon/login_section/svg/reply_icon.svg',
-                        width: 15,
-                        height: 13,
-                      ),
+                      svgAsset: 'assets/icon/login_section/svg/reply_icon.svg',
+                      iconWidth: 15,
+                      iconHeight: 13,
                     ),
-                    IconButton(
+                    AltaIconButton(
                       splashRadius: 15,
-                      padding: EdgeInsets.zero,
                       onPressed: () {},
-                      icon: SvgPicture.asset(
-                        'assets/icon/login_section/svg/more_vert_icon.svg',
-                        width: 3,
-                        height: 15,
-                      ),
+                      svgAsset:
+                          'assets/icon/login_section/svg/more_vert_icon.svg',
+                      iconWidth: 3,
+                      iconHeight: 15,
                     ),
                   ],
                 ),
@@ -166,7 +166,8 @@ class ForgotPasswordPage3 extends StatelessWidget {
               AltaText(
                 context: context,
                 text: 'Kata Sandi',
-                style: AltaTextStyle.headlineH2,
+                style: AltaTextStyle.headline2,
+                fontWeight: CustomFontWeight.bold,
                 color: AltaColor.darkGray,
               ),
               const SizedBox(height: AltaSpacing.space16),
@@ -174,7 +175,8 @@ class ForgotPasswordPage3 extends StatelessWidget {
                 context: context,
                 text:
                     'Halo, Nahdy Dailamy Batewa! Silakan klik tombol di bawah ini untuk mengubah kata sandi akun Alterra kamu',
-                style: AltaTextStyle.titleH2,
+                style: AltaTextStyle.title3,
+                fontWeight: CustomFontWeight.normal,
                 color: AltaColor.darkGray,
                 textAlign: TextAlign.left,
               ),
@@ -195,7 +197,8 @@ class ForgotPasswordPage3 extends StatelessWidget {
                       child: AltaText(
                         context: context,
                         text: 'Ubah Kata Sandi',
-                        style: AltaTextStyle.titleH2,
+                        style: AltaTextStyle.title3,
+                        fontWeight: CustomFontWeight.semiBold,
                         color: AltaColor.white,
                       ),
                     ),
@@ -207,7 +210,8 @@ class ForgotPasswordPage3 extends StatelessWidget {
                 context: context,
                 text:
                     'Jika kamu tidak melakukan pendaftaran, harap hiraukan email ini',
-                style: AltaTextStyle.bodyH1,
+                style: AltaTextStyle.body1,
+                fontWeight: CustomFontWeight.normal,
                 color: AltaColor.black,
                 textAlign: TextAlign.center,
               ),
@@ -216,7 +220,8 @@ class ForgotPasswordPage3 extends StatelessWidget {
                 context: context,
                 text:
                     'Jika anda mengalami kendala ketika klik tombol "Verifikasi Akun Alterra", klik link URL di bawah ini:',
-                style: AltaTextStyle.titleH2,
+                style: AltaTextStyle.body1,
+                fontWeight: CustomFontWeight.normal,
                 color: AltaColor.black,
                 textAlign: TextAlign.left,
               ),
@@ -227,6 +232,7 @@ class ForgotPasswordPage3 extends StatelessWidget {
                   text:
                       'https://flexiprogram-api.alterraacademy.id/api/v1/auth/email-verification/eyJpdiI6IjYxSnJKTWRHYzd1ckFEcHo1Y2VQV3c9PSIsInZhbHVlIjoiT3RKd0RSVWxqdU1GWjhHUCtGTlwvcXU4TnlvOHZCKzFOUElqaVk0NnlRTlZQWjhpS3RKRVNcLzFRK3JHWE41eVwvaCIsIm1hYyI6ImFmYmY4OGE0NmNmZDQ0N2JjM2M3OWE5NmY2NTEzYTMwMjg1YjRlNjQ3YzY5NGE2YzI3OTA5NWQyYjJkYmIwOGUifQ==',
                   style: AltaTextStyle.hyperlinkText,
+                  fontWeight: CustomFontWeight.normal,
                   color: AltaColor.darkBlue,
                   textAlign: TextAlign.left,
                 ),

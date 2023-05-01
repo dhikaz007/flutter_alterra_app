@@ -6,6 +6,7 @@ import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/widgets/alta_icon_button.dart';
 import '../../../../../utils/widgets/alta_text.dart';
+
 import '../widget/course_list_card_widget.dart';
 
 class FlutterCourseListPage extends StatelessWidget {
@@ -14,6 +15,7 @@ class FlutterCourseListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
+      scaffoldColor: AltaColor.white,
       isAppbar: AppBarVisibility.off,
       body: SafeArea(
         child: Padding(
@@ -61,7 +63,8 @@ class FlutterCourseListPage extends StatelessWidget {
                       AltaText(
                         context: context,
                         text: 'Program Flexi Flutter',
-                        style: AltaTextStyle.headlineH2,
+                        style: AltaTextStyle.title1,
+                        fontWeight: CustomFontWeight.bold,
                         color: AltaColor.white,
                       ),
                     ],

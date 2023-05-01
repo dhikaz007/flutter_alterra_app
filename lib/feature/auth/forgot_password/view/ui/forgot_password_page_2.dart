@@ -47,11 +47,12 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
+      scaffoldColor: AltaColor.white,
+      appBarColor: AltaColor.white,
       isAppbar: AppBarVisibility.on,
       leadingAsset: 'assets/icon/login_section/svg/arrow_back_icon.svg',
       leadingHeight: 17,
       leadingWidth: 15,
-      appBarColor: Colors.transparent,
       onPressed: () => Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => const LoginPage(),
       )),
@@ -67,7 +68,8 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
             AltaText(
               context: context,
               text: 'Langkah 2/2',
-              style: AltaTextStyle.titleH2,
+              style: AltaTextStyle.title3,
+              fontWeight: CustomFontWeight.semiBold,
               color: AltaColor.black,
             ),
             const SizedBox(height: AltaSpacing.space16),
@@ -75,7 +77,8 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
               context: context,
               text:
                   'Klik tautan lupa kata sandi yang telah kami kirim ke ${widget.email}',
-              style: AltaTextStyle.headlineH1,
+              style: AltaTextStyle.headline2,
+              fontWeight: CustomFontWeight.semiBold,
               color: AltaColor.black,
             ),
             const SizedBox(height: AltaSpacing.space24),
@@ -85,7 +88,8 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
                 AltaText(
                   context: context,
                   text: 'Email yang dimasukkan salah?',
-                  style: AltaTextStyle.titleH2,
+                  style: AltaTextStyle.title3,
+                  fontWeight: CustomFontWeight.normal,
                   color: AltaColor.darkGray,
                 ),
                 const SizedBox(width: AltaSpacing.space8),
@@ -94,7 +98,8 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
                   child: AltaText(
                     context: context,
                     text: 'Ubah Email',
-                    style: AltaTextStyle.titleH2,
+                    style: AltaTextStyle.title3,
+                    fontWeight: CustomFontWeight.bold,
                     color: AltaColor.tangerine,
                   ),
                 ),
@@ -107,7 +112,8 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
                 context: context,
                 text:
                     'Belum menerima tautan verifikasi? Kirim ulang dalam ${secondsValue.toString()}',
-                style: AltaTextStyle.titleH2,
+                style: AltaTextStyle.title3,
+                fontWeight: CustomFontWeight.normal,
                 color: AltaColor.darkGray,
               ),
             ),
@@ -135,7 +141,8 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
                       child: AltaText(
                         context: context,
                         text: 'KIRIM ULANG TAUTAN',
-                        style: AltaTextStyle.titleH1,
+                        style: AltaTextStyle.title2,
+                        fontWeight: CustomFontWeight.bold,
                         color: AltaColor.white,
                       ),
                     ),

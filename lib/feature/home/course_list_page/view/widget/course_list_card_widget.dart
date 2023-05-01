@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../../utils/widgets/alta_svg.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_text.dart';
@@ -55,7 +55,8 @@ class CourseListCardWidget extends StatelessWidget {
             child: AltaText(
               context: context,
               text: titleLesson,
-              style: AltaTextStyle.headlineH2,
+              style: AltaTextStyle.title1,
+              fontWeight: CustomFontWeight.semiBold,
               color: AltaColor.black,
             ),
           ),
@@ -64,20 +65,21 @@ class CourseListCardWidget extends StatelessWidget {
             child: AltaText(
               context: context,
               text: '2 Topics | 1 Quiz',
-              style: AltaTextStyle.bodyH3,
+              style: AltaTextStyle.body2,
+              fontWeight: CustomFontWeight.medium,
               color: AltaColor.black,
             ),
           ),
           Align(
             alignment: const Alignment(1, -1),
             child: value.number == 0.0
-                ? SvgPicture.asset(
-                    'assets/icon/homepage_section/svg/lock_icon.svg',
+                ? const AltaSvg(
+                    svgPath: 'assets/icon/homepage_section/svg/lock_icon.svg',
                     width: 24,
                     height: 24,
                   )
-                : SvgPicture.asset(
-                    'assets/icon/homepage_section/svg/check_icon.svg',
+                : const AltaSvg(
+                    svgPath: 'assets/icon/homepage_section/svg/check_icon.svg',
                     width: 24,
                     height: 24,
                   ),
@@ -99,14 +101,15 @@ class CourseListCardWidget extends StatelessWidget {
             child: AltaText(
               context: context,
               text: '${value.number * 100}% Selesai',
-              style: AltaTextStyle.bodyH3,
+              style: AltaTextStyle.body2,
+              fontWeight: CustomFontWeight.normal,
               color: AltaColor.tangerine,
             ),
           ),
-          Align(
-            alignment: const Alignment(1, 0.6),
-            child: SvgPicture.asset(
-              'assets/icon/homepage_section/svg/arrow_right_icon.svg',
+          const Align(
+            alignment: Alignment(1, 0.6),
+            child: AltaSvg(
+              svgPath: 'assets/icon/homepage_section/svg/arrow_right_icon.svg',
               width: 24,
               height: 24,
             ),

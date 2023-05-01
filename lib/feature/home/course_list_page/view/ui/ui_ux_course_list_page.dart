@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/utils/widgets/alta_scaffold.dart';
 
+import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_icon_button.dart';
 import '../../../../../utils/widgets/alta_text.dart';
+
 import '../widget/course_list_card_widget.dart';
 
 class UiUxCourseListPage extends StatelessWidget {
@@ -14,6 +15,7 @@ class UiUxCourseListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
+      scaffoldColor: AltaColor.white,
       isAppbar: AppBarVisibility.off,
       body: SafeArea(
         child: Padding(
@@ -61,7 +63,8 @@ class UiUxCourseListPage extends StatelessWidget {
                       AltaText(
                         context: context,
                         text: 'Program Flexi UI/UX',
-                        style: AltaTextStyle.headlineH2,
+                        style: AltaTextStyle.title1,
+                        fontWeight: CustomFontWeight.bold,
                         color: AltaColor.white,
                       ),
                     ],
@@ -72,32 +75,32 @@ class UiUxCourseListPage extends StatelessWidget {
                   titleLesson: 'Introduction to UI/UX',
                   value: ProgressIndicatorBar.complete,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: AltaSpacing.space16),
                 const CourseListCardWidget(
                   titleLesson: 'Design Process Framework',
                   value: ProgressIndicatorBar.complete,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: AltaSpacing.space16),
                 const CourseListCardWidget(
                   titleLesson: 'Identifying User & Design Requirement',
                   value: ProgressIndicatorBar.complete,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: AltaSpacing.space16),
                 const CourseListCardWidget(
                   titleLesson: 'Figma Introduction Interface Dimension',
                   value: ProgressIndicatorBar.aThreeQuarter,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: AltaSpacing.space16),
                 const CourseListCardWidget(
                   titleLesson: 'Interface Structure',
                   value: ProgressIndicatorBar.aHalf,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: AltaSpacing.space16),
                 const CourseListCardWidget(
                   titleLesson: 'Design System',
                   value: ProgressIndicatorBar.aQuarter,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: AltaSpacing.space16),
                 const CourseListCardWidget(
                   titleLesson: 'Interface Structure',
                   value: ProgressIndicatorBar.none,
