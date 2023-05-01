@@ -47,6 +47,7 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
+      isAppbar: AppBarVisibility.on,
       leadingAsset: 'assets/icon/login_section/svg/arrow_back_icon.svg',
       leadingHeight: 17,
       leadingWidth: 15,

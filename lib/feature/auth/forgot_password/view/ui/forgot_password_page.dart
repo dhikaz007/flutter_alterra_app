@@ -21,6 +21,7 @@ class ForgotPasswordPage extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: AltaScaffold(
+        isAppbar: AppBarVisibility.on,
         leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
         leadingHeight: 14,
         leadingWidth: 14,

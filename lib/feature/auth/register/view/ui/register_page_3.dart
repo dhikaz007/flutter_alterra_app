@@ -44,6 +44,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
+      isAppbar: AppBarVisibility.on,
       leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
       leadingHeight: 14,
       leadingWidth: 14,

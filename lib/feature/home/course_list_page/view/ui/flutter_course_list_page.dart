@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/constant/alta_color.dart';
@@ -12,8 +13,8 @@ class FlutterCourseListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AltaColor.white,
+    return AltaScaffold(
+      isAppbar: AppBarVisibility.off,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(

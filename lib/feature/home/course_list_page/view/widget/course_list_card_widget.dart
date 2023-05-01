@@ -44,7 +44,7 @@ class CourseListCardWidget extends StatelessWidget {
       width: 368,
       height: 140,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AltaColor.white,
         borderRadius: BorderRadius.circular(AltaBorderRadius.radius12),
         border: Border.all(color: AltaColor.gray),
       ),

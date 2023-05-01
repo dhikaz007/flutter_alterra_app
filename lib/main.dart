@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Inter',
       ),
-      home: const FlutterCourseListPage(),
+      home: const UiUxCourseListPage(),
     );
   }
 }

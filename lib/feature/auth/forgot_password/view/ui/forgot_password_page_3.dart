@@ -32,6 +32,7 @@ class ForgotPasswordPage3 extends StatelessWidget {
     }
 
     return AltaScaffold(
+      isAppbar: AppBarVisibility.on,
       leadingAsset: 'assets/icon/login_section/svg/arrow_back_icon.svg',
       leadingHeight: 17,
       leadingWidth: 15,
