@@ -19,6 +19,7 @@ extension AppbarIndicator on AppBarVisibility {
 
 class AltaScaffold extends StatelessWidget {
   final AppBarVisibility isAppbar;
+  final bool? centerTitle;
   final Widget body;
   final String? leadingAsset;
   final double? leadingWidth;
@@ -31,6 +32,7 @@ class AltaScaffold extends StatelessWidget {
   const AltaScaffold({
     Key? key,
     required this.isAppbar,
+    this.centerTitle,
     required this.body,
     this.leadingAsset,
     this.leadingWidth,
@@ -59,6 +61,8 @@ class AltaScaffold extends StatelessWidget {
                   iconWidth: leadingWidth,
                   iconHeight: leadingHeight,
                 ),
+                titleSpacing: 0,
+                centerTitle: centerTitle ?? false,
                 actions: actions,
               )
             : null,
