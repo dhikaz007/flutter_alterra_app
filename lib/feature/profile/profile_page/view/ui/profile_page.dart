@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../utils/alta_constants.dart';
 import '../../../../../utils/alta_widgets.dart';
 import '../../../../../utils/widgets/alta_dialogs.dart';
-import '../../../about_alterra_page/view/ui/about_alterra_page.dart';
+import '../../../my_sertificate/view/ui/my_sertificate.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -66,21 +66,22 @@ class ProfilePage extends StatelessWidget {
                         iconProfiles: 'assets/images/svg/icons/class_icon.svg',
                         text: 'Kelas Saya',
                       ),
-                      const AltaListProfile(
+                      AltaListProfile(
                         iconProfiles:
                             'assets/images/svg/icons/sertificate_icon.svg',
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const MySertificate(),
+                            ),
+                          );
+                        },
                         text: 'Sertifikat Saya',
                       ),
                       AltaListProfile(
                         iconProfiles: 'assets/images/svg/icons/about_icon.svg',
                         text: 'Tentang Alterra',
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => const AboutAlterraPage(),
-                            ),
-                          );
-                        },
+                        onTap: () {},
                       ),
                     ],
                   ),
