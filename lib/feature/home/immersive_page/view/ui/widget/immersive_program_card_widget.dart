@@ -40,7 +40,8 @@ class ImmersiveProgramCard extends StatelessWidget {
           AltaText(
             context: context,
             text: titleCourse,
-            style: AltaTextStyle.bodyH4,
+            style: AltaTextStyle.body2,
+            fontWeight: CustomFontWeight.semiBold,
             color: AltaColor.darkBlue,
             textAlign: TextAlign.center,
           ),
@@ -48,7 +49,8 @@ class ImmersiveProgramCard extends StatelessWidget {
           AltaText(
             context: context,
             text: subtitleCourse,
-            style: AltaTextStyle.bodyH5,
+            style: AltaTextStyle.body3,
+            fontWeight: CustomFontWeight.normal,
             color: AltaColor.darkGray,
             textAlign: TextAlign.center,
           ),

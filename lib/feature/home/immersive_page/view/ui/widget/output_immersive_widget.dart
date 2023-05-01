@@ -20,14 +20,16 @@ class OutputImmersive extends StatelessWidget {
         AltaText(
           context: context,
           text: title,
-          style: AltaTextStyle.headlineH2,
+          style: AltaTextStyle.title1,
+          fontWeight: CustomFontWeight.bold,
           color: AltaColor.darkBlue,
           textAlign: TextAlign.center,
         ),
         AltaText(
           context: context,
           text: subtitle,
-          style: AltaTextStyle.bodyH2,
+          style: AltaTextStyle.body2,
+          fontWeight: CustomFontWeight.semiBold,
           color: AltaColor.darkBlue,
           textAlign: TextAlign.center,
         ),

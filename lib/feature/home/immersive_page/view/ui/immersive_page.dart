@@ -20,6 +20,8 @@ class ImmersivePage extends StatelessWidget {
     final ValueNotifier<int> activeIndex = ValueNotifier(1);
 
     return AltaScaffold(
+      isAppbar: AppBarVisibility.on,
+      scaffoldColor: AltaColor.white,
       appBarColor: AltaColor.darkBlue,
       leadingAsset: 'assets/icon/homepage_section/svg/back_icon.svg',
       leadingHeight: 24,
@@ -27,7 +29,8 @@ class ImmersivePage extends StatelessWidget {
       title: AltaText(
         context: context,
         text: 'Immersive Program',
-        style: AltaTextStyle.headlineH2,
+        style: AltaTextStyle.title1,
+        fontWeight: CustomFontWeight.veryBold,
         color: AltaColor.white,
       ),
       body: SingleChildScrollView(
@@ -61,20 +64,23 @@ class ImmersivePage extends StatelessWidget {
                         AltaText(
                           context: context,
                           text: 'Immersive Bootcamp Program',
-                          style: AltaTextStyle.bodyH3,
+                          style: AltaTextStyle.body2,
+                          fontWeight: CustomFontWeight.semiBold,
                           color: AltaColor.white,
                         ),
                         AltaText(
                           context: context,
                           text: 'Bayar Nanti, Belajar Sekarang.',
-                          style: AltaTextStyle.titleH2,
+                          style: AltaTextStyle.body2,
+                          fontWeight: CustomFontWeight.bold,
                           color: AltaColor.white,
                         ),
                         AltaText(
                           context: context,
                           text:
                               'Raih karir impianmu sebagai Software Engineer \ntanpa merasa khawatir soal biaya. Bayar biaya \nprogram setelah dapat kerja!',
-                          style: AltaTextStyle.bodyH5,
+                          style: AltaTextStyle.body3,
+                          fontWeight: CustomFontWeight.medium,
                           color: AltaColor.white,
                         ),
                       ],
@@ -94,7 +100,8 @@ class ImmersivePage extends StatelessWidget {
               AltaText(
                 context: context,
                 text: 'Perusahaan Hiring Partnersn \nAlterra Academy',
-                style: AltaTextStyle.bodyH2,
+                style: AltaTextStyle.body2,
+                fontWeight: CustomFontWeight.semiBold,
                 color: AltaColor.darkBlue,
                 textAlign: TextAlign.center,
               ),
@@ -132,7 +139,8 @@ class ImmersivePage extends StatelessWidget {
               AltaText(
                 context: context,
                 text: 'Immersive Program',
-                style: AltaTextStyle.titleH2,
+                style: AltaTextStyle.body2,
+                fontWeight: CustomFontWeight.bold,
                 color: AltaColor.darkBlue,
                 textAlign: TextAlign.center,
               ),
