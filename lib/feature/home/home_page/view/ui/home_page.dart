@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_homepage_background.dart';
+import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,8 +15,9 @@ class HomePage extends StatelessWidget {
     return Stack(
       children: [
         const AltaHomePageBackground(),
-        Scaffold(
-          backgroundColor: Colors.transparent,
+        AltaScaffold(
+          isAppbar: AppBarVisibility.off,
+          scaffoldColor: Colors.transparent,
           body: Padding(
             padding: const EdgeInsets.only(
               left: AltaSpacing.space20,
@@ -38,13 +40,15 @@ class HomePage extends StatelessWidget {
                         AltaText(
                           context: context,
                           text: 'Nahdy Dailamy Batewa',
-                          style: AltaTextStyle.titleH2,
+                          style: AltaTextStyle.title3,
+                          fontWeight: CustomFontWeight.bold,
                           color: AltaColor.white,
                         ),
                         AltaText(
                           context: context,
                           text: email,
-                          style: AltaTextStyle.bodyH2,
+                          style: AltaTextStyle.body2,
+                          fontWeight: CustomFontWeight.normal,
                           color: AltaColor.white,
                         ),
                       ],

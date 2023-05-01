@@ -14,11 +14,13 @@ class MyCoursePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AltaScaffold(
       isAppbar: AppBarVisibility.on,
+      scaffoldColor: AltaColor.white,
       appBarColor: AltaColor.darkBlue,
       title: AltaText(
         context: context,
         text: 'Kursus anda saat ini',
-        style: AltaTextStyle.headlineH2,
+        style: AltaTextStyle.title1,
+        fontWeight: CustomFontWeight.semiBold,
         color: AltaColor.white,
       ),
       centerTitle: true,
@@ -64,7 +66,8 @@ class MyCoursePage extends StatelessWidget {
                     AltaText(
                       context: context,
                       text: 'Program Flexi UI/UX',
-                      style: AltaTextStyle.headlineH2,
+                      style: AltaTextStyle.title1,
+                      fontWeight: CustomFontWeight.bold,
                       color: AltaColor.white,
                     ),
                   ],
@@ -106,7 +109,8 @@ class MyCoursePage extends StatelessWidget {
                     AltaText(
                       context: context,
                       text: 'Program Flexi Flutter',
-                      style: AltaTextStyle.headlineH2,
+                      style: AltaTextStyle.title1,
+                      fontWeight: CustomFontWeight.bold,
                       color: AltaColor.white,
                     ),
                   ],

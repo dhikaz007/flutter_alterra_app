@@ -19,11 +19,13 @@ class ConfirmNewPasswordPage extends StatelessWidget {
     final ValueNotifier<bool> isFilled = ValueNotifier(false);
 
     return AltaScaffold(
+      scaffoldColor: AltaColor.white,
       isAppbar: AppBarVisibility.off,
-      appBarColor: Colors.transparent,
       body: Padding(
         padding: const EdgeInsets.only(
-            left: AltaSpacing.space16, right: AltaSpacing.space16),
+          left: AltaSpacing.space16,
+          right: AltaSpacing.space16,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -31,14 +33,16 @@ class ConfirmNewPasswordPage extends StatelessWidget {
             AltaText(
               context: context,
               text: 'Buat kata sandi baru',
-              style: AltaTextStyle.headlineH1,
+              style: AltaTextStyle.headline2,
+              fontWeight: CustomFontWeight.semiBold,
               color: AltaColor.black,
             ),
             const SizedBox(height: AltaSpacing.space24),
             AltaText(
               context: context,
               text: 'Kata sandi baru',
-              style: AltaTextStyle.bodyH1,
+              style: AltaTextStyle.body1,
+              fontWeight: CustomFontWeight.normal,
               color: AltaColor.darkGray,
             ),
             const SizedBox(height: AltaSpacing.space8),
@@ -61,7 +65,8 @@ class ConfirmNewPasswordPage extends StatelessWidget {
             AltaText(
               context: context,
               text: 'Konfirmasi kata sandi',
-              style: AltaTextStyle.bodyH1,
+              style: AltaTextStyle.body1,
+              fontWeight: CustomFontWeight.normal,
               color: AltaColor.darkGray,
             ),
             const SizedBox(height: AltaSpacing.space8),
@@ -106,7 +111,8 @@ class ConfirmNewPasswordPage extends StatelessWidget {
                       child: AltaText(
                         context: context,
                         text: 'SIMPAN',
-                        style: AltaTextStyle.titleH1,
+                        style: AltaTextStyle.title2,
+                        fontWeight: CustomFontWeight.bold,
                         color: AltaColor.white,
                       ),
                     ),
