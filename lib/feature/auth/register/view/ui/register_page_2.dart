@@ -22,6 +22,9 @@ class RegisterPage2 extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: AltaScaffold(
+        scaffoldColor: AltaColor.white,
+        appBarColor: AltaColor.white,
+        isAppbar: AppBarVisibility.on,
         leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
         leadingHeight: 14,
         leadingWidth: 14,
@@ -41,21 +44,24 @@ class RegisterPage2 extends StatelessWidget {
                 AltaText(
                   context: context,
                   text: 'Langkah 2/3',
-                  style: AltaTextStyle.titleH2,
+                  style: AltaTextStyle.title3,
+                  fontWeight: CustomFontWeight.semiBold,
                   color: AltaColor.black.withOpacity(0.5),
                 ),
                 const SizedBox(height: AltaSpacing.space28),
                 AltaText(
                   context: context,
                   text: 'Lengkapi Data Akun',
-                  style: AltaTextStyle.headlineH1,
+                  style: AltaTextStyle.headline2,
+                  fontWeight: CustomFontWeight.semiBold,
                   color: AltaColor.black,
                 ),
                 const SizedBox(height: AltaSpacing.space28),
                 AltaText(
                   context: context,
                   text: 'Nama Lengkap',
-                  style: AltaTextStyle.bodyH1,
+                  style: AltaTextStyle.body1,
+                  fontWeight: CustomFontWeight.medium,
                   color: AltaColor.darkGray,
                 ),
                 const SizedBox(height: AltaSpacing.space8),
@@ -63,6 +69,8 @@ class RegisterPage2 extends StatelessWidget {
                   valueListenable: name,
                   builder: (context, nameValue, _) => AltaTextField(
                     hintText: 'Masukkan nama lengkap anda',
+                    borderRadius: 8,
+                    borderSide: const BorderSide(color: AltaColor.gray),
                     onChanged: (value) {
                       name.value = value;
                       if (name.value.isNotEmpty &&
@@ -79,7 +87,8 @@ class RegisterPage2 extends StatelessWidget {
                 AltaText(
                   context: context,
                   text: 'Kata Sandi',
-                  style: AltaTextStyle.bodyH1,
+                  style: AltaTextStyle.body1,
+                  fontWeight: CustomFontWeight.medium,
                   color: AltaColor.darkGray,
                 ),
                 const SizedBox(height: AltaSpacing.space8),
@@ -87,6 +96,8 @@ class RegisterPage2 extends StatelessWidget {
                   valueListenable: pass,
                   builder: (context, passValue, _) => AltaTextField(
                     hintText: 'Masukkan kata sandi',
+                    borderRadius: 8,
+                    borderSide: const BorderSide(color: AltaColor.gray),
                     obscureText: true,
                     onChanged: (value) {
                       pass.value = value;
@@ -104,7 +115,8 @@ class RegisterPage2 extends StatelessWidget {
                 AltaText(
                   context: context,
                   text: 'Konfirmasi Kata Sandi',
-                  style: AltaTextStyle.bodyH1,
+                  style: AltaTextStyle.body1,
+                  fontWeight: CustomFontWeight.medium,
                   color: AltaColor.darkGray,
                 ),
                 const SizedBox(height: AltaSpacing.space8),
@@ -112,6 +124,8 @@ class RegisterPage2 extends StatelessWidget {
                   valueListenable: confirmPass,
                   builder: (context, confirmPassValue, _) => AltaTextField(
                     hintText: 'Masukkan konfirmasi kata sandi',
+                    borderRadius: 8,
+                    borderSide: const BorderSide(color: AltaColor.gray),
                     obscureText: true,
                     onChanged: (value) {
                       confirmPass.value = value;
@@ -150,7 +164,8 @@ class RegisterPage2 extends StatelessWidget {
                           child: AltaText(
                             context: context,
                             text: 'DAFTAR',
-                            style: AltaTextStyle.titleH1,
+                            style: AltaTextStyle.title2,
+                            fontWeight: CustomFontWeight.semiBold,
                             color: AltaColor.white,
                           ),
                         ),
@@ -162,7 +177,8 @@ class RegisterPage2 extends StatelessWidget {
                 AltaText(
                   context: context,
                   text: 'Dengan menekan tombol "DAFTAR", saya',
-                  style: AltaTextStyle.titleH3,
+                  style: AltaTextStyle.title3,
+                  fontWeight: CustomFontWeight.normal,
                   color: AltaColor.darkGray,
                   textAlign: TextAlign.justify,
                 ),
@@ -171,35 +187,40 @@ class RegisterPage2 extends StatelessWidget {
                     AltaText(
                       context: context,
                       text: 'menyetujui ',
-                      style: AltaTextStyle.titleH3,
+                      style: AltaTextStyle.title3,
+                      fontWeight: CustomFontWeight.normal,
                       color: AltaColor.darkGray,
                       textAlign: TextAlign.justify,
                     ),
                     AltaText(
                       context: context,
                       text: 'Syarat Ketentuan ',
-                      style: AltaTextStyle.titleH2,
+                      style: AltaTextStyle.title3,
+                      fontWeight: CustomFontWeight.semiBold,
                       color: AltaColor.tangerine,
                       textAlign: TextAlign.justify,
                     ),
                     AltaText(
                       context: context,
                       text: '& ',
-                      style: AltaTextStyle.titleH3,
+                      style: AltaTextStyle.title3,
+                      fontWeight: CustomFontWeight.normal,
                       color: AltaColor.darkGray,
                       textAlign: TextAlign.justify,
                     ),
                     AltaText(
                       context: context,
                       text: 'Privasi ',
-                      style: AltaTextStyle.titleH2,
+                      style: AltaTextStyle.title3,
+                      fontWeight: CustomFontWeight.semiBold,
                       color: AltaColor.tangerine,
                       textAlign: TextAlign.justify,
                     ),
                     AltaText(
                       context: context,
                       text: 'yang ',
-                      style: AltaTextStyle.titleH3,
+                      style: AltaTextStyle.title3,
+                      fontWeight: CustomFontWeight.normal,
                       color: AltaColor.darkGray,
                       textAlign: TextAlign.justify,
                     ),
@@ -208,7 +229,8 @@ class RegisterPage2 extends StatelessWidget {
                 AltaText(
                   context: context,
                   text: 'berlaku di Alterra Academy.',
-                  style: AltaTextStyle.titleH3,
+                  style: AltaTextStyle.title3,
+                  fontWeight: CustomFontWeight.normal,
                   color: AltaColor.darkGray,
                 ),
               ],

@@ -44,6 +44,9 @@ class _RegisterPage3State extends State<RegisterPage3> {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
+      scaffoldColor: AltaColor.white,
+      appBarColor: AltaColor.white,
+      isAppbar: AppBarVisibility.on,
       leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
       leadingHeight: 14,
       leadingWidth: 14,
@@ -62,15 +65,17 @@ class _RegisterPage3State extends State<RegisterPage3> {
             AltaText(
               context: context,
               text: 'Langkah 3/3',
-              style: AltaTextStyle.titleH2,
+              style: AltaTextStyle.title3,
+              fontWeight: CustomFontWeight.semiBold,
               color: AltaColor.black,
             ),
             const SizedBox(height: AltaSpacing.space28),
             AltaText(
               context: context,
               text:
-              'Klik tautan lupa kata sandi yang telah kami kirim ke ${widget.email}',
-              style: AltaTextStyle.headlineH1,
+                  'Klik tautan lupa kata sandi yang telah kami kirim ke ${widget.email}',
+              style: AltaTextStyle.headline2,
+              fontWeight: CustomFontWeight.semiBold,
               color: AltaColor.black,
             ),
             const SizedBox(height: AltaSpacing.space20),
@@ -80,7 +85,8 @@ class _RegisterPage3State extends State<RegisterPage3> {
                 AltaText(
                   context: context,
                   text: 'Email yang dimasukkan salah?',
-                  style: AltaTextStyle.titleH2,
+                  style: AltaTextStyle.title3,
+                  fontWeight: CustomFontWeight.normal,
                   color: AltaColor.darkGray,
                 ),
                 const SizedBox(width: AltaSpacing.space8),
@@ -89,7 +95,8 @@ class _RegisterPage3State extends State<RegisterPage3> {
                   child: AltaText(
                     context: context,
                     text: 'Ubah Email',
-                    style: AltaTextStyle.titleH2,
+                    style: AltaTextStyle.title3,
+                    fontWeight: CustomFontWeight.bold,
                     color: AltaColor.tangerine,
                   ),
                 ),
@@ -101,8 +108,9 @@ class _RegisterPage3State extends State<RegisterPage3> {
               builder: (context, secondsValue, _) => AltaText(
                 context: context,
                 text:
-                'Belum menerima tautan verifikasi? Kirim ulang dalam ${secondsValue.toString()}',
-                style: AltaTextStyle.titleH2,
+                    'Belum menerima tautan verifikasi? Kirim ulang dalam ${secondsValue.toString()}',
+                style: AltaTextStyle.title3,
+                fontWeight: CustomFontWeight.normal,
                 color: AltaColor.darkGray,
               ),
             ),
@@ -114,24 +122,23 @@ class _RegisterPage3State extends State<RegisterPage3> {
                     valueListenable: seconds,
                     builder: (context, secondsValue, child) =>
                         AltaPrimaryButton(
-                          backgroundColor: MaterialStateProperty.resolveWith(
-                                (states) => secondsValue == 0
-                                ? AltaColor.darkBlue
-                                : AltaColor.altGray2,
-                          ),
-                          borderRadius: AltaBorderRadius.radius8,
-                          paddingVertical: AltaSpacing.space20,
-                          paddingHorizontal: AltaSpacing.space28,
-                          onPressed: () => secondsValue == 0
-                              ? {}
-                              : null,
-                          child: AltaText(
-                            context: context,
-                            text: 'KIRIM ULANG TAUTAN',
-                            style: AltaTextStyle.titleH1,
-                            color: AltaColor.white,
-                          ),
-                        ),
+                      backgroundColor: MaterialStateProperty.resolveWith(
+                        (states) => secondsValue == 0
+                            ? AltaColor.darkBlue
+                            : AltaColor.altGray2,
+                      ),
+                      borderRadius: AltaBorderRadius.radius8,
+                      paddingVertical: AltaSpacing.space20,
+                      paddingHorizontal: AltaSpacing.space28,
+                      onPressed: () => secondsValue == 0 ? {} : null,
+                      child: AltaText(
+                        context: context,
+                        text: 'KIRIM ULANG TAUTAN',
+                        style: AltaTextStyle.title2,
+                        fontWeight: CustomFontWeight.semiBold,
+                        color: AltaColor.white,
+                      ),
+                    ),
                   ),
                 ),
               ],

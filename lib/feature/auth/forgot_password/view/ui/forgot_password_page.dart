@@ -21,6 +21,9 @@ class ForgotPasswordPage extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: AltaScaffold(
+        scaffoldColor: AltaColor.white,
+        appBarColor: AltaColor.white,
+        isAppbar: AppBarVisibility.on,
         leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
         leadingHeight: 14,
         leadingWidth: 14,
@@ -37,21 +40,24 @@ class ForgotPasswordPage extends StatelessWidget {
               AltaText(
                 context: context,
                 text: 'Langkah 1/2',
-                style: AltaTextStyle.titleH2,
+                style: AltaTextStyle.title3,
+                fontWeight: CustomFontWeight.semiBold,
                 color: AltaColor.black,
               ),
               const SizedBox(height: AltaSpacing.space16),
               AltaText(
                 context: context,
                 text: 'Masukkan email untuk mengubah kata sandi',
-                style: AltaTextStyle.headlineH1,
+                style: AltaTextStyle.headline2,
+                fontWeight: CustomFontWeight.semiBold,
                 color: AltaColor.black,
               ),
               const SizedBox(height: AltaSpacing.space24),
               AltaText(
                 context: context,
                 text: 'Masukkan email',
-                style: AltaTextStyle.bodyH1,
+                style: AltaTextStyle.body1,
+                fontWeight: CustomFontWeight.medium,
                 color: AltaColor.darkGray,
               ),
               const SizedBox(height: AltaSpacing.space8),
@@ -59,6 +65,8 @@ class ForgotPasswordPage extends StatelessWidget {
                 valueListenable: email,
                 builder: (context, emailValue, _) => AltaTextField(
                   hintText: 'Masukkan email anda',
+                  borderRadius: 8,
+                  borderSide: const BorderSide(color: AltaColor.gray),
                   onChanged: (value) {
                     email.value = value;
                     if (email.value.isEmpty) {
@@ -94,7 +102,8 @@ class ForgotPasswordPage extends StatelessWidget {
                         child: AltaText(
                           context: context,
                           text: 'KIRIM KODE / TAUTAN',
-                          style: AltaTextStyle.titleH1,
+                          style: AltaTextStyle.title2,
+                          fontWeight: CustomFontWeight.bold,
                           color: AltaColor.white,
                         ),
                       ),

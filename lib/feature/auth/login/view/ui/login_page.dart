@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../../utils/widgets/alta_svg.dart';
+import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/constant/alta_border_radius.dart';
 import '../../../../../utils/widgets/alta_text.dart';
 import '../../../../../utils/widgets/alta_login_background.dart';
@@ -10,7 +11,7 @@ import '../../../../../utils/widgets/alta_logo.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
 import '../../../../../utils/widgets/alta_text_button.dart';
 import '../../../../../utils/widgets/alta_text_field.dart';
-import '../../../../home_page/view/ui/home_page.dart';
+import '../../../../home/home_page/view/ui/home_page.dart';
 import '../../../register/view/ui/register_page.dart';
 import '../../../forgot_password/view/ui/forgot_password_page.dart';
 
@@ -32,8 +33,9 @@ class LoginPage extends StatelessWidget {
       child: Stack(
         children: [
           const AltaLoginBackground(),
-          Scaffold(
-            backgroundColor: Colors.transparent,
+          AltaScaffold(
+            scaffoldColor: Colors.transparent,
+            isAppbar: AppBarVisibility.off,
             body: Padding(
               padding: const EdgeInsets.all(AltaSpacing.space16),
               child: SingleChildScrollView(
@@ -55,7 +57,8 @@ class LoginPage extends StatelessWidget {
                     AltaText(
                       context: context,
                       text: 'Selamat Datang',
-                      style: AltaTextStyle.headlineH2,
+                      style: AltaTextStyle.title1,
+                      fontWeight: CustomFontWeight.bold,
                       color: AltaColor.black,
                     ),
                     const SizedBox(height: AltaSpacing.space16),
@@ -68,19 +71,22 @@ class LoginPage extends StatelessWidget {
                             AltaText(
                               context: context,
                               text: 'Mungkin username atau password yang',
-                              style: AltaTextStyle.titleH2,
+                              style: AltaTextStyle.title3,
+                              fontWeight: CustomFontWeight.normal,
                               color: AltaColor.red,
                               textAlign: TextAlign.left,
                             ),
                             AltaText(
                               context: context,
                               text: 'anda masukkan salah ',
-                              style: AltaTextStyle.titleH2,
+                              style: AltaTextStyle.title3,
+                              fontWeight: CustomFontWeight.normal,
                               color: AltaColor.red,
                               textAlign: TextAlign.left,
                             ),
-                            SvgPicture.asset(
-                              'assets/icon/login_section/svg/error_icon.svg',
+                            const AltaSvg(
+                              svgPath:
+                                  'assets/icon/login_section/svg/error_icon.svg',
                               width: 16,
                               height: 16,
                             ),
@@ -89,7 +95,8 @@ class LoginPage extends StatelessWidget {
                         child: AltaText(
                           context: context,
                           text: 'Masukkan akun Alterra Academy',
-                          style: AltaTextStyle.titleH2,
+                          style: AltaTextStyle.title3,
+                          fontWeight: CustomFontWeight.normal,
                           color: AltaColor.darkBlue,
                         ),
                       ),
@@ -98,7 +105,8 @@ class LoginPage extends StatelessWidget {
                     AltaText(
                       context: context,
                       text: 'Masukkan Email',
-                      style: AltaTextStyle.bodyH1,
+                      style: AltaTextStyle.body1,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkGray,
                     ),
                     const SizedBox(height: AltaSpacing.space8),
@@ -106,6 +114,8 @@ class LoginPage extends StatelessWidget {
                       valueListenable: email,
                       builder: (context, emailValue, _) => AltaTextField(
                         hintText: 'Masukkan email anda',
+                        borderRadius: 8,
+                        borderSide: const BorderSide(color: AltaColor.gray),
                         onChanged: (value) {
                           email.value = value;
                           if (email.value.isEmpty && pass.value.isEmpty) {
@@ -124,7 +134,8 @@ class LoginPage extends StatelessWidget {
                     AltaText(
                       context: context,
                       text: 'Kata Sandi',
-                      style: AltaTextStyle.bodyH1,
+                      style: AltaTextStyle.body1,
+                      fontWeight: CustomFontWeight.medium,
                       color: AltaColor.darkGray,
                     ),
                     const SizedBox(height: AltaSpacing.space8),
@@ -134,6 +145,8 @@ class LoginPage extends StatelessWidget {
                           AltaTextField(
                         obscureText: true,
                         hintText: 'Masukkan kata sandi',
+                        borderRadius: 8,
+                        borderSide: const BorderSide(color: AltaColor.gray),
                         onChanged: (value) {
                           pass.value = value;
                           if (pass.value.isEmpty && email.value.isEmpty) {
@@ -157,7 +170,8 @@ class LoginPage extends StatelessWidget {
                       child: AltaText(
                         context: context,
                         text: 'Lupa Password',
-                        style: AltaTextStyle.titleH2,
+                        style: AltaTextStyle.title3,
+                        fontWeight: CustomFontWeight.semiBold,
                         color: AltaColor.tangerine,
                       ),
                     ),
@@ -192,7 +206,8 @@ class LoginPage extends StatelessWidget {
                               child: AltaText(
                                 context: context,
                                 text: 'LOGIN',
-                                style: AltaTextStyle.titleH1,
+                                style: AltaTextStyle.title2,
+                                fontWeight: CustomFontWeight.semiBold,
                                 color: AltaColor.white,
                               ),
                             ),
@@ -207,7 +222,8 @@ class LoginPage extends StatelessWidget {
                         AltaText(
                           context: context,
                           text: 'Belum punya akun?',
-                          style: AltaTextStyle.titleH2,
+                          style: AltaTextStyle.title2,
+                          fontWeight: CustomFontWeight.semiBold,
                           color: AltaColor.black,
                         ),
                         TextButton(
@@ -218,7 +234,8 @@ class LoginPage extends StatelessWidget {
                           child: AltaText(
                             context: context,
                             text: 'Daftar disini',
-                            style: AltaTextStyle.titleH2,
+                            style: AltaTextStyle.title3,
+                            fontWeight: CustomFontWeight.bold,
                             color: AltaColor.tangerine,
                           ),
                         ),
