@@ -26,14 +26,16 @@ class AltaHeaderProfile extends StatelessWidget {
         AltaText(
           context: context,
           text: 'Nahdy Dailamy Batewa',
-          style: AltaTextStyle.titleH2,
+          style: AltaTextStyle.title3,
           color: AltaColor.white,
+          fontWeight: CustomFontWeight.semiBold,
         ),
         AltaText(
           context: context,
           text: 'nadewa@alterra.com',
-          style: AltaTextStyle.bodyH2,
+          style: AltaTextStyle.body1,
           color: AltaColor.white,
+          fontWeight: CustomFontWeight.medium,
         ),
       ],
     );

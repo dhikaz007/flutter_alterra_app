@@ -27,7 +27,7 @@ class AltaListProfile extends StatelessWidget {
           ),
           title: AltaProfileComponent(
               text: text,
-              style: AltaTextStyle.titleH2,
+              style: AltaTextStyle.title3,
               iconArrowBlue: 'assets/images/svg/icons/arrow_blue.svg',
               onTap: onTap),
           subtitle: const AltaDivider(),

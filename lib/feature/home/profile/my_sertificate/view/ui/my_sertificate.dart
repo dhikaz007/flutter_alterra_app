@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../../utils/alta_constants.dart';
-import '../../../../../utils/alta_widgets.dart';
+import '../../../../../../utils/alta_constants.dart';
+import '../../../../../../utils/alta_widgets.dart';
 import 'widget/sertificate_widgets.dart';
 
 class MySertificate extends StatelessWidget {
@@ -21,10 +21,12 @@ class MySertificate extends StatelessWidget {
         ),
         titleSpacing: 0,
         title: AltaText(
-            context: context,
-            text: 'Sertifikat Saya',
-            style: AltaTextStyle.headlineH2,
-            color: AltaColor.white),
+          context: context,
+          text: 'Sertifikat Saya',
+          style: AltaTextStyle.title1,
+          color: AltaColor.white,
+          fontWeight: CustomFontWeight.veryBold,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 16, right: 16),
@@ -32,7 +34,7 @@ class MySertificate extends StatelessWidget {
           children: [
             Column(
               children: const [
-                SizedBox(height: AltaSpacing.space26),
+                SizedBox(height: AltaSpacing.space28),
                 AccountSertificate(),
               ],
             ),
@@ -40,16 +42,20 @@ class MySertificate extends StatelessWidget {
             Image.asset('assets/images/png/no_sertificate.png'),
             const SizedBox(height: AltaSpacing.space20),
             AltaText(
-                context: context,
-                text: 'Sorry!',
-                style: AltaTextStyle.headlineH01,
-                color: AltaColor.black),
-            const SizedBox(height: AltaSpacing.space10),
+              context: context,
+              text: 'Sorry!',
+              style: AltaTextStyle.headline1,
+              color: AltaColor.black,
+              fontWeight: CustomFontWeight.normal,
+            ),
+            const SizedBox(height: AltaSpacing.space12),
             AltaText(
-                context: context,
-                text: 'Complete courses to earn certificates',
-                style: AltaTextStyle.bodyH1a,
-                color: AltaColor.darkBlue),
+              context: context,
+              text: 'Complete courses to earn certificates',
+              style: AltaTextStyle.body1,
+              color: AltaColor.darkBlue,
+              fontWeight: CustomFontWeight.light,
+            ),
             const Spacer(flex: 3),
             const BottomSertificate(),
             const Spacer(),

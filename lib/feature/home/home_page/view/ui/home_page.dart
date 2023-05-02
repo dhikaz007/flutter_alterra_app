@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../utils/alta_constants.dart';
-import '../../../../utils/alta_widgets.dart';
+import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_widgets.dart';
 
 class HomePage extends StatelessWidget {
   final ScrollController? scrollController;
@@ -35,37 +35,41 @@ class HomePage extends StatelessWidget {
                         AltaText(
                           context: context,
                           text: 'Nahdy Dailamy Batewa',
-                          style: AltaTextStyle.titleH2,
+                          style: AltaTextStyle.title3,
                           color: AltaColor.white,
+                          fontWeight: CustomFontWeight.bold,
                         ),
                         AltaText(
                           context: context,
                           text: 'nadewa@alterra.com',
-                          style: AltaTextStyle.bodyH2,
+                          style: AltaTextStyle.body2,
                           color: AltaColor.white,
+                          fontWeight: CustomFontWeight.normal,
                         ),
                       ],
                     ),
                   ],
                 ),
-                const SizedBox(height: AltaSpacing.space23),
+                const SizedBox(height: AltaSpacing.space24),
                 const AltaSearchWidget(
                   filled: true,
                   prefixIcon: Icon(Icons.search),
                   hintText: 'Search',
                 ),
-                const SizedBox(height: AltaSpacing.space18),
+                const SizedBox(height: AltaSpacing.space20),
                 Image.asset(
                   'assets/images/png/flash_sale.png',
                 ),
-                const SizedBox(height: AltaSpacing.space18),
+                const SizedBox(height: AltaSpacing.space20),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: AltaText(
-                      context: context,
-                      text: 'Courses',
-                      style: AltaTextStyle.titleH2,
-                      color: AltaColor.black),
+                    context: context,
+                    text: 'Courses',
+                    style: AltaTextStyle.title3,
+                    color: AltaColor.black,
+                    fontWeight: CustomFontWeight.bold,
+                  ),
                 ),
                 const SizedBox(height: AltaSpacing.space20),
                 // AltaFeatureCourses(),
