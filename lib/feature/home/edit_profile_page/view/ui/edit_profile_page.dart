@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../utils/alta_constants.dart';
 import '../../../../../utils/alta_widgets.dart';
-import '../../../../../utils/widgets/alta_edit_profile_background.dart';
 import '../widget/account_setting_list.dart';
 
 class EditProfilePage extends StatelessWidget {
@@ -28,7 +27,7 @@ class EditProfilePage extends StatelessWidget {
                       Navigator.of(context).pop();
                     },
                     child: SvgPicture.asset(
-                      'assets/images/svg/icons/arrow_white.svg',
+                      'assets/icon/homepage_section/svg/arrow_white.svg',
                     ),
                   ),
                 ),
@@ -36,8 +35,9 @@ class EditProfilePage extends StatelessWidget {
                 AltaText(
                     context: context,
                     text: 'Profile',
-                    style: AltaTextStyle.headlineH1a,
-                    color: AltaColor.white),
+                    style: AltaTextStyle.headline3,
+                    color: AltaColor.white,
+                    fontWeight: CustomFontWeight.semiBold),
                 const SizedBox(height: AltaSpacing.space16),
                 Row(
                   children: [
@@ -46,8 +46,8 @@ class EditProfilePage extends StatelessWidget {
                       backgroundColor: AltaColor.tangerine,
                       child: CircleAvatar(
                         radius: 35.5,
-                        backgroundImage:
-                            AssetImage('assets/images/png/profile_avatar.png'),
+                        backgroundImage: AssetImage(
+                            'assets/images/login_section/png/profile_avatar.png'),
                       ),
                     ),
                     const SizedBox(width: AltaSpacing.space12),
@@ -57,8 +57,9 @@ class EditProfilePage extends StatelessWidget {
                         AltaText(
                           context: context,
                           text: 'Nahdy Dailamy Batewa',
-                          style: AltaTextStyle.titleH2,
+                          style: AltaTextStyle.title3,
                           color: AltaColor.white,
+                          fontWeight: CustomFontWeight.bold,
                         ),
                         const SizedBox(height: AltaSpacing.space8),
                         Row(
@@ -66,24 +67,27 @@ class EditProfilePage extends StatelessWidget {
                             AltaText(
                               context: context,
                               text: 'Details',
-                              style: AltaTextStyle.bodyH2,
+                              style: AltaTextStyle.body1,
                               color: AltaColor.tangerine,
+                              fontWeight: CustomFontWeight.light,
                             ),
                             const SizedBox(width: AltaSpacing.space12),
                             SvgPicture.asset(
-                                'assets/images/svg/icons/arrow.svg')
+                                'assets/icon/homepage_section/svg/arrow.svg')
                           ],
                         ),
                       ],
                     ),
                   ],
                 ),
-                const SizedBox(height: AltaSpacing.space85),
+                const SizedBox(height: AltaSpacing.space84),
                 AltaText(
-                    context: context,
-                    text: 'Account settings',
-                    style: AltaTextStyle.titleH2,
-                    color: AltaColor.darkBlue),
+                  context: context,
+                  text: 'Account settings',
+                  style: AltaTextStyle.title3,
+                  color: AltaColor.darkBlue,
+                  fontWeight: CustomFontWeight.medium,
+                ),
                 const SizedBox(height: AltaSpacing.space16),
                 Expanded(
                   child: SingleChildScrollView(
@@ -118,11 +122,14 @@ class EditProfilePage extends StatelessWidget {
         Positioned(
           top: 154,
           left: 91,
-          child: CircleAvatar(
-            backgroundColor: AltaColor.white,
-            radius: 5,
-            child: SvgPicture.asset(
-                'assets/images/svg/icons/icon_edit_profile.svg'),
+          child: GestureDetector(
+            onTap: () {},
+            child: CircleAvatar(
+              backgroundColor: AltaColor.white,
+              radius: 5,
+              child: SvgPicture.asset(
+                  'assets/icon/homepage_section/svg/icon_edit_profile.svg'),
+            ),
           ),
         ),
         Padding(
@@ -138,12 +145,14 @@ class EditProfilePage extends StatelessWidget {
                     onPressed: () {},
                     borderRadius: AltaBorderRadius.radius10,
                     paddingHorizontal: AltaSpacing.space28,
-                    paddingVertical: AltaSpacing.space18,
+                    paddingVertical: AltaSpacing.space16,
                     child: AltaText(
-                        context: context,
-                        text: 'Simpan',
-                        style: AltaTextStyle.titleH1,
-                        color: AltaColor.white),
+                      context: context,
+                      text: 'Simpan',
+                      style: AltaTextStyle.title2,
+                      color: AltaColor.white,
+                      fontWeight: CustomFontWeight.bold,
+                    ),
                   ),
                 ),
               ],
