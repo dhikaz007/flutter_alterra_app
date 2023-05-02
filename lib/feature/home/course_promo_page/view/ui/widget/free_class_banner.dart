@@ -5,15 +5,9 @@ import '../../../../../../utils/alta_constants.dart';
 
 class FreeClassBanner extends StatelessWidget {
   final String imgAssets;
-  // final String text1;
-  // final String text2;
-  // final String text3;
   const FreeClassBanner({
     super.key,
     required this.imgAssets,
-    // required this.text1,
-    // required this.text2,
-    // required this.text3
   });
 
   @override
@@ -38,22 +32,28 @@ class FreeClassBanner extends StatelessWidget {
             ),
             const SizedBox(height: AltaSpacing.space4),
             AltaText(
-                context: context,
-                text: 'GRATIS Kelas Frontend\n& Backend!',
-                style: AltaTextStyle.titleH4,
-                color: AltaColor.darkBlue),
+              context: context,
+              text: 'GRATIS Kelas Frontend\n& Backend!',
+              style: AltaTextStyle.body1,
+              color: AltaColor.darkBlue,
+              fontWeight: CustomFontWeight.veryBold,
+            ),
             const SizedBox(height: AltaSpacing.space4),
             AltaText(
-                context: context,
-                text: 'Daftar sekarang sebelum\nketinggalan!',
-                style: AltaTextStyle.bodyH2,
-                color: AltaColor.darkGray),
+              context: context,
+              text: 'Daftar sekarang sebelum\nketinggalan!',
+              style: AltaTextStyle.body2,
+              color: AltaColor.darkGray,
+              fontWeight: CustomFontWeight.medium,
+            ),
             const SizedBox(height: AltaSpacing.space12),
             AltaText(
-                context: context,
-                text: '25 KUOTA PER KELAS',
-                style: AltaTextStyle.bodyH2a,
-                color: AltaColor.darkBlue),
+              context: context,
+              text: '25 KUOTA PER KELAS',
+              style: AltaTextStyle.body2,
+              color: AltaColor.darkBlue,
+              fontWeight: CustomFontWeight.semiBold,
+            ),
             const SizedBox(height: AltaSpacing.space12),
             SizedBox(
               width: MediaQuery.of(context).size.width / 2.5,
@@ -61,13 +61,15 @@ class FreeClassBanner extends StatelessWidget {
                 backgroundColor: MaterialStateProperty.all(AltaColor.tangerine),
                 onPressed: () {},
                 borderRadius: AltaBorderRadius.radius8,
-                paddingHorizontal: AltaSpacing.space60,
-                paddingVertical: AltaSpacing.space6,
+                paddingHorizontal: AltaSpacing.space56,
+                paddingVertical: AltaSpacing.space8,
                 child: AltaText(
-                    context: context,
-                    text: 'Daftar',
-                    style: AltaTextStyle.bodyH1,
-                    color: AltaColor.white),
+                  context: context,
+                  text: 'Daftar',
+                  style: AltaTextStyle.body1,
+                  color: AltaColor.white,
+                  fontWeight: CustomFontWeight.bold,
+                ),
               ),
             ),
           ],

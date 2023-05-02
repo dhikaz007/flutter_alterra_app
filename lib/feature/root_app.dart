@@ -3,10 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../utils/alta_constants.dart';
 import '../utils/alta_widgets.dart';
-import 'course_page/view/ui/course_page.dart';
-import 'faq_page/view/ui/faq_page.dart';
+// import 'course_page/view/ui/course_page.dart';
+// import 'faq_page/view/ui/faq_page.dart';
 import 'home/home_page/view/ui/home_page.dart';
-import 'profile_page/view/ui/profile_page.dart';
+// import 'profile_page/view/ui/profile_page.dart';
 
 class RootApp extends StatelessWidget {
   const RootApp({super.key});
@@ -15,9 +15,9 @@ class RootApp extends StatelessWidget {
 
   static final List<Widget> _widgetOptions = [
     HomePage(scrollController: _scrollController),
-    const CoursePage(),
-    const FaqPage(),
-    const ProfilePage(),
+    // const CoursePage(),
+    // const FaqPage(),
+    // const ProfilePage(),
   ];
 
   @override
@@ -35,12 +35,12 @@ class RootApp extends StatelessWidget {
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
-                  'assets/images/svg/icons/home_icon.svg',
+                  'assets/icon/homepage_section/svg/home_icon.svg',
                   width: 24,
                   height: 24,
                 ),
                 activeIcon: SvgPicture.asset(
-                  'assets/images/svg/icons/home_fill_icon.svg',
+                  'assets/icon/homepage_section/svg/home_fill_icon.svg',
                   width: 24,
                   height: 24,
                 ),
@@ -48,12 +48,12 @@ class RootApp extends StatelessWidget {
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
-                  'assets/images/svg/icons/course_icon.svg',
+                  'assets/icon/homepage_section/svg/course_icon.svg',
                   width: 24,
                   height: 24,
                 ),
                 activeIcon: SvgPicture.asset(
-                  'assets/images/svg/icons/course_fill_icon.svg',
+                  'assets/icon/homepage_section/svg/course_fill_icon.svg',
                   width: 24,
                   height: 24,
                 ),
@@ -61,12 +61,12 @@ class RootApp extends StatelessWidget {
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
-                  'assets/images/svg/icons/faq_icon.svg',
+                  'assets/icon/homepage_section/svg/faq_icon.svg',
                   width: 24,
                   height: 24,
                 ),
                 activeIcon: SvgPicture.asset(
-                  'assets/images/svg/icons/faq_fill_icon.svg',
+                  'assets/icon/homepage_section/svg/faq_fill_icon.svg',
                   width: 24,
                   height: 24,
                 ),
@@ -74,7 +74,7 @@ class RootApp extends StatelessWidget {
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
-                  'assets/images/svg/icons/profile_icon.svg',
+                  'assets/icon/homepage_section/svg/profile_icon.svg',
                   width: 24,
                   height: 24,
                 ),

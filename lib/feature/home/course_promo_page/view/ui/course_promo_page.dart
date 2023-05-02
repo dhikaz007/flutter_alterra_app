@@ -12,7 +12,7 @@ class CoursePromoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ValueNotifier<int> activeIndex = ValueNotifier(1);
+    final ValueNotifier<int> activeIndex = ValueNotifier(0);
     return Scaffold(
       body: Column(
         children: [
@@ -31,13 +31,15 @@ class CoursePromoPage extends StatelessWidget {
                         Navigator.of(context).pop();
                       },
                       child: SvgPicture.asset(
-                          'assets/images/svg/icons/arrow_white.svg')),
+                          'assets/icon/homepage_section/svg/arrow_white.svg')),
                   const SizedBox(width: AltaSpacing.space28),
                   AltaText(
-                      context: context,
-                      text: 'Promo',
-                      style: AltaTextStyle.headlineH2,
-                      color: AltaColor.white),
+                    context: context,
+                    text: 'Promo',
+                    style: AltaTextStyle.title1,
+                    color: AltaColor.white,
+                    fontWeight: CustomFontWeight.bold,
+                  ),
                 ],
               ),
             ),
@@ -51,10 +53,12 @@ class CoursePromoPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     AltaText(
-                        context: context,
-                        text: 'Rekomendasi',
-                        style: AltaTextStyle.headlineH2,
-                        color: AltaColor.black),
+                      context: context,
+                      text: 'Rekomendasi',
+                      style: AltaTextStyle.title1,
+                      color: AltaColor.black,
+                      fontWeight: CustomFontWeight.bold,
+                    ),
                     const SizedBox(height: AltaSpacing.space12),
                     SizedBox(
                       height: 163,
@@ -70,22 +74,21 @@ class CoursePromoPage extends StatelessWidget {
                             initialPage: 0,
                             enlargeCenterPage: true,
                             autoPlay: true,
-                            // enlargeStrategy: CenterPageEnlargeStrategy.zoom,
                             scrollPhysics: const BouncingScrollPhysics(),
                             onPageChanged: (index, reason) =>
                                 activeIndex.value = index,
                           ),
                           items: [
                             Image.asset(
-                              'assets/images/png/flash_sale.png',
+                              'assets/images/homepage_section/png/flash_sale.png',
                               fit: BoxFit.fill,
                             ),
                             Image.asset(
-                              'assets/images/png/flash_sale.png',
+                              'assets/images/homepage_section/png/flash_sale.png',
                               fit: BoxFit.fill,
                             ),
                             Image.asset(
-                              'assets/images/png/flash_sale.png',
+                              'assets/images/homepage_section/png/flash_sale.png',
                               fit: BoxFit.fill,
                             ),
                           ].map((e) => e).toList(),
@@ -111,10 +114,12 @@ class CoursePromoPage extends StatelessWidget {
                     ),
                     const SizedBox(height: AltaSpacing.space16),
                     AltaText(
-                        context: context,
-                        text: 'Kelas Gratis',
-                        style: AltaTextStyle.headlineH2,
-                        color: AltaColor.black),
+                      context: context,
+                      text: 'Kelas Gratis',
+                      style: AltaTextStyle.title1,
+                      color: AltaColor.black,
+                      fontWeight: CustomFontWeight.bold,
+                    ),
                     const SizedBox(height: AltaSpacing.space16),
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
@@ -124,26 +129,33 @@ class CoursePromoPage extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         children: const [
                           FreeClassBanner(
-                              imgAssets: 'assets/images/png/banner1.png'),
+                              imgAssets:
+                                  'assets/images/homepage_section/png/banner1.png'),
                           SizedBox(width: AltaSpacing.space16),
                           FreeClassBanner(
-                              imgAssets: 'assets/images/png/banner2.png'),
+                              imgAssets:
+                                  'assets/images/homepage_section/png/banner2.png'),
                           SizedBox(width: AltaSpacing.space16),
                           FreeClassBanner(
-                              imgAssets: 'assets/images/png/banner2.png'),
+                              imgAssets:
+                                  'assets/images/homepage_section/png/banner2.png'),
                         ],
                       ),
                     ),
                     const SizedBox(height: AltaSpacing.space16),
                     AltaText(
-                        context: context,
-                        text: 'Promo Lain',
-                        style: AltaTextStyle.headlineH2,
-                        color: AltaColor.black),
+                      context: context,
+                      text: 'Promo Lain',
+                      style: AltaTextStyle.title1,
+                      color: AltaColor.black,
+                      fontWeight: CustomFontWeight.bold,
+                    ),
                     const SizedBox(height: AltaSpacing.space12),
-                    Image.asset('assets/images/png/promo1.png'),
+                    Image.asset(
+                        'assets/images/homepage_section/png/promo1.png'),
                     const SizedBox(height: AltaSpacing.space12),
-                    Image.asset('assets/images/png/promo2.png'),
+                    Image.asset(
+                        'assets/images/homepage_section/png/promo2.png'),
                     const SizedBox(height: AltaSpacing.space12),
                   ],
                 ),
