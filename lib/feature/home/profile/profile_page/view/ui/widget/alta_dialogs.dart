@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../alta_constants.dart';
-import '../alta_widgets.dart';
+import '../../../../../../../utils/alta_constants.dart';
+import '../../../../../../../utils/alta_widgets.dart';
 
 class AltaDialogs extends StatelessWidget {
   const AltaDialogs({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../alta_constants.dart';
-import 'alta_text.dart';
+import '../../../../../../../utils/alta_constants.dart';
+import '../../../../../../../utils/widgets/alta_text.dart';
 
 class AltaProfileComponent extends StatelessWidget {
   final String text;

@@ -22,7 +22,8 @@ class BottomSertificate extends StatelessWidget {
         const SizedBox(width: AltaSpacing.space20),
         InkWell(
             onTap: () {},
-            child: SvgPicture.asset('assets/images/svg/icons/icon_right.svg'))
+            child: SvgPicture.asset(
+                'assets/icon/homepage_section/svg/icon_right.svg'))
       ],
     );
   }

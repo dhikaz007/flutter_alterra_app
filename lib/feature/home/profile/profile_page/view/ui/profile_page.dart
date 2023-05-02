@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../../utils/alta_constants.dart';
 import '../../../../../../utils/alta_widgets.dart';
-import '../../../../../../utils/widgets/alta_dialogs.dart';
+import 'widget/profile_widgets.dart';
 import '../../../my_sertificate/view/ui/my_sertificate.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -41,7 +41,7 @@ class ProfilePage extends StatelessWidget {
                             text: 'Edit Profile',
                             style: AltaTextStyle.title3,
                             iconArrowBlue:
-                                'assets/images/svg/icons/arrow_blue.svg',
+                                'assets/icon/homepage_section/svg/arrow_blue.svg',
                             onTap: () {},
                           ),
                           const SizedBox(height: AltaSpacing.space12),
@@ -65,12 +65,13 @@ class ProfilePage extends StatelessWidget {
                   child: Column(
                     children: [
                       const AltaListProfile(
-                        iconProfiles: 'assets/images/svg/icons/class_icon.svg',
+                        iconProfiles:
+                            'assets/icon/homepage_section/svg/class_icon.svg',
                         text: 'Kelas Saya',
                       ),
                       AltaListProfile(
                         iconProfiles:
-                            'assets/images/svg/icons/sertificate_icon.svg',
+                            'assets/icon/homepage_section/svg/sertificate_icon.svg',
                         onTap: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
@@ -81,7 +82,8 @@ class ProfilePage extends StatelessWidget {
                         text: 'Sertifikat Saya',
                       ),
                       AltaListProfile(
-                        iconProfiles: 'assets/images/svg/icons/about_icon.svg',
+                        iconProfiles:
+                            'assets/icon/homepage_section/svg/about_icon.svg',
                         text: 'Tentang Alterra',
                         onTap: () {},
                       ),
@@ -99,7 +101,7 @@ class ProfilePage extends StatelessWidget {
             child: GestureDetector(
               onTap: () {},
               child: SvgPicture.asset(
-                'assets/images/svg/icons/arrow_white.svg',
+                'assets/icon/homepage_section/svg/arrow_white.svg',
               ),
             ),
           ),

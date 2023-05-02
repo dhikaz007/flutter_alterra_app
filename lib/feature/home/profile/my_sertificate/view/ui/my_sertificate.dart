@@ -17,7 +17,8 @@ class MySertificate extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          icon: SvgPicture.asset('assets/images/svg/icons/arrow_white.svg'),
+          icon: SvgPicture.asset(
+              'assets/icon/homepage_section/svg/arrow_white.svg'),
         ),
         titleSpacing: 0,
         title: AltaText(
@@ -39,7 +40,8 @@ class MySertificate extends StatelessWidget {
               ],
             ),
             const Spacer(flex: 3),
-            Image.asset('assets/images/png/no_sertificate.png'),
+            Image.asset(
+                'assets/images/homepage_section/png/no_sertificate.png'),
             const SizedBox(height: AltaSpacing.space20),
             AltaText(
               context: context,

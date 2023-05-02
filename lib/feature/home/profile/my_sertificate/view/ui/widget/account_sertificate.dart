@@ -11,7 +11,8 @@ class AccountSertificate extends StatelessWidget {
     return Row(
       children: [
         const CircleAvatar(
-          backgroundImage: AssetImage('assets/images/png/profile_avatar.png'),
+          backgroundImage:
+              AssetImage('assets/images/login_section/png/profile_avatar.png'),
           radius: 22,
         ),
         const SizedBox(width: AltaSpacing.space12),

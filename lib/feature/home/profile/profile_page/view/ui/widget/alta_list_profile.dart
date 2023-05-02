@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../alta_widgets.dart';
+import '../../../../../../../utils/alta_widgets.dart';
+import 'profile_widgets.dart';
 
 class AltaListProfile extends StatelessWidget {
   final String iconProfiles;
@@ -28,7 +29,7 @@ class AltaListProfile extends StatelessWidget {
           title: AltaProfileComponent(
               text: text,
               style: AltaTextStyle.title3,
-              iconArrowBlue: 'assets/images/svg/icons/arrow_blue.svg',
+              iconArrowBlue: 'assets/icon/homepage_section/svg/arrow_blue.svg',
               onTap: onTap),
           subtitle: const AltaDivider(),
         ),
