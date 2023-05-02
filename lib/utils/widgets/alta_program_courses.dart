@@ -39,23 +39,27 @@ class AltaProgramCourses extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(width: AltaSpacing.space14),
+                  const SizedBox(width: AltaSpacing.space16),
                   SizedBox(
-                    width: 240,
+                    width: MediaQuery.of(context).size.width * 0.5,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AltaText(
-                            context: context,
-                            text: text,
-                            style: AltaTextStyle.titleH2,
-                            color: AltaColor.black),
+                          context: context,
+                          text: text,
+                          style: AltaTextStyle.title3,
+                          color: AltaColor.black,
+                          fontWeight: CustomFontWeight.semiBold,
+                        ),
                         const SizedBox(height: AltaSpacing.space8),
                         AltaText(
-                            context: context,
-                            text: sub,
-                            style: AltaTextStyle.bodyH4,
-                            color: AltaColor.darkGray),
+                          context: context,
+                          text: sub,
+                          style: AltaTextStyle.body3,
+                          color: AltaColor.darkGray,
+                          fontWeight: CustomFontWeight.normal,
+                        ),
                       ],
                     ),
                   )

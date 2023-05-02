@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../utils/alta_constants.dart';
-import '../../../../utils/alta_widgets.dart';
-import '../../../../utils/widgets/alta_dialogs.dart';
+import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_widgets.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -21,7 +20,7 @@ class ProfilePage extends StatelessWidget {
             child: Column(
               children: [
                 const AltaHeaderProfile(),
-                const SizedBox(height: AltaSpacing.space43),
+                const SizedBox(height: AltaSpacing.space44),
                 Padding(
                   padding: const EdgeInsets.only(left: 16, right: 16),
                   child: Card(
@@ -38,19 +37,21 @@ class ProfilePage extends StatelessWidget {
                         children: [
                           AltaProfileComponent(
                             text: 'Edit Profile',
-                            style: AltaTextStyle.titleH2,
+                            style: AltaTextStyle.title3,
                             iconArrowBlue:
-                                'assets/images/svg/icons/arrow_blue.svg',
+                                'assets/icon/homepage_section/svg/arrow_blue.svg',
                             onTap: () {},
                           ),
                           const SizedBox(height: AltaSpacing.space12),
                           const AltaDivider(),
                           const SizedBox(height: AltaSpacing.space12),
                           AltaText(
-                              context: context,
-                              text: 'Lengkapi data diri Anda',
-                              style: AltaTextStyle.bodyH1,
-                              color: AltaColor.darkGray),
+                            context: context,
+                            text: 'Lengkapi data diri Anda',
+                            style: AltaTextStyle.body1,
+                            color: AltaColor.darkGray,
+                            fontWeight: CustomFontWeight.medium,
+                          ),
                         ],
                       ),
                     ),
@@ -62,16 +63,18 @@ class ProfilePage extends StatelessWidget {
                   child: Column(
                     children: const [
                       AltaListProfile(
-                        iconProfiles: 'assets/images/svg/icons/class_icon.svg',
+                        iconProfiles:
+                            'assets/icon/homepage_section/svg/class_icon.svg',
                         text: 'Kelas Saya',
                       ),
                       AltaListProfile(
                         iconProfiles:
-                            'assets/images/svg/icons/sertificate_icon.svg',
+                            'assets/icon/homepage_section/svg/sertificate_icon.svg',
                         text: 'Sertifikat Saya',
                       ),
                       AltaListProfile(
-                        iconProfiles: 'assets/images/svg/icons/about_icon.svg',
+                        iconProfiles:
+                            'assets/icon/homepage_section/svg/about_icon.svg',
                         text: 'Tentang Alterra',
                       ),
                     ],
@@ -88,7 +91,7 @@ class ProfilePage extends StatelessWidget {
             child: GestureDetector(
               onTap: () {},
               child: SvgPicture.asset(
-                'assets/images/svg/icons/arrow_white.svg',
+                'assets/icon/homepage_section/svg/arrow_white.svg',
               ),
             ),
           ),
@@ -110,12 +113,14 @@ class ProfilePage extends StatelessWidget {
                   },
                   borderRadius: AltaBorderRadius.radius10,
                   paddingHorizontal: AltaSpacing.space28,
-                  paddingVertical: AltaSpacing.space18,
+                  paddingVertical: AltaSpacing.space16,
                   child: AltaText(
-                      context: context,
-                      text: 'Keluar',
-                      style: AltaTextStyle.titleH1,
-                      color: AltaColor.white),
+                    context: context,
+                    text: 'Keluar',
+                    style: AltaTextStyle.title2,
+                    color: AltaColor.white,
+                    fontWeight: CustomFontWeight.bold,
+                  ),
                 ),
               ),
             ],

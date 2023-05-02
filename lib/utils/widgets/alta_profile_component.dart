@@ -22,10 +22,12 @@ class AltaProfileComponent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         AltaText(
-            context: context,
-            text: text,
-            style: style,
-            color: AltaColor.darkBlue),
+          context: context,
+          text: text,
+          style: style,
+          color: AltaColor.darkBlue,
+          fontWeight: CustomFontWeight.semiBold,
+        ),
         InkWell(
           onTap: onTap,
           child: SvgPicture.asset(iconArrowBlue),

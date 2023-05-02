@@ -18,7 +18,8 @@ class AltaHeaderProfile extends StatelessWidget {
           backgroundColor: AltaColor.tangerine,
           radius: 62,
           child: CircleAvatar(
-            backgroundImage: AssetImage('assets/images/png/profile_avatar.png'),
+            backgroundImage: AssetImage(
+                'assets/images/login_section/png/profile_avatar.png'),
             radius: 60,
           ),
         ),
@@ -26,14 +27,16 @@ class AltaHeaderProfile extends StatelessWidget {
         AltaText(
           context: context,
           text: 'Nahdy Dailamy Batewa',
-          style: AltaTextStyle.titleH2,
+          style: AltaTextStyle.title3,
           color: AltaColor.white,
+          fontWeight: CustomFontWeight.semiBold,
         ),
         AltaText(
           context: context,
           text: 'nadewa@alterra.com',
-          style: AltaTextStyle.bodyH2,
+          style: AltaTextStyle.body1,
           color: AltaColor.white,
+          fontWeight: CustomFontWeight.medium,
         ),
       ],
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'feature/profile_page/view/ui/profile_page.dart';
+import 'feature/home/profile_page/view/ui/profile_page.dart';
 
 void main() {
   runApp(const MyApp());

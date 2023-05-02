@@ -6,8 +6,9 @@ import '../alta_widgets.dart';
 class AltaListProfile extends StatelessWidget {
   final String iconProfiles;
   final String text;
+  final VoidCallback? onTap;
   const AltaListProfile(
-      {super.key, required this.iconProfiles, required this.text});
+      {super.key, required this.iconProfiles, required this.text, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +27,9 @@ class AltaListProfile extends StatelessWidget {
           ),
           title: AltaProfileComponent(
               text: text,
-              style: AltaTextStyle.titleH2,
-              iconArrowBlue: 'assets/images/svg/icons/arrow_blue.svg'),
+              style: AltaTextStyle.title3,
+              iconArrowBlue: 'assets/icon/homepage_section/svg/arrow_blue.svg',
+              onTap: onTap),
           subtitle: const AltaDivider(),
         ),
       ],
