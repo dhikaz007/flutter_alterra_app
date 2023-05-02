@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../utils/alta_constants.dart';
-import '../../../../utils/alta_widgets.dart';
-import '../../../../utils/widgets/alta_program_courses.dart';
+import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_widgets.dart';
 
 class HomePage extends StatelessWidget {
   final ScrollController? scrollController;
@@ -27,8 +26,8 @@ class HomePage extends StatelessWidget {
                 Row(
                   children: [
                     const CircleAvatar(
-                      backgroundImage:
-                          AssetImage('assets/images/png/profile_avatar.png'),
+                      backgroundImage: AssetImage(
+                          'assets/images/login_section/png/profile_avatar.png'),
                     ),
                     const SizedBox(width: AltaSpacing.space12),
                     Column(
@@ -37,26 +36,28 @@ class HomePage extends StatelessWidget {
                         AltaText(
                           context: context,
                           text: 'Nahdy Dailamy Batewa',
-                          style: AltaTextStyle.titleH2,
+                          style: AltaTextStyle.title3,
                           color: AltaColor.white,
+                          fontWeight: CustomFontWeight.bold,
                         ),
                         AltaText(
                           context: context,
                           text: 'nadewa@alterra.com',
-                          style: AltaTextStyle.bodyH2,
+                          style: AltaTextStyle.body2,
                           color: AltaColor.white,
+                          fontWeight: CustomFontWeight.normal,
                         ),
                       ],
                     ),
                   ],
                 ),
-                const SizedBox(height: AltaSpacing.space23),
+                const SizedBox(height: AltaSpacing.space24),
                 const AltaSearchWidget(
                   filled: true,
                   prefixIcon: Icon(Icons.search),
                   hintText: 'Search',
                 ),
-                const SizedBox(height: AltaSpacing.space18),
+                const SizedBox(height: AltaSpacing.space20),
                 Center(
                   child: SizedBox(
                     height: 163,
@@ -64,13 +65,13 @@ class HomePage extends StatelessWidget {
                     child: InkWell(
                       onTap: () {},
                       child: Image.asset(
-                        'assets/images/png/flash_sale.png',
+                        'assets/images/homepage_section/png/flash_sale.png',
                         fit: BoxFit.fill,
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(height: AltaSpacing.space18),
+                const SizedBox(height: AltaSpacing.space20),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Column(
@@ -79,9 +80,10 @@ class HomePage extends StatelessWidget {
                         AltaText(
                             context: context,
                             text: 'Courses',
-                            style: AltaTextStyle.titleH2,
-                            color: AltaColor.black),
-                        const SizedBox(height: AltaSpacing.space16),
+                            style: AltaTextStyle.title3,
+                            color: AltaColor.black,
+                            fontWeight: CustomFontWeight.bold),
+                        const SizedBox(height: AltaSpacing.space20),
                         SizedBox(
                           width: MediaQuery.of(context).size.width,
                           height: 198,
@@ -90,44 +92,51 @@ class HomePage extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             children: const [
                               AltaFeatureCourses(
-                                assetsCourse: 'assets/images/png/ui_ux.png',
+                                assetsCourse:
+                                    'assets/images/homepage_section/png/ui_ux.png',
                                 textCourse: 'Program Flexi UI/UX',
                                 textDetail: 'Selengkapnya',
                               ),
                               SizedBox(width: AltaSpacing.space12),
                               AltaFeatureCourses(
-                                assetsCourse: 'assets/images/png/flutter.png',
+                                assetsCourse:
+                                    'assets/images/homepage_section/png/flutter.png',
                                 textCourse: 'Program Flexi Flutter',
                                 textDetail: 'Selengkapnya',
                               ),
                             ],
                           ),
                         ),
-                        const SizedBox(height: AltaSpacing.space18),
+                        const SizedBox(height: AltaSpacing.space20),
                         AltaText(
-                            context: context,
-                            text: 'Program Alterra Academy',
-                            style: AltaTextStyle.titleH2,
-                            color: AltaColor.black),
-                        const SizedBox(height: AltaSpacing.space18),
+                          context: context,
+                          text: 'Program Alterra Academy',
+                          style: AltaTextStyle.title3,
+                          color: AltaColor.black,
+                          fontWeight: CustomFontWeight.bold,
+                        ),
+                        const SizedBox(height: AltaSpacing.space20),
                         Column(
                           children: const [
                             AltaProgramCourses(
-                              svgPicture: 'assets/images/png/immersive.png',
+                              svgPicture:
+                                  'assets/icon/homepage_section/png/immersive.png',
                               text: 'Immersive Program',
                               sub:
                                   'Raih karir impianmu sebagai Software Engineer tanpa merasa khawatir soal biaya. Bayar biaya program setelah dapat kerja!',
                             ),
                             SizedBox(height: AltaSpacing.space16),
                             AltaProgramCourses(
-                              svgPicture: 'assets/images/png/flexi_program.png',
+                              svgPicture:
+                                  'assets/icon/homepage_section/png/flexi_program.png',
                               text: 'Flexi Program',
                               sub:
                                   'Bootcamp dengan waktu belajar yang flexible, solusi untuk kamu yang masih bekerja dan mempunyai kegiatan rutin tetapi ingin pindah karir di Bidang Digital.',
                             ),
                             SizedBox(height: AltaSpacing.space16),
                             AltaProgramCourses(
-                              svgPicture: 'assets/images/png/alta_id.png',
+                              svgPicture:
+                                  'assets/icon/homepage_section/png/alta_id.png',
                               text: 'ALTA.id | Online\nLearning Platform',
                               sub:
                                   'Alta.id merupakan platform pembelajaran untuk kalian yang ingin menjadi engineer berkualitas. Setiap kelas dapat diakses kapan saja dengan format belajar hybrid.',

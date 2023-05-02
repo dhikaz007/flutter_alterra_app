@@ -4,10 +4,11 @@ import 'package:flutter_svg/svg.dart';
 import '../alta_widgets.dart';
 
 class AltaListProfile extends StatelessWidget {
-  final String svgPicture;
+  final String iconProfiles;
   final String text;
+  final VoidCallback? onTap;
   const AltaListProfile(
-      {super.key, required this.svgPicture, required this.text});
+      {super.key, required this.iconProfiles, required this.text, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +21,15 @@ class AltaListProfile extends StatelessWidget {
           dense: true,
           minLeadingWidth: 8,
           leading: SvgPicture.asset(
-            svgPicture,
+            iconProfiles,
             width: 24,
             height: 24,
           ),
-          title: AltaProfileComponent(text: text, style: AltaTextStyle.titleH2),
+          title: AltaProfileComponent(
+              text: text,
+              style: AltaTextStyle.title3,
+              iconArrowBlue: 'assets/images/svg/icons/arrow_blue.svg',
+              onTap: onTap),
           subtitle: const AltaDivider(),
         ),
       ],

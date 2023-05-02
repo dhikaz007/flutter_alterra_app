@@ -2,8 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/alta_constants.dart';
-import '../../../../../utils/alta_widgets.dart';
+import '../../../../../utils/widgets/alta_scaffold.dart';
+import '../../../../../utils/widgets/alta_text.dart';
+import '../../../../../utils/constant/alta_color.dart';
+import '../../../../../utils/constant/alta_spacing.dart';
+import '../../../../../utils/widgets/alta_splash_background.dart';
+import '../../../../../utils/widgets/alta_logo.dart';
 
 import 'login_page.dart';
 
@@ -21,12 +25,12 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
   }
 
-  _startSplashPage() {
-    var duration = const Duration(seconds: 2);
-    return Timer(
-      duration,
-      () => Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => const LoginPage())),
+  void _startSplashPage() {
+    Timer(
+      const Duration(seconds: 2),
+      () => Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const LoginPage(),
+      )),
     );
   }
 
@@ -35,19 +39,23 @@ class _SplashPageState extends State<SplashPage> {
     return Stack(
       children: [
         const AltaSplashBackground(),
-        Scaffold(
-          backgroundColor: Colors.transparent,
-          body: Stack(
+        AltaScaffold(
+          scaffoldColor: Colors.transparent,
+          isAppbar: AppBarVisibility.off,
+          body: Column(
             children: [
+              const Spacer(flex: 1),
               const Align(
                 alignment: Alignment.center,
                 child: AltaLogo(
-                  imgPath: 'assets/images/png/alterra_white_logo.png',
+                  imgPath:
+                      'assets/images/login_section/png/alterra_white_logo.png',
                   width: 267,
                   height: 161,
                   alignment: Alignment.center,
                 ),
               ),
+              const Spacer(flex: 1),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
@@ -55,7 +63,8 @@ class _SplashPageState extends State<SplashPage> {
                   child: AltaText(
                     context: context,
                     text: 'Copyright by Flexiclass\n@2023',
-                    style: AltaTextStyle.bodyH2,
+                    style: AltaTextStyle.body2,
+                    fontWeight: CustomFontWeight.normal,
                     color: AltaColor.white,
                     textAlign: TextAlign.center,
                   ),
