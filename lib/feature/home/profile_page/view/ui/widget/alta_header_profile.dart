@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../alta_constants.dart';
-import 'alta_text.dart';
+import '../../../../../../utils/alta_constants.dart';
+import '../../../../../../utils/alta_widgets.dart';
 
 class AltaHeaderProfile extends StatelessWidget {
   const AltaHeaderProfile({super.key});

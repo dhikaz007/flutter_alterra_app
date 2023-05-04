@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constant/alta_border_radius.dart';
-import '../constant/alta_color.dart';
-import 'alta_circle_widget.dart';
+import '../../../../../../utils/alta_constants.dart';
+import '../../../../../../utils/alta_widgets.dart';
 
 class AltaEditProfileBackground extends StatelessWidget {
   const AltaEditProfileBackground({super.key});

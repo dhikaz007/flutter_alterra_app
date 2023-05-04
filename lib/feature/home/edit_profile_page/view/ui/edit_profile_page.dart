@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../utils/alta_constants.dart';
 import '../../../../../utils/alta_widgets.dart';
-import '../widget/account_setting_list.dart';
+import 'widget/edit_profile_widgets.dart';
 
 class EditProfilePage extends StatelessWidget {
   const EditProfilePage({super.key});

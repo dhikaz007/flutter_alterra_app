@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../utils/alta_constants.dart';
 import '../../../../../utils/alta_widgets.dart';
 import '../../../edit_profile_page/view/ui/edit_profile_page.dart';
+import 'widget/profile_widgets.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
