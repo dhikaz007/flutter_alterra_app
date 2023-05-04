@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constant/alta_color.dart';
+import '../../../../../../utils/constant/alta_color.dart';
 
 class AltaDivider extends StatelessWidget {
   const AltaDivider({super.key});

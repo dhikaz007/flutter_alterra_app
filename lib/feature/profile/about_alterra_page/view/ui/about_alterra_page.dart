@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/feature/profile/about_alterra_page/view/ui/widget/about_bottom_widget.dart';
-import 'package:flutter_alterra_app/feature/profile/about_alterra_page/view/ui/widget/contribute_widget.dart';
-import 'package:flutter_alterra_app/feature/profile/about_alterra_page/view/ui/widget/detail_text.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../utils/alta_constants.dart';
 import '../../../../../utils/alta_widgets.dart';
+import '../../../about_alterra_page/view/ui/widget/about_widgets.dart';
 
 class AboutAlterraPage extends StatelessWidget {
   const AboutAlterraPage({super.key});
@@ -32,21 +30,23 @@ class AboutAlterraPage extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.only(
-                  left: 20, bottom: 11, top: 33, right: 20),
+                  left: 20, bottom: 11, top: 30, right: 20),
               child: Row(
                 children: [
-                  InkWell(
+                  GestureDetector(
                       onTap: () {
                         Navigator.of(context).pop();
                       },
                       child: SvgPicture.asset(
-                          'assets/images/svg/icons/arrow_left_blue.svg')),
-                  const SizedBox(width: AltaSpacing.space28),
+                          'assets/icon/homepage_section/svg/arrow_left_blue.svg')),
+                  const SizedBox(width: AltaSpacing.space16),
                   AltaText(
-                      context: context,
-                      text: 'Tentang Alterra',
-                      style: AltaTextStyle.headlineH2,
-                      color: AltaColor.darkBlue),
+                    context: context,
+                    text: 'Tentang Alterra',
+                    style: AltaTextStyle.title1,
+                    color: AltaColor.darkBlue,
+                    fontWeight: CustomFontWeight.bold,
+                  ),
                 ],
               ),
             ),
@@ -60,20 +60,22 @@ class AboutAlterraPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(height: AltaSpacing.space26),
+                        const SizedBox(height: AltaSpacing.space28),
                         Center(
                           child: Image.asset(
-                            'assets/images/png/alterra_blue_logo.png',
+                            'assets/images/login_section/png/alterra_blue_logo.png',
                             width: 280,
                             height: 169,
                           ),
                         ),
-                        const SizedBox(height: AltaSpacing.space26),
+                        const SizedBox(height: AltaSpacing.space28),
                         AltaText(
-                            context: context,
-                            text: 'About Us.',
-                            style: AltaTextStyle.headlineH2,
-                            color: AltaColor.black),
+                          context: context,
+                          text: 'About Us.',
+                          style: AltaTextStyle.title1,
+                          color: AltaColor.black,
+                          fontWeight: CustomFontWeight.medium,
+                        ),
                         const SizedBox(height: AltaSpacing.space4),
                         SizedBox(
                           width: 292,
@@ -81,8 +83,9 @@ class AboutAlterraPage extends StatelessWidget {
                             context: context,
                             text:
                                 'Alterra Academy adalah wadah transformasi digital\nuntuk semua orang Indonesia untuk menjadi Talenta\nDigital dengan kualitas terbaik di Industri saat ini.',
-                            style: AltaTextStyle.bodyH2,
+                            style: AltaTextStyle.body2,
                             color: AltaColor.black.withOpacity(0.8),
+                            fontWeight: CustomFontWeight.light,
                           ),
                         ),
                         const SizedBox(height: AltaSpacing.space16),
@@ -94,22 +97,26 @@ class AboutAlterraPage extends StatelessWidget {
                           paddingHorizontal: 10,
                           onPressed: () {},
                           child: AltaText(
-                              context: context,
-                              text: 'Learn More',
-                              style: AltaTextStyle.bodyH1,
-                              color: AltaColor.white),
+                            context: context,
+                            text: 'Learn More',
+                            style: AltaTextStyle.body1,
+                            color: AltaColor.white,
+                            fontWeight: CustomFontWeight.medium,
+                          ),
                         ),
                         const SizedBox(height: AltaSpacing.space24),
                         SizedBox(
                           width: 290,
                           child: AltaText(
-                              context: context,
-                              text:
-                                  'Kontribusi Kami dalam Bidang Teknologi di Indonesia',
-                              style: AltaTextStyle.headlineH2,
-                              color: AltaColor.black),
+                            context: context,
+                            text:
+                                'Kontribusi Kami dalam Bidang Teknologi di Indonesia',
+                            style: AltaTextStyle.title1,
+                            color: AltaColor.black,
+                            fontWeight: CustomFontWeight.medium,
+                          ),
                         ),
-                        const SizedBox(height: AltaSpacing.space26),
+                        const SizedBox(height: AltaSpacing.space28),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -120,7 +127,8 @@ class AboutAlterraPage extends StatelessWidget {
                                 sub: 'Pendaftar Program',
                               ),
                             ),
-                            Image.asset('assets/images/png/line.png'),
+                            Image.asset(
+                                'assets/icon/homepage_section/png/line.png'),
                             const SizedBox(
                               width: 131,
                               child: ContributeWidget(
@@ -146,7 +154,8 @@ class AboutAlterraPage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Image.asset('assets/images/png/line.png'),
+                            Image.asset(
+                                'assets/icon/homepage_section/png/line.png'),
                             const SizedBox(
                               width: 131,
                               child: ContributeWidget(
@@ -158,11 +167,13 @@ class AboutAlterraPage extends StatelessWidget {
                         ),
                         const SizedBox(height: AltaSpacing.space20),
                         AltaText(
-                            context: context,
-                            text: 'Mengapa Belajar\ndi Alterra Academy?',
-                            style: AltaTextStyle.headlineH2,
-                            color: AltaColor.black),
-                        const SizedBox(height: AltaSpacing.space10),
+                          context: context,
+                          text: 'Mengapa Belajar\ndi Alterra Academy?',
+                          style: AltaTextStyle.title1,
+                          color: AltaColor.black,
+                          fontWeight: CustomFontWeight.medium,
+                        ),
+                        const SizedBox(height: AltaSpacing.space12),
                         const DetailText(),
                       ],
                     ),

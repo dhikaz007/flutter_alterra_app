@@ -1,13 +1,9 @@
-export './widgets/alta_circle_widget.dart';
-export './widgets/alta_divider.dart';
-export './widgets/alta_feature_courses.dart';
-export './widgets/alta_header_profile.dart';
+export 'widgets/alta_circle_widget.dart';
+export '../feature/profile/profile_page/view/ui/widget/alta_divider.dart';
 export './widgets/alta_homepage_background.dart';
-export './widgets/alta_list_profile.dart';
 export './widgets/alta_login_background.dart';
 export './widgets/alta_logo.dart';
 export './widgets/alta_primary_button.dart';
-export './widgets/alta_profile_component.dart';
 export './widgets/alta_search_widget.dart';
 export './widgets/alta_splash_background.dart';
 export './widgets/alta_text.dart';

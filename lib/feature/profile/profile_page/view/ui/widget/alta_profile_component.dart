@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../alta_constants.dart';
-import 'alta_text.dart';
+import '../../../../../../../utils/alta_constants.dart';
+import '../../../../../../../utils/widgets/alta_text.dart';
 
 class AltaProfileComponent extends StatelessWidget {
   final String text;
@@ -22,11 +22,13 @@ class AltaProfileComponent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         AltaText(
-            context: context,
-            text: text,
-            style: style,
-            color: AltaColor.darkBlue),
-        InkWell(
+          context: context,
+          text: text,
+          style: style,
+          color: AltaColor.darkBlue,
+          fontWeight: CustomFontWeight.semiBold,
+        ),
+        GestureDetector(
           onTap: onTap,
           child: SvgPicture.asset(iconArrowBlue),
         ),

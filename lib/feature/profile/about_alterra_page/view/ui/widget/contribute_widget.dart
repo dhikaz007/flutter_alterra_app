@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../utils/alta_constants.dart';
+import '../../../../../../utils/alta_widgets.dart';
 
 class ContributeWidget extends StatelessWidget {
   final String title;
@@ -11,22 +12,20 @@ class ContributeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          title,
-          style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w500,
-              color: AltaColor.darkBlue),
-        ),
+        AltaText(
+            context: context,
+            text: title,
+            style: AltaTextStyle.headline2,
+            fontWeight: CustomFontWeight.medium,
+            color: AltaColor.darkBlue),
         const SizedBox(height: AltaSpacing.space20),
-        Text(
-          sub,
-          style: const TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w300,
-              color: AltaColor.darkBlue),
-          textAlign: TextAlign.center,
-        ),
+        AltaText(
+            context: context,
+            text: sub,
+            style: AltaTextStyle.body2,
+            fontWeight: CustomFontWeight.light,
+            color: AltaColor.darkBlue,
+            textAlign: TextAlign.center),
       ],
     );
   }
