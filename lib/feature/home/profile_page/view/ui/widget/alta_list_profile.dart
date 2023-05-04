@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../alta_widgets.dart';
+import '../../../../../../utils/alta_widgets.dart';
+import 'profile_widgets.dart';
 
 class AltaListProfile extends StatelessWidget {
   final String iconProfiles;
