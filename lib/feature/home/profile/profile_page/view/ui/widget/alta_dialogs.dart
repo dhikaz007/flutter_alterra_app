@@ -16,69 +16,67 @@ class AltaDialogs extends StatelessWidget {
           height: 168,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20), color: AltaColor.white),
-          child: Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                AltaText(
-                  context: context,
-                  text: 'Yakin Untuk Keluar?',
-                  style: AltaTextStyle.body1,
-                  color: AltaColor.darkBlue,
-                  fontWeight: CustomFontWeight.semiBold,
-                ),
-                const SizedBox(height: AltaSpacing.space20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    AltaPrimaryButton(
-                      onPressed: () {},
-                      borderRadius: AltaBorderRadius.radius10,
-                      paddingVertical: AltaSpacing.space12,
-                      paddingHorizontal: AltaSpacing.space28,
-                      side: MaterialStateProperty.all(
-                          const BorderSide(color: AltaColor.tangerine)),
-                      backgroundColor:
-                          MaterialStateProperty.resolveWith((states) {
-                        if (states.contains(MaterialState.pressed)) {
-                          return AltaColor.tangerine;
-                        }
-                        return AltaColor.white;
-                      }),
-                      child: AltaText(
-                        context: context,
-                        text: 'Ya',
-                        style: AltaTextStyle.body1,
-                        color: AltaColor.black,
-                        fontWeight: CustomFontWeight.medium,
-                      ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              AltaText(
+                context: context,
+                text: 'Yakin Untuk Keluar?',
+                style: AltaTextStyle.body1,
+                color: AltaColor.darkBlue,
+                fontWeight: CustomFontWeight.semiBold,
+              ),
+              const SizedBox(height: AltaSpacing.space20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  AltaPrimaryButton(
+                    onPressed: () {},
+                    borderRadius: AltaBorderRadius.radius10,
+                    paddingVertical: AltaSpacing.space12,
+                    paddingHorizontal: AltaSpacing.space28,
+                    side: MaterialStateProperty.all(
+                        const BorderSide(color: AltaColor.tangerine)),
+                    backgroundColor:
+                        MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.pressed)) {
+                        return AltaColor.tangerine;
+                      }
+                      return AltaColor.white;
+                    }),
+                    child: AltaText(
+                      context: context,
+                      text: 'Ya',
+                      style: AltaTextStyle.body1,
+                      color: AltaColor.black,
+                      fontWeight: CustomFontWeight.medium,
                     ),
-                    AltaPrimaryButton(
-                      onPressed: () {},
-                      borderRadius: AltaBorderRadius.radius10,
-                      paddingVertical: AltaSpacing.space12,
-                      paddingHorizontal: AltaSpacing.space16,
-                      side: MaterialStateProperty.all(
-                          const BorderSide(color: AltaColor.tangerine)),
-                      backgroundColor:
-                          MaterialStateProperty.resolveWith((states) {
-                        if (states.contains(MaterialState.pressed)) {
-                          return AltaColor.tangerine;
-                        }
-                        return AltaColor.white;
-                      }),
-                      child: AltaText(
-                        context: context,
-                        text: 'Tidak',
-                        style: AltaTextStyle.body1,
-                        color: AltaColor.black,
-                        fontWeight: CustomFontWeight.medium,
-                      ),
+                  ),
+                  AltaPrimaryButton(
+                    onPressed: () {},
+                    borderRadius: AltaBorderRadius.radius10,
+                    paddingVertical: AltaSpacing.space12,
+                    paddingHorizontal: AltaSpacing.space16,
+                    side: MaterialStateProperty.all(
+                        const BorderSide(color: AltaColor.tangerine)),
+                    backgroundColor:
+                        MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.pressed)) {
+                        return AltaColor.tangerine;
+                      }
+                      return AltaColor.white;
+                    }),
+                    child: AltaText(
+                      context: context,
+                      text: 'Tidak',
+                      style: AltaTextStyle.body1,
+                      color: AltaColor.black,
+                      fontWeight: CustomFontWeight.medium,
                     ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),

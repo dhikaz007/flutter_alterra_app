@@ -28,7 +28,7 @@ class AltaProfileComponent extends StatelessWidget {
           color: AltaColor.darkBlue,
           fontWeight: CustomFontWeight.semiBold,
         ),
-        InkWell(
+        GestureDetector(
           onTap: onTap,
           child: SvgPicture.asset(iconArrowBlue),
         ),

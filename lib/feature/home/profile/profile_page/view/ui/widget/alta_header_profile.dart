@@ -23,7 +23,7 @@ class AltaHeaderProfile extends StatelessWidget {
             radius: 60,
           ),
         ),
-        const SizedBox(width: AltaSpacing.space12),
+        const SizedBox(height: AltaSpacing.space4),
         AltaText(
           context: context,
           text: 'Nahdy Dailamy Batewa',

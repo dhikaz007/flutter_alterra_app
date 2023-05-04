@@ -20,7 +20,7 @@ class BottomSertificate extends StatelessWidget {
           fontWeight: CustomFontWeight.light,
         ),
         const SizedBox(width: AltaSpacing.space20),
-        InkWell(
+        GestureDetector(
             onTap: () {},
             child: SvgPicture.asset(
                 'assets/icon/homepage_section/svg/icon_right.svg'))
