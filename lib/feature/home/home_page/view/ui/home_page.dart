@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../utils/alta_constants.dart';
 import '../../../../../utils/alta_widgets.dart';
 import '../../../course_promo_page/view/ui/course_promo_page.dart';
+import 'widget/homepage_widgets.dart';
 
 class HomePage extends StatelessWidget {
   final ScrollController? scrollController;
@@ -63,7 +64,7 @@ class HomePage extends StatelessWidget {
                   child: SizedBox(
                     height: 163,
                     width: MediaQuery.of(context).size.width,
-                    child: InkWell(
+                    child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (_) => const CoursePromoPage()));

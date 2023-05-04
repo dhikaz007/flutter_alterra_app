@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../alta_constants.dart';
-import '../alta_widgets.dart';
+import '../../../../../../utils/alta_constants.dart';
+import '../../../../../../utils/alta_widgets.dart';
 
 class AltaProgramCourses extends StatelessWidget {
   final String svgPicture;
@@ -15,7 +15,7 @@ class AltaProgramCourses extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {},
       child: Card(
         elevation: 2,

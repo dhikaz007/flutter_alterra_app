@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../alta_constants.dart';
-import '../alta_widgets.dart';
+import '../../../../../../utils/alta_constants.dart';
+import '../../../../../../utils/alta_widgets.dart';
 
 class AltaFeatureCourses extends StatelessWidget {
   final String textCourse;
@@ -42,7 +42,7 @@ class AltaFeatureCourses extends StatelessWidget {
               fontWeight: CustomFontWeight.bold,
             ),
             const SizedBox(height: AltaSpacing.space8),
-            InkWell(
+            GestureDetector(
               onTap: () {},
               child: Row(
                 children: [

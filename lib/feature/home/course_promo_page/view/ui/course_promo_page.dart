@@ -26,7 +26,7 @@ class CoursePromoPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 24),
               child: Row(
                 children: [
-                  InkWell(
+                  GestureDetector(
                       onTap: () {
                         Navigator.of(context).pop();
                       },
