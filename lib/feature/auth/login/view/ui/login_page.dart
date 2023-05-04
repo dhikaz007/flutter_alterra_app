@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../../../utils/widgets/alta_svg.dart';
-import '../../../../../utils/widgets/alta_scaffold.dart';
-import '../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/widgets/alta_login_background.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_logo.dart';
-import '../../../../../utils/widgets/alta_primary_button.dart';
-import '../../../../../utils/widgets/alta_text_button.dart';
-import '../../../../../utils/widgets/alta_text_field.dart';
+import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_widgets.dart';
 import '../../../../home/home_page/view/ui/home_page.dart';
 import '../../../register/view/ui/register_page.dart';
 import '../../../forgot_password/view/ui/forgot_password_page.dart';
@@ -221,8 +211,8 @@ class LoginPage extends StatelessWidget {
                         AltaText(
                           context: context,
                           text: 'Belum punya akun?',
-                          style: AltaTextStyle.title2,
-                          fontWeight: CustomFontWeight.semiBold,
+                          style: AltaTextStyle.title3,
+                          fontWeight: CustomFontWeight.normal,
                           color: AltaColor.black,
                         ),
                         TextButton(

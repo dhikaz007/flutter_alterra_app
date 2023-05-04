@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../utils/alta_constants.dart';
 import '../../../../../utils/alta_widgets.dart';
+import 'widget/homepage_widgets.dart';
 
 class HomePage extends StatelessWidget {
   final ScrollController? scrollController;

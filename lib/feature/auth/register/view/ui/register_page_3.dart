@@ -3,13 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../login/view/ui/login_page.dart';
-import '../../../../../utils/widgets/alta_scaffold.dart';
-import '../../../../../utils/widgets/alta_text_button.dart';
-import '../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_primary_button.dart';
+import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_widgets.dart';
 
 class RegisterPage3 extends StatefulWidget {
   final String email;
