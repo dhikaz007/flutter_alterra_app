@@ -10,7 +10,7 @@ import 'home/profile_page/view/ui/profile_page.dart';
 
 class RootApp extends StatelessWidget {
   const RootApp({super.key});
-
+  static const String route = "rootPage";
   static final ScrollController _scrollController = ScrollController();
 
   static final List<Widget> _widgetOptions = [

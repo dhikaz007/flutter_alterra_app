@@ -4,8 +4,17 @@ import 'register_page_3.dart';
 import '../../../../../utils/alta_constants.dart';
 import '../../../../../utils/alta_widgets.dart';
 
-class RegisterPage2 extends StatelessWidget {
+class RegisterPage2 extends StatefulWidget {
   const RegisterPage2({Key? key}) : super(key: key);
+
+  @override
+  State<RegisterPage2> createState() => _RegisterPage2State();
+}
+
+class _RegisterPage2State extends State<RegisterPage2> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  bool loading = false;
 
   @override
   Widget build(BuildContext context) {

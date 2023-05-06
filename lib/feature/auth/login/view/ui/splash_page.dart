@@ -13,6 +13,7 @@ import 'login_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
+  static const String route = "splashPage";
 
   @override
   State<SplashPage> createState() => _SplashPageState();

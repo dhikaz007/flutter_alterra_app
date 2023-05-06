@@ -12,6 +12,7 @@ import 'forgot_password_page_2.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({Key? key}) : super(key: key);
+  static const String route = "forgotPasswordPage";
 
   @override
   Widget build(BuildContext context) {
