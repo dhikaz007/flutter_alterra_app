@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_alterra_app/feature/home/immersive_page/view/ui/immersive_page.dart';
-
 import 'feature/auth/login/view/ui/splash_page.dart';
 
 void main() {
@@ -18,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Inter',
       ),
-      home: const ImmersivePage(),
+      home: const SplashPage(),
     );
   }
 }

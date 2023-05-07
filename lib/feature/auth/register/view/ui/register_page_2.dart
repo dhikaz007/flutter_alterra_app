@@ -69,6 +69,8 @@ class RegisterPage2 extends StatelessWidget {
                   valueListenable: name,
                   builder: (context, nameValue, _) => AltaTextField(
                     hintText: 'Masukkan nama lengkap anda',
+                    borderRadius: 8,
+                    borderSide: const BorderSide(color: AltaColor.gray),
                     onChanged: (value) {
                       name.value = value;
                       if (name.value.isNotEmpty &&
@@ -94,6 +96,8 @@ class RegisterPage2 extends StatelessWidget {
                   valueListenable: pass,
                   builder: (context, passValue, _) => AltaTextField(
                     hintText: 'Masukkan kata sandi',
+                    borderRadius: 8,
+                    borderSide: const BorderSide(color: AltaColor.gray),
                     obscureText: true,
                     onChanged: (value) {
                       pass.value = value;
@@ -120,6 +124,8 @@ class RegisterPage2 extends StatelessWidget {
                   valueListenable: confirmPass,
                   builder: (context, confirmPassValue, _) => AltaTextField(
                     hintText: 'Masukkan konfirmasi kata sandi',
+                    borderRadius: 8,
+                    borderSide: const BorderSide(color: AltaColor.gray),
                     obscureText: true,
                     onChanged: (value) {
                       confirmPass.value = value;
