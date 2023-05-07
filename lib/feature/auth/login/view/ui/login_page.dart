@@ -11,6 +11,7 @@ import '../../../../../utils/widgets/alta_logo.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
 import '../../../../../utils/widgets/alta_text_button.dart';
 import '../../../../../utils/widgets/alta_text_field.dart';
+
 import '../../../../home/home_page/view/ui/home_page.dart';
 import '../../../register/view/ui/register_page.dart';
 import '../../../forgot_password/view/ui/forgot_password_page.dart';
