@@ -4,6 +4,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'confirm_new_password_page.dart';
 
+import '../../../../../utils/constant/alta_url.dart';
+import '../../../../../utils/widgets/alta_svg.dart';
 import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/widgets/alta_icon_button.dart';
 
@@ -20,9 +22,7 @@ class ForgotPasswordPage3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Uri url = Uri.parse(
-        'https://flexiprogram-api.alterraacademy.id/api/v1/auth/email-verification/eyJpdiI6IjYxSnJKTWRHYzd1ckFEcHo1Y2VQV3c9PSIsInZhbHVlIjoiT3RKd0RSVWxqdU1GWjhHUCtGTlwvcXU4TnlvOHZCKzFOUElqaVk0NnlRTlZQWjhpS3RKRVNcLzFRK3JHWE41eVwvaCIsIm1hYyI6ImFmYmY4OGE0NmNmZDQ0N2JjM2M3OWE5NmY2NTEzYTMwMjg1YjRlNjQ3YzY5NGE2YzI3OTA5NWQyYjJkYmIwOGUifQ==');
-
+    final Uri url = Uri.parse(altaUrl);
     Future<void> launch() async {
       if (await launchUrl(url)) {
         await launchUrl(url);
@@ -85,8 +85,10 @@ class ForgotPasswordPage3 extends StatelessWidget {
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(width: AltaSpacing.space4),
-                  SvgPicture.asset(
-                    'assets/icon/login_section/svg/starred_icon.svg',
+                  const AltaSvg(
+                    svgPath: 'assets/icon/login_section/svg/starred_icon.svg',
+                    width: 16,
+                    height: 16,
                   ),
                 ],
               ),
@@ -166,7 +168,7 @@ class ForgotPasswordPage3 extends StatelessWidget {
               AltaText(
                 context: context,
                 text: 'Kata Sandi',
-                style: AltaTextStyle.headline2,
+                style: AltaTextStyle.title1,
                 fontWeight: CustomFontWeight.bold,
                 color: AltaColor.darkGray,
               ),

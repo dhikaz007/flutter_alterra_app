@@ -11,6 +11,7 @@ import '../../../../../utils/widgets/alta_logo.dart';
 import '../../../../../utils/widgets/alta_primary_button.dart';
 import '../../../../../utils/widgets/alta_text_button.dart';
 import '../../../../../utils/widgets/alta_text_field.dart';
+
 import '../../../../home/home_page/view/ui/home_page.dart';
 import '../../../register/view/ui/register_page.dart';
 import '../../../forgot_password/view/ui/forgot_password_page.dart';
@@ -114,6 +115,8 @@ class LoginPage extends StatelessWidget {
                       valueListenable: email,
                       builder: (context, emailValue, _) => AltaTextField(
                         hintText: 'Masukkan email anda',
+                        borderRadius: 8,
+                        borderSide: const BorderSide(color: AltaColor.gray),
                         onChanged: (value) {
                           email.value = value;
                           if (email.value.isEmpty && pass.value.isEmpty) {
@@ -143,6 +146,8 @@ class LoginPage extends StatelessWidget {
                           AltaTextField(
                         obscureText: true,
                         hintText: 'Masukkan kata sandi',
+                        borderRadius: 8,
+                        borderSide: const BorderSide(color: AltaColor.gray),
                         onChanged: (value) {
                           pass.value = value;
                           if (pass.value.isEmpty && email.value.isEmpty) {
