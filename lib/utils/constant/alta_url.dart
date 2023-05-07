@@ -1,0 +1,2 @@
+const altaUrl =
+    'https://flexiprogram-api.alterraacademy.id/api/v1/auth/email-verification/eyJpdiI6IjYxSnJKTWRHYzd1ckFEcHo1Y2VQV3c9PSIsInZhbHVlIjoiT3RKd0RSVWxqdU1GWjhHUCtGTlwvcXU4TnlvOHZCKzFOUElqaVk0NnlRTlZQWjhpS3RKRVNcLzFRK3JHWE41eVwvaCIsIm1hYyI6ImFmYmY4OGE0NmNmZDQ0N2JjM2M3OWE5NmY2NTEzYTMwMjg1YjRlNjQ3YzY5NGE2YzI3OTA5NWQyYjJkYmIwOGUifQ==';
