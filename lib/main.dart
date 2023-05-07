@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'feature/home/my_course_page/view/ui/my_course_page.dart';
-
 import 'feature/auth/login/view/ui/splash_page.dart';
 
 void main() {
@@ -18,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Inter',
       ),
-      home: const MyCoursePage(),
+      home: const SplashPage(),
     );
   }
 }
