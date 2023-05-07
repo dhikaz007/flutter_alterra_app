@@ -166,7 +166,7 @@ class ForgotPasswordPage3 extends StatelessWidget {
               AltaText(
                 context: context,
                 text: 'Kata Sandi',
-                style: AltaTextStyle.headline2,
+                style: AltaTextStyle.title1,
                 fontWeight: CustomFontWeight.bold,
                 color: AltaColor.darkGray,
               ),

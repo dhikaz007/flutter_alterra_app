@@ -52,20 +52,20 @@ class AltaScaffold extends StatelessWidget {
       backgroundColor: scaffoldColor,
       appBar: isAppbar.valueAppbar == true
           ? AppBar(
-        title: title,
-        backgroundColor: appBarColor,
-        elevation: 0,
-        leading: AltaIconButton(
-          color: AltaColor.black,
-          svgAsset: leadingAsset ?? '',
-          onPressed: onPressed,
-          iconWidth: leadingWidth,
-          iconHeight: leadingHeight,
-        ),
-        titleSpacing: 0,
-        centerTitle: centerTitle ?? false,
-        actions: actions,
-      )
+              title: title,
+              backgroundColor: appBarColor,
+              elevation: 0,
+              leading: AltaIconButton(
+                color: AltaColor.black,
+                svgAsset: leadingAsset ?? '',
+                onPressed: onPressed,
+                iconWidth: leadingWidth,
+                iconHeight: leadingHeight,
+              ),
+              titleSpacing: 0,
+              centerTitle: centerTitle ?? false,
+              actions: actions,
+            )
           : null,
       body: body,
       floatingActionButton: floatingActionButton,
