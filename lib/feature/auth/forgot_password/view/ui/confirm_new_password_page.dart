@@ -53,7 +53,7 @@ class ConfirmNewPasswordPage extends StatelessWidget {
                 builder: (context, passValue, _) => AltaTextField(
                   obscureText: true,
                   hintText: 'Masukkan kata sandi',
-                  borderRadius: 8,
+                   borderRadius: 8,
                   borderSide: const BorderSide(color: AltaColor.gray),
                   onChanged: (value) {
                     pass.value = value;
