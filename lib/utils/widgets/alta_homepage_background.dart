@@ -33,7 +33,7 @@ class AltaHomePageBackground extends StatelessWidget {
         ),
         const AltaCircleWidget(
           right: -75,
-          bottom: 10,
+          top: 98,
           width: 151,
           height: 151,
           color: AltaColor.tangerine,

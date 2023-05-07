@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'feature/auth/login/view/ui/splash_page.dart';
 
 void main() {
