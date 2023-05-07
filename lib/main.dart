@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/feature/home/faq_page/view/ui/faq_page.dart';
 
 import 'feature/auth/login/view/ui/splash_page.dart';
 
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Inter',
       ),
-      home: const FaqPage(),
+      home: const SplashPage(),
     );
   }
 }
