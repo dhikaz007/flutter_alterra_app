@@ -53,6 +53,8 @@ class ConfirmNewPasswordPage extends StatelessWidget {
                 builder: (context, passValue, _) => AltaTextField(
                   obscureText: true,
                   hintText: 'Masukkan kata sandi',
+                   borderRadius: 8,
+                  borderSide: const BorderSide(color: AltaColor.gray),
                   onChanged: (value) {
                     pass.value = value;
                     if (pass.value.isNotEmpty && confirmPass.value.isNotEmpty) {
@@ -77,6 +79,8 @@ class ConfirmNewPasswordPage extends StatelessWidget {
                 builder: (context, confirmPassValue, _) => AltaTextField(
                   obscureText: true,
                   hintText: 'Masukkan ulang kata sandi',
+                  borderRadius: 8,
+                  borderSide: const BorderSide(color: AltaColor.gray),
                   onChanged: (value) {
                     confirmPass.value = value;
                     if (confirmPass.value.isNotEmpty && pass.value.isNotEmpty) {
