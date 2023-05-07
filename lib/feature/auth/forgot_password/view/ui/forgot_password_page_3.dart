@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'confirm_new_password_page.dart';
 
+import '../../../../../utils/widgets/alta_svg.dart';
 import '../../../../../utils/widgets/alta_scaffold.dart';
 import '../../../../../utils/widgets/alta_icon_button.dart';
 
@@ -85,8 +86,10 @@ class ForgotPasswordPage3 extends StatelessWidget {
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(width: AltaSpacing.space4),
-                  SvgPicture.asset(
-                    'assets/icon/login_section/svg/starred_icon.svg',
+                  const AltaSvg(
+                    svgPath: 'assets/icon/login_section/svg/starred_icon.svg',
+                    width: 16,
+                    height: 16,
                   ),
                 ],
               ),

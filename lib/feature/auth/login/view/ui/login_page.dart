@@ -115,6 +115,8 @@ class LoginPage extends StatelessWidget {
                       valueListenable: email,
                       builder: (context, emailValue, _) => AltaTextField(
                         hintText: 'Masukkan email anda',
+                        borderRadius: 8,
+                        borderSide: const BorderSide(color: AltaColor.gray),
                         onChanged: (value) {
                           email.value = value;
                           if (email.value.isEmpty && pass.value.isEmpty) {
@@ -144,6 +146,8 @@ class LoginPage extends StatelessWidget {
                           AltaTextField(
                         obscureText: true,
                         hintText: 'Masukkan kata sandi',
+                        borderRadius: 8,
+                        borderSide: const BorderSide(color: AltaColor.gray),
                         onChanged: (value) {
                           pass.value = value;
                           if (pass.value.isEmpty && email.value.isEmpty) {
