@@ -14,8 +14,9 @@ class HomePage extends StatelessWidget {
     return Stack(
       children: [
         const AltaHomePageBackground(),
-        Scaffold(
-          backgroundColor: Colors.transparent,
+        AltaScaffold(
+          isAppbar: AppBarVisibility.off,
+          scaffoldColor: Colors.transparent,
           body: Padding(
             padding: const EdgeInsets.only(
               left: AltaSpacing.space20,
@@ -29,7 +30,8 @@ class HomePage extends StatelessWidget {
                   children: [
                     const CircleAvatar(
                       backgroundImage: AssetImage(
-                          'assets/images/login_section/png/profile_avatar.png'),
+                        'assets/images/login_section/png/profile_avatar.png',
+                      ),
                     ),
                     const SizedBox(width: AltaSpacing.space12),
                     Column(
