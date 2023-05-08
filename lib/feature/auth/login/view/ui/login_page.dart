@@ -132,7 +132,6 @@ class LoginPage extends StatelessWidget {
                                 _isFilled.value = true;
                                 _isValid.value = true;
                               }
-                              authValidator.validateEmail(value);
                             },
                           ),
                         ),
@@ -164,7 +163,6 @@ class LoginPage extends StatelessWidget {
                                 _isFilled.value = true;
                                 _isValid.value = true;
                               }
-                              authValidator.validatePassword(value);
                             },
                           ),
                         ),
@@ -202,12 +200,13 @@ class LoginPage extends StatelessWidget {
                                   paddingHorizontal: AltaSpacing.space28,
                                   onPressed: () async => isFilledValue ==
                                               true &&
-                                          _isValid.value == true
-                                      // &&
-                                      // authValidator
-                                      //     .validateEmail(_email.value) &&
-                                      // authValidator
-                                      //     .validatePassword(_pass.value)
+                                          _isValid.value == true &&
+                                          authValidator.validateEmail(
+                                                  _email.value) ==
+                                              true &&
+                                          authValidator.validatePassword(
+                                                  _pass.value) ==
+                                              true
                                       ? await context.read<LoginCubit>().login(
                                             email: _email.value,
                                             password: _pass.value,
