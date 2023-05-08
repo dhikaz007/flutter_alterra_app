@@ -1,17 +1,3 @@
-import 'package:flutter/material.dart';
-
-import '../../../../../../utils/alta_constant.dart';
-import '../../../../../../utils/alta_widgets.dart';
-
-
-class FaqTileWidget extends StatelessWidget {
-  final Widget title;
-  final Widget content;
-  const FaqTileWidget({
-    super.key,
-    required this.title,
-    required this.content,
-  });
 
   @override
   Widget build(BuildContext context) {

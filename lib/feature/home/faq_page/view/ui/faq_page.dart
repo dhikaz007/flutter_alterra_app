@@ -1,13 +1,3 @@
-import 'package:flutter/material.dart';
-
-import '../../../../../utils/alta_constant.dart';
-import '../../../../../utils/alta_widgets.dart';
-import 'widget/faq_tile_widget.dart';
-
-
-class FaqPage extends StatelessWidget {
-  final ScrollController scrollController;
-  const FaqPage({Key? key, required this.scrollController}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
