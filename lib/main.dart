@@ -6,7 +6,6 @@ import 'package:flutter_alterra_app/feature/auth/register/view/ui/register_page.
 import 'package:flutter_alterra_app/feature/controller/cubit/forgot_password/forgot_password_cubit.dart';
 import 'package:flutter_alterra_app/feature/controller/cubit/login/login_cubit.dart';
 import 'package:flutter_alterra_app/feature/controller/cubit/register/register_cubit.dart';
-import 'package:flutter_alterra_app/feature/home/home_page/view/ui/home_page.dart';
 import 'package:flutter_alterra_app/feature/root_app.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +51,7 @@ class MyApp extends StatelessWidget {
           RootApp.route: (context) => const RootApp(),
         },
         home: StreamBuilder(
-            stream: FirebaseAuth.instance.authStateChanges(),
+            stream: FirebaseAuth.instance.userChanges(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Scaffold(
@@ -62,13 +61,39 @@ class MyApp extends StatelessWidget {
                 );
               }
               if (snapshot.data != null) {
-                return const HomePage();
+                return const RootApp();
               } else {
                 return const LoginPage();
               }
             }),
       ),
     );
+
+    //     home: StreamBuilder(
+    //         stream: FirebaseAuth.instance.userChanges(),
+    //         builder: (context, snapshot) {
+    //           final firebaseUser = context.watch<User?>();
+
+    //           if (firebaseUser != null) {
+    //             return const HomePage();
+    //           }
+    //           return const LoginPage();
+
+    //           // if (snapshot.connectionState == ConnectionState.waiting) {
+    //           //   return const Scaffold(
+    //           //     body: Center(
+    //           //       child: CircularProgressIndicator.adaptive(),
+    //           //     ),
+    //           //   );
+    //           // }
+    //           // if (snapshot.data != null) {
+    //           //   return const HomePage();
+    //           // } else {
+    //           //   return const LoginPage();
+    //           // }
+    //         }),
+    //   ),
+    // );
 
     // MaterialApp(
     //   debugShowCheckedModeBanner: false,
