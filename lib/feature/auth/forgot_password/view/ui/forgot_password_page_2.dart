@@ -18,20 +18,28 @@ class ForgotPasswordPage2 extends StatefulWidget {
 }
 
 class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
-  static const maxSeconds = 30;
+  static const maxSeconds = 10;
   Timer? timer;
 
   final ValueNotifier<int> seconds = ValueNotifier(maxSeconds);
 
   void startTimer() {
-    timer = Timer.periodic(const Duration(seconds: 1), (_) {
+    timer = Timer.periodic(const Duration(seconds: 1), (_) async {
       if (seconds.value > 0) {
         seconds.value--;
       } else {
         timer?.cancel();
-        Navigator.of(context).pushAndRemoveUntil(
+        await showDialog(
+          context: context,
+          builder: (_) => AltaPopUpMessage(
+            title: 'Berhasil Ubah Kata Sandi',
+            content:
+                'Silahkan melakukan kembali login dengan kata sandi yang baru',
+            onPressed: () => Navigator.of(context).pop(true),
+          ),
+        ).then((value) => Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(builder: (context) => const SplashPage()),
-            (route) => false);
+            (route) => false));
       }
     });
   }
@@ -40,6 +48,12 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
   void initState() {
     startTimer();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
   }
 
   @override
@@ -147,7 +161,7 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

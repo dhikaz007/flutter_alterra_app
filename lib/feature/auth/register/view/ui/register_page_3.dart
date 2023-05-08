@@ -16,7 +16,7 @@ class RegisterPage3 extends StatefulWidget {
 }
 
 class _RegisterPage3State extends State<RegisterPage3> {
-  static const maxSeconds = 30;
+  static const maxSeconds = 10;
   Timer? timer;
 
   final ValueNotifier<int> seconds = ValueNotifier(maxSeconds);

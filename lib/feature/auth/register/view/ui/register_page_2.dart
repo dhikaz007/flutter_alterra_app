@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'register_page_3.dart';
-
+import '../../../login/view/ui/splash_page.dart';
 import '../../../../../core/auth/auth_validator.dart';
 import '../../../../../utils/alta_constant.dart';
 import '../../../../../utils/alta_widgets.dart';
@@ -22,12 +21,9 @@ class RegisterPage2 extends StatelessWidget {
     return BlocConsumer<RegisterCubit, RegisterState>(
       listener: (context, state) {
         if (state is UserRegisterSuccess) {
-          AltaSnackBar.getAltaSnackBar(
-              context, 'Berhasil membuat akun', AltaColor.tangerine);
           Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(
-                  builder: (context) => RegisterPage3(email: email)),
+              MaterialPageRoute(builder: (context) => const SplashPage()),
               (route) => false);
         } else if (state is UserRegisterFailure) {
           AltaSnackBar.getAltaSnackBar(context, state.errorText, AltaColor.red);
@@ -192,13 +188,24 @@ class RegisterPage2 extends StatelessWidget {
                                       authValidator.validatePassword(
                                               _confirmPass.value) ==
                                           true
-                                  ? await context
-                                      .read<RegisterCubit>()
-                                      .createUser(
-                                        email: email,
-                                        password: _pass.value,
-                                        name: _name.value,
-                                      )
+                                  ? await showDialog(
+                                      context: context,
+                                      builder: (_) => AltaPopUpMessage(
+                                        title: 'Registrasi Berhasil',
+                                        content:
+                                            'Silahkan kembali melakukan login dengan akyn yang sudah terdaftar',
+                                        onPressed: () =>
+                                            Navigator.of(context).pop(true),
+                                      ),
+                                    ).then(
+                                      (value) => context
+                                          .read<RegisterCubit>()
+                                          .createUser(
+                                            email: email,
+                                            password: _pass.value,
+                                            name: _name.value,
+                                          ),
+                                    )
                                   : null,
                               borderRadius: 8,
                               paddingHorizontal: AltaSpacing.space28,
