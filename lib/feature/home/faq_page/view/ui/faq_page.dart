@@ -9,7 +9,8 @@ import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_scaffold.dart';
 
 class FaqPage extends StatelessWidget {
-  const FaqPage({Key? key}) : super(key: key);
+  final ScrollController? scrollController;
+  const FaqPage({Key? key, this.scrollController}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,7 @@ class FaqPage extends StatelessWidget {
             Expanded(
               child: ListView(
                 physics: const BouncingScrollPhysics(),
+                controller: scrollController,
                 children: [
                   const SizedBox(height: AltaSpacing.space20),
                   AltaText(
@@ -171,6 +173,7 @@ class FaqPage extends StatelessWidget {
             Expanded(
               child: ListView(
                 physics: const BouncingScrollPhysics(),
+                controller: scrollController,
                 children: [
                   const SizedBox(height: AltaSpacing.space24),
                   AltaText(

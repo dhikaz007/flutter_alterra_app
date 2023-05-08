@@ -2,17 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'forgot_password_page_3.dart';
-
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
+import '../../../login/view/ui/splash_page.dart';
 import '../../../login/view/ui/login_page.dart';
-import '../../../../../utils/widgets/alta_scaffold.dart';
 
-import '../../../../../utils/widgets/alta_text_button.dart';
-import '../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_primary_button.dart';
+import 'forgot_password_page_3.dart';
 
 class ForgotPasswordPage2 extends StatefulWidget {
   final String email;
@@ -23,17 +18,28 @@ class ForgotPasswordPage2 extends StatefulWidget {
 }
 
 class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
-  static const maxSeconds = 30;
+  static const maxSeconds = 10;
   Timer? timer;
 
   final ValueNotifier<int> seconds = ValueNotifier(maxSeconds);
 
   void startTimer() {
-    timer = Timer.periodic(const Duration(seconds: 1), (_) {
+    timer = Timer.periodic(const Duration(seconds: 1), (_) async {
       if (seconds.value > 0) {
         seconds.value--;
       } else {
         timer?.cancel();
+        await showDialog(
+          context: context,
+          builder: (_) => AltaPopUpMessage(
+            title: 'Berhasil Ubah Kata Sandi',
+            content:
+                'Silahkan melakukan kembali login dengan kata sandi yang baru',
+            onPressed: () => Navigator.of(context).pop(true),
+          ),
+        ).then((value) => Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) => const SplashPage()),
+            (route) => false));
       }
     });
   }
@@ -42,6 +48,12 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
   void initState() {
     startTimer();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
   }
 
   @override
@@ -149,7 +161,7 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
