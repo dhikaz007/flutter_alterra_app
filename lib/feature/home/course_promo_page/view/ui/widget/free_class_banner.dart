@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_alterra_app/utils/alta_widgets.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../../utils/alta_constants.dart';
 
@@ -59,7 +60,11 @@ class FreeClassBanner extends StatelessWidget {
               width: MediaQuery.of(context).size.width / 2.5,
               child: AltaPrimaryButton(
                 backgroundColor: MaterialStateProperty.all(AltaColor.tangerine),
-                onPressed: () {},
+                onPressed: () async {
+                  launchUrl(
+                    Uri.parse("https://academy.alterra.id/"),
+                  );
+                },
                 borderRadius: AltaBorderRadius.radius8,
                 paddingHorizontal: AltaSpacing.space56,
                 paddingVertical: AltaSpacing.space8,

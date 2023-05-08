@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../utils/alta_constants.dart';
 import '../utils/alta_widgets.dart';
-// import 'course_page/view/ui/course_page.dart';
 // import 'faq_page/view/ui/faq_page.dart';
 import 'home/home_page/view/ui/home_page.dart';
 // import 'profile_page/view/ui/profile_page.dart';
