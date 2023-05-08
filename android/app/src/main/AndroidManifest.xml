@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.alterra.app.flutter_alterra_app">
+     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
    <application
         android:label="flutter_alterra_app"
         android:name="${applicationName}"

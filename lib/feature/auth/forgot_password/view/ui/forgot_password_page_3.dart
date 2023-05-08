@@ -2,19 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
+
 import 'confirm_new_password_page.dart';
-
-import '../../../../../utils/widgets/alta_svg.dart';
-import '../../../../../utils/widgets/alta_scaffold.dart';
-import '../../../../../utils/widgets/alta_icon_button.dart';
-
-import '../../../../../utils/widgets/alta_text_button.dart';
-import '../../../../../utils/widgets/alta_logo.dart';
-import '../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_primary_button.dart';
 
 class ForgotPasswordPage3 extends StatelessWidget {
   const ForgotPasswordPage3({Key? key}) : super(key: key);

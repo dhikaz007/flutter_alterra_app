@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/widgets/alta_scaffold.dart';
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
 import '../../../login/view/ui/login_page.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/widgets/alta_text_field.dart';
-import '../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/widgets/alta_primary_button.dart';
 
 class ConfirmNewPasswordPage extends StatelessWidget {
   const ConfirmNewPasswordPage({Key? key}) : super(key: key);

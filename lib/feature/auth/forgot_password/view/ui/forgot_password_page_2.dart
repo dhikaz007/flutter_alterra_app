@@ -2,17 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'forgot_password_page_3.dart';
-
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
+import '../../../login/view/ui/splash_page.dart';
 import '../../../login/view/ui/login_page.dart';
-import '../../../../../utils/widgets/alta_scaffold.dart';
 
-import '../../../../../utils/widgets/alta_text_button.dart';
-import '../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_primary_button.dart';
+import 'forgot_password_page_3.dart';
 
 class ForgotPasswordPage2 extends StatefulWidget {
   final String email;
@@ -34,6 +29,9 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
         seconds.value--;
       } else {
         timer?.cancel();
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) => const SplashPage()),
+            (route) => false);
       }
     });
   }
