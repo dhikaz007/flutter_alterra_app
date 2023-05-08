@@ -11,7 +11,8 @@ import 'widget/course_card_large_widget.dart';
 import 'widget/course_card_small_widget.dart';
 
 class CoursePage extends StatelessWidget {
-  const CoursePage({Key? key}) : super(key: key);
+  final ScrollController? scrollController;
+  const CoursePage({Key? key, this.scrollController}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +39,7 @@ class CoursePage extends StatelessWidget {
         ),
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
+          controller: scrollController,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
