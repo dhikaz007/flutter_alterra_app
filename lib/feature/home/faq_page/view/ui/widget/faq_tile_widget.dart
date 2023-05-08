@@ -1,3 +1,16 @@
+import 'package:flutter/material.dart';
+
+import '../../../../../../utils/widgets/alta_svg.dart';
+import '../../../../../../utils/constant/alta_spacing.dart';
+
+class FaqTileWidget extends StatelessWidget {
+  final Widget title;
+  final Widget content;
+  const FaqTileWidget({
+    super.key,
+    required this.title,
+    required this.content,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,16 @@
+import 'package:flutter/material.dart';
+
+import 'widget/faq_tile_widget.dart';
+
+import '../../../../../utils/constant/alta_border_radius.dart';
+import '../../../../../utils/widgets/alta_text.dart';
+import '../../../../../utils/constant/alta_color.dart';
+import '../../../../../utils/constant/alta_spacing.dart';
+import '../../../../../utils/widgets/alta_scaffold.dart';
+
+class FaqPage extends StatelessWidget {
+  final ScrollController? scrollController;
+  const FaqPage({Key? key, this.scrollController}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -160,6 +173,7 @@
             Expanded(
               child: ListView(
                 physics: const BouncingScrollPhysics(),
+                controller: scrollController,
                 children: [
                   const SizedBox(height: AltaSpacing.space24),
                   AltaText(
