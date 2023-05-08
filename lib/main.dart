@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'feature/root_app.dart';
+import 'package:flutter_alterra_app/feature/auth/login/view/ui/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Inter',
       ),
-      home: const RootApp(),
+      home: const SplashPage(),
     );
   }
 }
