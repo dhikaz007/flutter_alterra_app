@@ -18,7 +18,6 @@ class _VideoContentPageState extends State<VideoContentPage> {
   final videoURL =
       "https://www.youtube.com/watch?v=55NvZjUZIO8&pp=ygUTaW50cm9kdWN0aW9uIHVpIHV4IA%3D%3D";
   late YoutubePlayerController _controller;
-  final ValueNotifier<bool> isDone = ValueNotifier(false);
 
   @override
   void initState() {
@@ -44,35 +43,25 @@ class _VideoContentPageState extends State<VideoContentPage> {
               player,
               //some other widgets
               const SizedBox(height: AltaSpacing.space36),
-              Row(
-                children: [
-                  Expanded(
-                    child: ValueListenableBuilder(
-                      valueListenable: isDone,
-                      builder: (context, isDoneValue, _) => AltaPrimaryButton(
-                        backgroundColor: MaterialStateProperty.resolveWith(
-                          (states) => isDoneValue == true
-                              ? Colors.orange.shade700
-                              : Colors.grey,
-                        ),
-                        paddingVertical: AltaSpacing.space20,
-                        paddingHorizontal: AltaSpacing.space28,
-                        borderRadius: AltaBorderRadius.radius10,
-                        onPressed: () => isDoneValue == true
-                            ? debugPrint('TAPPED COMPLETE')
-                            : null,
-                        child: AltaText(
-                          context: context,
-                          text: 'COMPLETE',
-                          style: AltaTextStyle.title2,
-                          fontWeight: CustomFontWeight.bold,
-                          color: AltaColor.white,
-                        ),
-                      ),
+              Row(children: [
+                Expanded(
+                  child: AltaPrimaryButton(
+                    backgroundColor: MaterialStateProperty.resolveWith(
+                        (states) => Colors.orange.shade700),
+                    paddingVertical: AltaSpacing.space20,
+                    paddingHorizontal: AltaSpacing.space28,
+                    borderRadius: AltaBorderRadius.radius10,
+                    onPressed: () {},
+                    child: AltaText(
+                      context: context,
+                      text: 'COMPLETE',
+                      style: AltaTextStyle.title2,
+                      fontWeight: CustomFontWeight.bold,
+                      color: AltaColor.white,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ]),
             ],
           );
         });
