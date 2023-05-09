@@ -1,13 +1,11 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/widgets/alta_scaffold.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_splash_background.dart';
-import '../../../../../utils/widgets/alta_logo.dart';
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
+import '../../../../home/home_page/view/ui/main_home_page.dart';
 
 import 'login_page.dart';
 
@@ -21,17 +19,23 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    _startSplashPage();
-    super.initState();
-  }
+    Timer(const Duration(seconds: 2), () {
+      if (FirebaseAuth.instance.currentUser?.uid == null) {
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+              builder: (_) => const LoginPage(),
+            ),
+            (route) => false);
+      } else {
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+              builder: (_) => const MainHomePage(),
+            ),
+            (route) => false);
+      }
+    });
 
-  void _startSplashPage() {
-    Timer(
-      const Duration(seconds: 2),
-      () => Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => const LoginPage(),
-      )),
-    );
+    super.initState();
   }
 
   @override

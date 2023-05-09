@@ -5,11 +5,13 @@ class AltaSvg extends StatelessWidget {
   final String svgPath;
   final double width;
   final double height;
+  final ColorFilter? colorFilter;
   const AltaSvg({
     super.key,
     required this.svgPath,
     required this.width,
     required this.height,
+    this.colorFilter,
   });
 
   @override
@@ -18,6 +20,7 @@ class AltaSvg extends StatelessWidget {
       svgPath,
       width: width,
       height: height,
+      colorFilter: colorFilter,
     );
   }
 }
