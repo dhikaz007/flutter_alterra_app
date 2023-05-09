@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_alterra_app/feature/home/home_page/view/ui/main_home_page.dart';
 
 import '../../../home_page/view/ui/home_page.dart';
 import '../../../../../utils/widgets/alta_svg.dart';
@@ -65,7 +66,7 @@ class FeedbackCompletePage extends StatelessWidget {
                 onPressed: () =>
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
                   builder: (context) =>
-                      const HomePage(email: 'nadewa@alterra.com'),
+                      const MainHomePage(),
                 )),
                 icon: AltaText(
                   context: context,

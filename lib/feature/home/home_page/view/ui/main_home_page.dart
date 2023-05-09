@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../../../utils/alta_widgets.dart';
 import '../../../../../utils/alta_constant.dart';
 
+import '../../../course_page/view/ui/course_page.dart';
 import '../../../faq_page/view/ui/faq_page.dart';
-import 'course_page.dart';
 import 'home_page.dart';
 import 'profile_page.dart';
-import 'widget/scroll_to_hide_widget.dart';
 
 class MainHomePage extends StatelessWidget {
   const MainHomePage({super.key});
