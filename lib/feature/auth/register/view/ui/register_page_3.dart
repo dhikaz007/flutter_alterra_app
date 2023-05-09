@@ -2,14 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
+import '../../../login/view/ui/splash_page.dart';
 import '../../../login/view/ui/login_page.dart';
-import '../../../../../utils/widgets/alta_scaffold.dart';
-import '../../../../../utils/widgets/alta_text_button.dart';
-import '../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_primary_button.dart';
 
 class RegisterPage3 extends StatefulWidget {
   final String email;
@@ -20,19 +16,25 @@ class RegisterPage3 extends StatefulWidget {
 }
 
 class _RegisterPage3State extends State<RegisterPage3> {
-  static const maxSeconds = 30;
+  static const maxSeconds = 10;
   Timer? timer;
 
   final ValueNotifier<int> seconds = ValueNotifier(maxSeconds);
 
   void startTimer() {
-    timer = Timer.periodic(const Duration(seconds: 1), (_) {
-      if (seconds.value > 0) {
-        seconds.value--;
-      } else {
-        timer?.cancel();
-      }
-    });
+    timer = Timer.periodic(
+      const Duration(seconds: 1),
+      (_) {
+        if (seconds.value > 0) {
+          seconds.value--;
+        } else {
+          timer?.cancel();
+          Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(builder: (context) => const SplashPage()),
+              (route) => false);
+        }
+      },
+    );
   }
 
   @override

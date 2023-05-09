@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../utils/alta_constants.dart';
 import '../../../../../utils/alta_widgets.dart';
 import '../../../course_promo_page/view/ui/course_promo_page.dart';
+import '../../view_model/cubit/homepage_cubit.dart';
 import 'widget/homepage_widgets.dart';
 
 class HomePage extends StatelessWidget {
@@ -41,15 +42,19 @@ class HomePage extends StatelessWidget {
                           children: [
                             AltaText(
                               context: context,
-                              text: 'Input Your Name',
-                              // '${FirebaseAuth.instance.currentUser!.displayName}',
+                              text:
+                                  context.read<HomepageCubit>().getUserName() ??
+                                      '',
                               style: AltaTextStyle.title3,
                               color: AltaColor.white,
                               fontWeight: CustomFontWeight.bold,
                             ),
                             AltaText(
                               context: context,
-                              text: 'input email',
+                              text: context
+                                      .read<HomepageCubit>()
+                                      .getEmailUser() ??
+                                  '',
                               style: AltaTextStyle.body2,
                               color: AltaColor.white,
                               fontWeight: CustomFontWeight.normal,
