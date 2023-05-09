@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/feature/home/home_page/view/ui/main_home_page.dart';
 
-import '../../../home_page/view/ui/home_page.dart';
+import '../../../home_page/view/ui/main_home_page.dart';
 import '../../../../../utils/widgets/alta_svg.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_logo.dart';
@@ -30,12 +29,11 @@ class FeedbackCompletePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(AltaSpacing.space16),
           child: Column(
-
             children: [
               const SizedBox(height: AltaSpacing.space100),
               const Align(
                 alignment: Alignment.center,
-                child:  AltaLogo(
+                child: AltaLogo(
                   imgPath:
                       'assets/images/login_section/png/alterra_blue_logo.png',
                   width: 280,
@@ -65,8 +63,7 @@ class FeedbackCompletePage extends StatelessWidget {
               TextButton.icon(
                 onPressed: () =>
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (context) =>
-                      const MainHomePage(),
+                  builder: (context) => const MainHomePage(),
                 )),
                 icon: AltaText(
                   context: context,
