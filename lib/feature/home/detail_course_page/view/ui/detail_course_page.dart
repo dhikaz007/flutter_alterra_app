@@ -109,7 +109,7 @@ class DetailCoursePage extends StatelessWidget {
                 onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
                 child: ListView(
                   physics: const BouncingScrollPhysics(),
-                  //reverse: true,
+                  // reverse: true,
                   children: [
                     const SizedBox(height: AltaSpacing.space8),
                     ValueListenableBuilder(
