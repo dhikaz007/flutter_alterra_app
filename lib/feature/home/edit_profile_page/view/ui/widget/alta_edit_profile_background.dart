@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../constant/alta_border_radius.dart';
-import '../constant/alta_color.dart';
-import 'alta_circle_widget.dart';
+import '../../../../../../utils/alta_constants.dart';
+import '../../../../../../utils/alta_widgets.dart';
 
-class AltaHomePageBackground extends StatelessWidget {
-  const AltaHomePageBackground({super.key});
+class AltaEditProfileBackground extends StatelessWidget {
+  const AltaEditProfileBackground({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +22,6 @@ class AltaHomePageBackground extends StatelessWidget {
               bottomRight: Radius.circular(AltaBorderRadius.radius12),
             ),
           ),
-        ),
-        const AltaCircleWidget(
-          left: -55,
-          top: 25,
-          width: 102,
-          height: 102,
-          color: AltaColor.tangerine,
         ),
         const AltaCircleWidget(
           right: -75,
