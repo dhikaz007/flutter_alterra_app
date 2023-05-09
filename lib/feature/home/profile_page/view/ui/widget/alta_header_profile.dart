@@ -4,36 +4,35 @@ import '../../../../../../utils/alta_constants.dart';
 import '../../../../../../utils/alta_widgets.dart';
 
 class AltaHeaderProfile extends StatelessWidget {
-  const AltaHeaderProfile({super.key});
+  final String name;
+  final String email;
+  const AltaHeaderProfile({super.key, required this.name, required this.email});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.only(top: 88),
-          child: Align(alignment: Alignment.center),
-        ),
         const CircleAvatar(
           backgroundColor: AltaColor.tangerine,
           radius: 62,
           child: CircleAvatar(
             backgroundImage: AssetImage(
-                'assets/images/login_section/png/profile_avatar.png'),
+              'assets/images/login_section/png/profile_avatar.png',
+            ),
             radius: 60,
           ),
         ),
         const SizedBox(width: AltaSpacing.space12),
         AltaText(
           context: context,
-          text: 'Nahdy Dailamy Batewa',
+          text: name,
           style: AltaTextStyle.title3,
           color: AltaColor.white,
           fontWeight: CustomFontWeight.semiBold,
         ),
         AltaText(
           context: context,
-          text: 'nadewa@alterra.com',
+          text: email,
           style: AltaTextStyle.body1,
           color: AltaColor.white,
           fontWeight: CustomFontWeight.medium,

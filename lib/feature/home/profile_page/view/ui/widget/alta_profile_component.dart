@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../../../../../utils/alta_constants.dart';
 import '../../../../../../utils/alta_widgets.dart';
@@ -30,7 +29,11 @@ class AltaProfileComponent extends StatelessWidget {
         ),
         GestureDetector(
           onTap: onTap,
-          child: SvgPicture.asset(iconArrowBlue),
+          child: AltaSvg(
+            svgPath: iconArrowBlue,
+            height: 15,
+            width: 8,
+          ),
         ),
       ],
     );

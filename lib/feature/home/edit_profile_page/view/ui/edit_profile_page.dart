@@ -1,53 +1,67 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../utils/alta_constants.dart';
 import '../../../../../utils/alta_widgets.dart';
 import 'widget/edit_profile_widgets.dart';
 
 class EditProfilePage extends StatelessWidget {
-  const EditProfilePage({super.key});
+  final String name;
+  final String email;
+  const EditProfilePage({super.key, required this.name, required this.email});
+
+  static String newName = '';
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         const AltaEditProfileBackground(),
-        Scaffold(
-          backgroundColor: Colors.transparent,
+        AltaScaffold(
+          isAppbar: AppBarVisibility.on,
+          appBarColor: Colors.transparent,
+          scaffoldColor: Colors.transparent,
+          leadingAsset: 'assets/icon/homepage_section/svg/arrow_white.svg',
+          leadingWidth: 24,
+          leadingHeight: 24,
+          onPressed: () => Navigator.of(context).pop(true),
           body: Padding(
-            padding: const EdgeInsets.only(left: 30, right: 36, top: 36),
+            padding: const EdgeInsets.only(
+                left: AltaSpacing.space32, right: AltaSpacing.space36),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: SvgPicture.asset(
-                      'assets/icon/homepage_section/svg/arrow_white.svg',
-                    ),
-                  ),
-                ),
-                const SizedBox(height: AltaSpacing.space48),
+                const SizedBox(height: AltaSpacing.space20),
                 AltaText(
                     context: context,
                     text: 'Profile',
-                    style: AltaTextStyle.headline3,
+                    style: AltaTextStyle.headline2,
                     color: AltaColor.white,
                     fontWeight: CustomFontWeight.semiBold),
                 const SizedBox(height: AltaSpacing.space16),
                 Row(
                   children: [
-                    const CircleAvatar(
+                    CircleAvatar(
                       radius: 37.5,
                       backgroundColor: AltaColor.tangerine,
                       child: CircleAvatar(
                         radius: 35.5,
-                        backgroundImage: AssetImage(
-                            'assets/images/login_section/png/profile_avatar.png'),
+                        backgroundImage: const AssetImage(
+                          'assets/images/login_section/png/profile_avatar.png',
+                        ),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              top: -17,
+                              right: -15,
+                              child: AltaIconButton(
+                                svgAsset:
+                                    'assets/icon/homepage_section/svg/edit_profile_icon.svg',
+                                color: AltaColor.white,
+                                onPressed: () {},
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(width: AltaSpacing.space12),
@@ -56,26 +70,20 @@ class EditProfilePage extends StatelessWidget {
                       children: [
                         AltaText(
                           context: context,
-                          text: 'Nahdy Dailamy Batewa',
+                          text: name,
                           style: AltaTextStyle.title3,
                           color: AltaColor.white,
                           fontWeight: CustomFontWeight.bold,
                         ),
                         const SizedBox(height: AltaSpacing.space8),
-                        Row(
-                          children: [
-                            AltaText(
-                              context: context,
-                              text: 'Details',
-                              style: AltaTextStyle.body1,
-                              color: AltaColor.tangerine,
-                              fontWeight: CustomFontWeight.light,
-                            ),
-                            const SizedBox(width: AltaSpacing.space12),
-                            SvgPicture.asset(
-                                'assets/icon/homepage_section/svg/arrow.svg')
-                          ],
+                        AltaText(
+                          context: context,
+                          text: email,
+                          style: AltaTextStyle.body1,
+                          color: AltaColor.white,
+                          fontWeight: CustomFontWeight.light,
                         ),
+                        const SizedBox(width: AltaSpacing.space12),
                       ],
                     ),
                   ],
@@ -89,71 +97,41 @@ class EditProfilePage extends StatelessWidget {
                   fontWeight: CustomFontWeight.medium,
                 ),
                 const SizedBox(height: AltaSpacing.space16),
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        AccountSettingList(
-                          name: 'Nama',
-                          onChanged: (String value) {},
-                          onPressed: () {},
+                AccountSettingList(
+                  title: 'Nama',
+                  content: name,
+                ),
+                const SizedBox(height: AltaSpacing.space32),
+                const AccountSettingList(
+                  title: 'Nomor Handphone',
+                  content: '0811222777111',
+                ),
+                const SizedBox(height: AltaSpacing.space32),
+                AccountSettingList(
+                  title: 'Alamat Email',
+                  content: email,
+                ),
+                const SizedBox(height: AltaSpacing.space108),
+                Row(
+                  children: [
+                    Expanded(
+                      child: AltaPrimaryButton(
+                        backgroundColor:
+                            MaterialStateProperty.all(AltaColor.tangerine),
+                        onPressed: () {},
+                        borderRadius: AltaBorderRadius.radius10,
+                        paddingHorizontal: AltaSpacing.space28,
+                        paddingVertical: AltaSpacing.space16,
+                        child: AltaText(
+                          context: context,
+                          text: 'Simpan',
+                          style: AltaTextStyle.title2,
+                          color: AltaColor.white,
+                          fontWeight: CustomFontWeight.bold,
                         ),
-                        const SizedBox(height: AltaSpacing.space32),
-                        AccountSettingList(
-                          name: 'Nomor Handphone',
-                          onChanged: (String value) {},
-                          onPressed: () {},
-                        ),
-                        const SizedBox(height: AltaSpacing.space32),
-                        AccountSettingList(
-                          name: 'Alamat Email',
-                          onChanged: (String value) {},
-                          onPressed: () {},
-                        ),
-                        const SizedBox(height: AltaSpacing.space32),
-                      ],
+                      ),
                     ),
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
-        Positioned(
-          top: 154,
-          left: 91,
-          child: GestureDetector(
-            onTap: () {},
-            child: CircleAvatar(
-              backgroundColor: AltaColor.white,
-              radius: 5,
-              child: SvgPicture.asset(
-                  'assets/icon/homepage_section/svg/icon_edit_profile.svg'),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Row(
-              children: [
-                Expanded(
-                  child: AltaPrimaryButton(
-                    backgroundColor:
-                        MaterialStateProperty.all(AltaColor.tangerine),
-                    onPressed: () {},
-                    borderRadius: AltaBorderRadius.radius10,
-                    paddingHorizontal: AltaSpacing.space28,
-                    paddingVertical: AltaSpacing.space16,
-                    child: AltaText(
-                      context: context,
-                      text: 'Simpan',
-                      style: AltaTextStyle.title2,
-                      color: AltaColor.white,
-                      fontWeight: CustomFontWeight.bold,
-                    ),
-                  ),
+                  ],
                 ),
               ],
             ),
