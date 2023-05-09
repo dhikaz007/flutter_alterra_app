@@ -36,6 +36,7 @@ class AltaPrimaryButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(borderRadius),
           ),
         ),
+        elevation: MaterialStateProperty.all(0),
         backgroundColor: backgroundColor,
       ),
       onPressed: onPressed,
