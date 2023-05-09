@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../utils/alta_constants.dart';
 import '../../../../../utils/alta_widgets.dart';
+import '../../../home_page/view_model/cubit/homepage_cubit.dart';
 import 'widget/edit_profile_widgets.dart';
 
 class EditProfilePage extends StatelessWidget {
-  final String name;
-  final String email;
-  const EditProfilePage({super.key, required this.name, required this.email});
+  const EditProfilePage({super.key});
 
   static String newName = '';
 
@@ -70,7 +70,7 @@ class EditProfilePage extends StatelessWidget {
                       children: [
                         AltaText(
                           context: context,
-                          text: name,
+                          text: context.read<HomepageCubit>().getUserName(),
                           style: AltaTextStyle.title3,
                           color: AltaColor.white,
                           fontWeight: CustomFontWeight.bold,
@@ -78,7 +78,7 @@ class EditProfilePage extends StatelessWidget {
                         const SizedBox(height: AltaSpacing.space8),
                         AltaText(
                           context: context,
-                          text: email,
+                          text: context.read<HomepageCubit>().getEmailUser(),
                           style: AltaTextStyle.body1,
                           color: AltaColor.white,
                           fontWeight: CustomFontWeight.light,
@@ -99,17 +99,17 @@ class EditProfilePage extends StatelessWidget {
                 const SizedBox(height: AltaSpacing.space16),
                 AccountSettingList(
                   title: 'Nama',
-                  content: name,
+                  content: context.read<HomepageCubit>().getUserName(),
                 ),
                 const SizedBox(height: AltaSpacing.space32),
                 const AccountSettingList(
                   title: 'Nomor Handphone',
-                  content: '0811222777111',
+                  content: '',
                 ),
                 const SizedBox(height: AltaSpacing.space32),
                 AccountSettingList(
                   title: 'Alamat Email',
-                  content: email,
+                  content: context.read<HomepageCubit>().getEmailUser(),
                 ),
                 const SizedBox(height: AltaSpacing.space108),
                 Row(

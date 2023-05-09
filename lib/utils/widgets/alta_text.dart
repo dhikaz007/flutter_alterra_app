@@ -52,7 +52,7 @@ extension FontWeightIndicator on CustomFontWeight {
 }
 
 class AltaText extends StatelessWidget {
-  final String text;
+  final String? text;
   final BuildContext context;
   final AltaTextStyle style;
   final CustomFontWeight fontWeight;
@@ -134,6 +134,6 @@ class AltaText extends StatelessWidget {
       }
     }
 
-    return Text(text, style: getAltaTextStyle(), textAlign: textAlign);
+    return Text(text??'', style: getAltaTextStyle(), textAlign: textAlign);
   }
 }

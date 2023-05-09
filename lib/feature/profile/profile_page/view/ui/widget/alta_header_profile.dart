@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../utils/alta_constant.dart';
 import '../../../../../../utils/alta_widgets.dart';
+import '../../../../../home/home_page/view_model/cubit/homepage_cubit.dart';
 
 class AltaHeaderProfile extends StatelessWidget {
-  final String name;
-  final String email;
-  const AltaHeaderProfile({super.key, required this.name, required this.email});
+
+  const AltaHeaderProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +26,14 @@ class AltaHeaderProfile extends StatelessWidget {
         const SizedBox(width: AltaSpacing.space12),
         AltaText(
           context: context,
-          text: name,
+          text: context.read<HomepageCubit>().getUserName(),
           style: AltaTextStyle.title3,
           color: AltaColor.white,
           fontWeight: CustomFontWeight.semiBold,
         ),
         AltaText(
           context: context,
-          text: email,
+          text: context.read<HomepageCubit>().getEmailUser(),
           style: AltaTextStyle.body1,
           color: AltaColor.white,
           fontWeight: CustomFontWeight.medium,

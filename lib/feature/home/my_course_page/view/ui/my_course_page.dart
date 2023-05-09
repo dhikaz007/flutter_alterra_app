@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_alterra_app/feature/home/course_list_page/view/ui/flutter_course_list_page.dart';
+import 'package:flutter_alterra_app/feature/home/course_list_page/view/ui/ui_ux_course_list_page.dart';
 
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
@@ -33,7 +35,9 @@ class MyCoursePage extends StatelessWidget {
         child: Column(
           children: [
             InkWell(
-              onTap: () => debugPrint('Program Flexi UI/UX'),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => const UiUxCourseListPage(),
+              )),
               child: Container(
                 padding: const EdgeInsets.symmetric(
                   vertical: AltaSpacing.space16,
@@ -76,7 +80,9 @@ class MyCoursePage extends StatelessWidget {
             ),
             const SizedBox(height: AltaSpacing.space16),
             InkWell(
-              onTap: () => debugPrint('Program Flexi Flutter'),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => const FlutterCourseListPage(),
+              )),
               child: Container(
                 padding: const EdgeInsets.symmetric(
                   vertical: AltaSpacing.space16,

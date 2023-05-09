@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_alterra_app/feature/auth/login/view/ui/splash_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../utils/alta_constants.dart';
 import '../../../../../../utils/alta_widgets.dart';
+import '../../../../../home/home_page/view_model/cubit/homepage_cubit.dart';
 
 class AltaDialogs extends StatelessWidget {
   const AltaDialogs({super.key});
@@ -31,7 +34,13 @@ class AltaDialogs extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   AltaPrimaryButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      BlocProvider.of<HomepageCubit>(context).userLogout();
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (_) => const SplashPage()),
+                          (route) => false);
+                    },
                     borderRadius: AltaBorderRadius.radius10,
                     paddingVertical: AltaSpacing.space12,
                     paddingHorizontal: AltaSpacing.space28,

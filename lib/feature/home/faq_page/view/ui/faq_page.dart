@@ -173,7 +173,6 @@ class FaqPage extends StatelessWidget {
             Expanded(
               child: ListView(
                 physics: const BouncingScrollPhysics(),
-                controller: scrollController,
                 children: [
                   const SizedBox(height: AltaSpacing.space24),
                   AltaText(

@@ -8,11 +8,13 @@ class AltaFeatureCourses extends StatelessWidget {
   final String textCourse;
   final String textDetail;
   final String assetsCourse;
+  final VoidCallback onTap;
   const AltaFeatureCourses(
       {super.key,
       required this.textCourse,
       required this.textDetail,
-      required this.assetsCourse});
+      required this.assetsCourse,
+      required this.onTap,});
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +44,8 @@ class AltaFeatureCourses extends StatelessWidget {
               fontWeight: CustomFontWeight.bold,
             ),
             const SizedBox(height: AltaSpacing.space8),
-            GestureDetector(
-              onTap: () {},
+            InkWell(
+              onTap: onTap,
               child: Row(
                 children: [
                   AltaText(
