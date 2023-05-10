@@ -25,10 +25,12 @@ extension Indicator on ProgressIndicatorBar {
 class CourseListCardWidget extends StatelessWidget {
   final ProgressIndicatorBar value;
   final String titleLesson;
+  final VoidCallback? onTap;
   const CourseListCardWidget({
     super.key,
     required this.titleLesson,
     required this.value,
+    this.onTap,
   });
 
   @override
@@ -103,12 +105,16 @@ class CourseListCardWidget extends StatelessWidget {
               color: AltaColor.tangerine,
             ),
           ),
-          const Align(
-            alignment: Alignment(1, 0.6),
-            child: AltaSvg(
-              svgPath: 'assets/icon/homepage_section/svg/arrow_right_icon.svg',
-              width: 24,
-              height: 24,
+          Align(
+            alignment: const Alignment(1, 0.6),
+            child: InkWell(
+              onTap: onTap,
+              child: const AltaSvg(
+                svgPath:
+                    'assets/icon/homepage_section/svg/arrow_right_icon.svg',
+                width: 24,
+                height: 24,
+              ),
             ),
           ),
         ],

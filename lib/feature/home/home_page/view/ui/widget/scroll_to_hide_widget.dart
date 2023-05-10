@@ -16,9 +16,9 @@ class ScrollToHideWidget extends StatefulWidget {
   State<ScrollToHideWidget> createState() => _ScrollToHideWidgetState();
 }
 
-final ValueNotifier<bool> _isVisible = ValueNotifier(true);
-
 class _ScrollToHideWidgetState extends State<ScrollToHideWidget> {
+  final ValueNotifier<bool> _isVisible = ValueNotifier(true);
+
   @override
   void initState() {
     widget.scrollController.addListener(_listen);

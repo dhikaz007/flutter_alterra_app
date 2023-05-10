@@ -10,12 +10,12 @@ import 'register_page_2.dart';
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
 
-  static final ValueNotifier<String> _email = ValueNotifier('');
-  static final ValueNotifier<bool> _isFilled = ValueNotifier(false);
-  static final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
+    final ValueNotifier<String> email = ValueNotifier('');
+    final ValueNotifier<bool> isFilled = ValueNotifier(false);
+    final formKey = GlobalKey<FormState>();
+
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: AltaScaffold(
@@ -33,7 +33,7 @@ class RegisterPage extends StatelessWidget {
             right: AltaSpacing.space16,
           ),
           child: Form(
-            key: _formKey,
+            key: formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -63,7 +63,7 @@ class RegisterPage extends StatelessWidget {
                 ),
                 const SizedBox(height: AltaSpacing.space8),
                 ValueListenableBuilder(
-                  valueListenable: _email,
+                  valueListenable: email,
                   builder: (context, emailValue, _) => AltaTextField(
                     hintText: 'Masukkan email anda',
                     borderRadius: 8,
@@ -74,11 +74,11 @@ class RegisterPage extends StatelessWidget {
                             ? null
                             : authValidator.errorText(ValidatorType.email),
                     onChanged: (value) {
-                      _email.value = value;
-                      if (_email.value.isEmpty) {
-                        _isFilled.value = false;
+                      email.value = value;
+                      if (email.value.isEmpty) {
+                        isFilled.value = false;
                       } else {
-                        _isFilled.value = true;
+                        isFilled.value = true;
                       }
                     },
                   ),
@@ -88,23 +88,23 @@ class RegisterPage extends StatelessWidget {
                   children: [
                     Expanded(
                       child: ValueListenableBuilder(
-                        valueListenable: _isFilled,
+                        valueListenable: isFilled,
                         builder: (context, isFilledValue, child) =>
                             AltaPrimaryButton(
                           backgroundColor: MaterialStateProperty.resolveWith(
-                            (states) => _isFilled.value == true
+                            (states) => isFilled.value == true
                                 ? AltaColor.darkBlue
                                 : AltaColor.altGray2,
                           ),
                           borderRadius: AltaBorderRadius.radius8,
                           paddingVertical: AltaSpacing.space20,
                           paddingHorizontal: AltaSpacing.space28,
-                          onPressed: () => _isFilled.value == true &&
-                                  _email.value.isNotEmpty &&
-                                  _formKey.currentState!.validate()
+                          onPressed: () => isFilled.value == true &&
+                                  email.value.isNotEmpty &&
+                                  formKey.currentState!.validate()
                               ? Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) =>
-                                      RegisterPage2(email: _email.value),
+                                      RegisterPage2(email: email.value),
                                 ))
                               : null,
                           child: AltaText(

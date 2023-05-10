@@ -10,8 +10,6 @@ import 'video_content_page.dart';
 class DetailCoursePage extends StatelessWidget {
   const DetailCoursePage({super.key});
 
-  static final ValueNotifier<int> _currentTab = ValueNotifier(0);
-
   static final List<String> _titleTab = [
     'Video',
     'Materi',
@@ -28,6 +26,8 @@ class DetailCoursePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ValueNotifier<int> currentTab = ValueNotifier(0);
+
     return AltaScaffold(
       isLeading: LeadingVisibility.on,
       isAppbar: AppBarVisibility.on,
@@ -38,7 +38,7 @@ class DetailCoursePage extends StatelessWidget {
       leadingHeight: 24,
       leadingAsset: 'assets/icon/homepage_section/svg/circle_left_icon.svg',
       onPressed: () =>
-          _currentTab.value == 0 ? _currentTab.value : _currentTab.value--,
+          currentTab.value == 0 ? currentTab.value : currentTab.value--,
       title: AltaText(
         context: context,
         text: 'Introdaction to UI/UX',
@@ -51,9 +51,9 @@ class DetailCoursePage extends StatelessWidget {
           svgAsset: 'assets/icon/homepage_section/svg/circle_right_icon.svg',
           iconHeight: 24,
           iconWidth: 24,
-          onPressed: () => _currentTab.value <= 0 || _currentTab.value < 3
-              ? _currentTab.value++
-              : _currentTab.value,
+          onPressed: () => currentTab.value <= 0 || currentTab.value < 3
+              ? currentTab.value++
+              : currentTab.value,
         ),
       ],
       body: Padding(
@@ -69,9 +69,9 @@ class DetailCoursePage extends StatelessWidget {
                 separatorBuilder: (context, index) =>
                     const SizedBox(width: AltaSpacing.space8),
                 itemBuilder: (context, index) => ValueListenableBuilder(
-                  valueListenable: _currentTab,
+                  valueListenable: currentTab,
                   builder: (context, currentTabValue, child) => InkWell(
-                    onTap: () => _currentTab.value = index,
+                    onTap: () => currentTab.value = index,
                     child: Container(
                       width: 100,
                       height: 32,
@@ -109,7 +109,7 @@ class DetailCoursePage extends StatelessWidget {
                   children: [
                     const SizedBox(height: AltaSpacing.space8),
                     ValueListenableBuilder(
-                      valueListenable: _currentTab,
+                      valueListenable: currentTab,
                       builder: (context, currentTabValue, _) =>
                           _contentTab[currentTabValue],
                     ),

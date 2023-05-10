@@ -65,9 +65,11 @@ class AltaScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       backgroundColor: scaffoldColor,
       appBar: isAppbar.valueAppbar == true
           ? AppBar(
+            automaticallyImplyLeading: false,
               title: title,
               backgroundColor: appBarColor,
               elevation: 0,

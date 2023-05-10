@@ -14,14 +14,14 @@ class RatingBadgeWidget extends StatelessWidget {
     required this.height,
   });
 
-  static final ValueNotifier<bool> _isSelected = ValueNotifier(false);
-
   @override
   Widget build(BuildContext context) {
+    final ValueNotifier<bool> isSelected = ValueNotifier(false);
+    
     return ValueListenableBuilder(
-      valueListenable: _isSelected,
+      valueListenable: isSelected,
       builder: (context, isSelectedValue, child) => InkWell(
-        onTap: () => _isSelected.value = !_isSelected.value,
+        onTap: () => isSelected.value = !isSelected.value,
         child: Container(
           width: width,
           height: height,

@@ -11,10 +11,11 @@ class FeedbackPage extends StatelessWidget {
   const FeedbackPage({super.key});
 
   static String? feedback;
-  static final ValueNotifier<bool> _isDone = ValueNotifier(false);
 
   @override
   Widget build(BuildContext context) {
+    final ValueNotifier<bool> isDone = ValueNotifier(false);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -136,15 +137,16 @@ class FeedbackPage extends StatelessWidget {
           maxLines: 10,
           borderRadius: AltaBorderRadius.zero,
           focusedBorderRadius: AltaBorderRadius.zero,
+          keyboardType: TextInputType.text,
           borderSide: const BorderSide(color: AltaColor.darkBlue),
           filled: true,
           fillColor: AltaColor.gray,
           onChanged: (value) {
             feedback = value;
             if (value.isEmpty) {
-              _isDone.value = false;
+              isDone.value = false;
             } else {
-              _isDone.value = true;
+              isDone.value = true;
             }
           },
         ),
@@ -153,7 +155,7 @@ class FeedbackPage extends StatelessWidget {
           children: [
             Expanded(
               child: ValueListenableBuilder(
-                valueListenable: _isDone,
+                valueListenable: isDone,
                 builder: (context, isDoneValue, _) => AltaPrimaryButton(
                   backgroundColor: MaterialStateProperty.resolveWith(
                     (states) => isDoneValue == true

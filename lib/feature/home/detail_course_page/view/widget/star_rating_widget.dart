@@ -7,10 +7,10 @@ class StarRatingWidget extends StatelessWidget {
   final MainAxisAlignment? mainAxisAlignment;
   const StarRatingWidget({super.key, this.mainAxisAlignment});
 
-  static final ValueNotifier<int> _ratingSelected = ValueNotifier(0);
-
   @override
   Widget build(BuildContext context) {
+    final ValueNotifier<int> ratingSelected = ValueNotifier(0);
+
     return Row(
       mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
       children: List.generate(
@@ -18,9 +18,9 @@ class StarRatingWidget extends StatelessWidget {
         (index) => Padding(
           padding: const EdgeInsets.only(right: AltaSpacing.space8),
           child: ValueListenableBuilder(
-            valueListenable: _ratingSelected,
+            valueListenable: ratingSelected,
             builder: (context, ratingSelectedValue, child) => InkWell(
-              onTap: () => _ratingSelected.value = index,
+              onTap: () => ratingSelected.value = index,
               child: index <= ratingSelectedValue
                   ? const AltaSvg(
                       svgPath:

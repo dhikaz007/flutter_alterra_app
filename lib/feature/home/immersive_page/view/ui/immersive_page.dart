@@ -10,10 +10,10 @@ import 'widget/output_immersive_widget.dart';
 class ImmersivePage extends StatelessWidget {
   const ImmersivePage({Key? key}) : super(key: key);
 
-  static final ValueNotifier<int> _activeIndex = ValueNotifier(1);
-
   @override
   Widget build(BuildContext context) {
+    final ValueNotifier<int> activeIndex = ValueNotifier(1);
+
     return AltaScaffold(
       isLeading: LeadingVisibility.on,
       isAppbar: AppBarVisibility.on,
@@ -175,7 +175,7 @@ class ImmersivePage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 210,
                 child: ValueListenableBuilder(
-                  valueListenable: _activeIndex,
+                  valueListenable: activeIndex,
                   builder: (context, activeIndexValue, _) => CarouselSlider(
                     options: CarouselOptions(
                       height: 210,
@@ -186,7 +186,7 @@ class ImmersivePage extends StatelessWidget {
                       enlargeStrategy: CenterPageEnlargeStrategy.zoom,
                       scrollPhysics: const BouncingScrollPhysics(),
                       onPageChanged: (index, reason) =>
-                          _activeIndex.value = index,
+                          activeIndex.value = index,
                     ),
                     items: const [
                       ImmersiveProgramCard(
@@ -210,7 +210,7 @@ class ImmersivePage extends StatelessWidget {
               ),
               const SizedBox(height: AltaSpacing.space8),
               ValueListenableBuilder(
-                valueListenable: _activeIndex,
+                valueListenable: activeIndex,
                 builder: (context, activeIndexValue, _) =>
                     AnimatedSmoothIndicator(
                   activeIndex: activeIndexValue,

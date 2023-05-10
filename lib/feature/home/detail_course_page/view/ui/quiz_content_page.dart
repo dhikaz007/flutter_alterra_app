@@ -7,22 +7,22 @@ import '../widget/quiz_content_list_widget.dart';
 class QuizContentPage extends StatelessWidget {
   const QuizContentPage({super.key});
 
-  static final ValueNotifier<ValueQuiz> _selectedRadioTile =
-      ValueNotifier(ValueQuiz.none);
-  static final ValueNotifier<ValueQuiz> _selectedRadioTile2 =
-      ValueNotifier(ValueQuiz.none);
-  static final ValueNotifier<ValueQuiz> _selectedRadioTile3 =
-      ValueNotifier(ValueQuiz.none);
-
-  static final ValueNotifier<bool> _isSelected = ValueNotifier(false);
-
   @override
   Widget build(BuildContext context) {
+    final ValueNotifier<ValueQuiz> selectedRadioTile =
+        ValueNotifier(ValueQuiz.none);
+    final ValueNotifier<ValueQuiz> selectedRadioTile2 =
+        ValueNotifier(ValueQuiz.none);
+    final ValueNotifier<ValueQuiz> selectedRadioTile3 =
+        ValueNotifier(ValueQuiz.none);
+
+    final ValueNotifier<bool> isSelected = ValueNotifier(false);
+
     return Column(
       children: [
         const SizedBox(height: AltaSpacing.space8),
         ValueListenableBuilder(
-          valueListenable: _selectedRadioTile,
+          valueListenable: selectedRadioTile,
           builder: (context, selectedRadioTileValue, _) =>
               QuizContentListWidget(
             titleQuiz:
@@ -37,12 +37,12 @@ class QuizContentPage extends StatelessWidget {
             value4: ValueQuiz.fourthValue,
             groupValue: selectedRadioTileValue,
             onChanged: (value) =>
-                _selectedRadioTile.value = value ?? ValueQuiz.none,
+                selectedRadioTile.value = value ?? ValueQuiz.none,
           ),
         ),
         const SizedBox(height: AltaSpacing.space12),
         ValueListenableBuilder(
-          valueListenable: _selectedRadioTile2,
+          valueListenable: selectedRadioTile2,
           builder: (context, selectedRadioTile2Value, _) =>
               QuizContentListWidget(
             titleQuiz: 'Manakah yang bukan merupakan basic rule pada UI/UX ?',
@@ -56,12 +56,12 @@ class QuizContentPage extends StatelessWidget {
             value4: ValueQuiz.fourthValue,
             groupValue: selectedRadioTile2Value,
             onChanged: (value) =>
-                _selectedRadioTile2.value = value ?? ValueQuiz.none,
+                selectedRadioTile2.value = value ?? ValueQuiz.none,
           ),
         ),
         const SizedBox(height: AltaSpacing.space12),
         ValueListenableBuilder(
-          valueListenable: _selectedRadioTile3,
+          valueListenable: selectedRadioTile3,
           builder: (context, selectedRadioTile3Value, _) =>
               QuizContentListWidget(
             titleQuiz:
@@ -76,11 +76,11 @@ class QuizContentPage extends StatelessWidget {
             value4: ValueQuiz.fourthValue,
             groupValue: selectedRadioTile3Value,
             onChanged: (value) {
-              (_selectedRadioTile3.value = value ?? ValueQuiz.none);
-              if (_selectedRadioTile3.value.name.isNotEmpty) {
-                _isSelected.value = true;
+              (selectedRadioTile3.value = value ?? ValueQuiz.none);
+              if (selectedRadioTile3.value.name.isNotEmpty) {
+                isSelected.value = true;
               } else {
-                _isSelected.value = false;
+                isSelected.value = false;
               }
             },
           ),
@@ -90,7 +90,7 @@ class QuizContentPage extends StatelessWidget {
           children: [
             Expanded(
               child: ValueListenableBuilder(
-                valueListenable: _isSelected,
+                valueListenable: isSelected,
                 builder: (context, isSelectedValue, _) => AltaPrimaryButton(
                   backgroundColor: MaterialStateProperty.resolveWith(
                     (states) => isSelectedValue == true

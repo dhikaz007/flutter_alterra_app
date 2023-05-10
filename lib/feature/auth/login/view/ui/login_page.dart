@@ -12,13 +12,13 @@ import '../../../register/view/ui/register_page.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
-  static final ValueNotifier<String> _email = ValueNotifier('');
-  static final ValueNotifier<String> _pass = ValueNotifier('');
-  static final ValueNotifier<bool> _isFilled = ValueNotifier(false);
-  static final ValueNotifier<bool> _isValid = ValueNotifier(true);
-
   @override
   Widget build(BuildContext context) {
+    final ValueNotifier<String> email = ValueNotifier('');
+    final ValueNotifier<String> pass = ValueNotifier('');
+    final ValueNotifier<bool> isFilled = ValueNotifier(false);
+    final ValueNotifier<bool> isValid = ValueNotifier(true);
+
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is UserLoginSuccess) {
@@ -69,7 +69,7 @@ class LoginPage extends StatelessWidget {
                         ),
                         const SizedBox(height: AltaSpacing.space16),
                         ValueListenableBuilder(
-                          valueListenable: _isValid,
+                          valueListenable: isValid,
                           builder: (context, isValidValue, _) => Visibility(
                             visible: isValidValue,
                             replacement: Wrap(
@@ -117,21 +117,21 @@ class LoginPage extends StatelessWidget {
                         ),
                         const SizedBox(height: AltaSpacing.space8),
                         ValueListenableBuilder<String>(
-                          valueListenable: _email,
+                          valueListenable: email,
                           builder: (context, emailValue, _) => AltaTextField(
                             hintText: 'Masukkan email anda',
                             borderRadius: 8,
                             borderSide: const BorderSide(color: AltaColor.gray),
                             onChanged: (value) {
-                              _email.value = value;
-                              if (_email.value.isEmpty && _pass.value.isEmpty) {
-                                _isFilled.value = false;
-                                _isValid.value = true;
-                              } else if (_email.value.contains(' ')) {
-                                _isValid.value = false;
+                              email.value = value;
+                              if (email.value.isEmpty && pass.value.isEmpty) {
+                                isFilled.value = false;
+                                isValid.value = true;
+                              } else if (email.value.contains(' ')) {
+                                isValid.value = false;
                               } else {
-                                _isFilled.value = true;
-                                _isValid.value = true;
+                                isFilled.value = true;
+                                isValid.value = true;
                               }
                             },
                           ),
@@ -146,7 +146,7 @@ class LoginPage extends StatelessWidget {
                         ),
                         const SizedBox(height: AltaSpacing.space8),
                         ValueListenableBuilder(
-                          valueListenable: _pass,
+                          valueListenable: pass,
                           builder: (BuildContext context, passValue, _) =>
                               AltaTextField(
                             obscureText: true,
@@ -154,15 +154,15 @@ class LoginPage extends StatelessWidget {
                             borderRadius: 8,
                             borderSide: const BorderSide(color: AltaColor.gray),
                             onChanged: (value) {
-                              _pass.value = value;
-                              if (_pass.value.isEmpty && _email.value.isEmpty) {
-                                _isFilled.value = false;
-                                _isValid.value = true;
-                              } else if (_pass.value.contains(' ')) {
-                                _isValid.value = false;
+                              pass.value = value;
+                              if (pass.value.isEmpty && email.value.isEmpty) {
+                                isFilled.value = false;
+                                isValid.value = true;
+                              } else if (pass.value.contains(' ')) {
+                                isValid.value = false;
                               } else {
-                                _isFilled.value = true;
-                                _isValid.value = true;
+                                isFilled.value = true;
+                                isValid.value = true;
                               }
                             },
                           ),
@@ -187,7 +187,7 @@ class LoginPage extends StatelessWidget {
                           children: [
                             Expanded(
                               child: ValueListenableBuilder(
-                                valueListenable: _isFilled,
+                                valueListenable: isFilled,
                                 builder: (context, isFilledValue, child) =>
                                     AltaPrimaryButton(
                                   backgroundColor:
@@ -201,16 +201,16 @@ class LoginPage extends StatelessWidget {
                                   paddingHorizontal: AltaSpacing.space28,
                                   onPressed: () async => isFilledValue ==
                                               true &&
-                                          _isValid.value == true &&
-                                          authValidator.validateEmail(
-                                                  _email.value) ==
+                                          isValid.value == true &&
+                                          authValidator
+                                                  .validateEmail(email.value) ==
                                               true &&
                                           authValidator.validatePassword(
-                                                  _pass.value) ==
+                                                  pass.value) ==
                                               true
                                       ? await context.read<LoginCubit>().login(
-                                            email: _email.value,
-                                            password: _pass.value,
+                                            email: email.value,
+                                            password: pass.value,
                                           )
                                       : null,
                                   child: AltaText(

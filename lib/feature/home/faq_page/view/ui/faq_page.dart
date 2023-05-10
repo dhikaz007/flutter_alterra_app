@@ -237,49 +237,6 @@ class FaqPage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(left: AltaSpacing.space8),
-        child: Stack(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: AltaSpacing.space24),
-              child: Align(
-                alignment: Alignment.bottomLeft,
-                child: TextField(
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.all(AltaSpacing.space16),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius:
-                          BorderRadius.circular(AltaBorderRadius.radius8),
-                    ),
-                    filled: true,
-                    fillColor: AltaColor.white,
-                    hintText: 'Ada pertanyaan?',
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius:
-                          BorderRadius.circular(AltaBorderRadius.radius8),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Align(
-              alignment: const Alignment(0.97, 0.99),
-              child: FloatingActionButton.small(
-                elevation: 0,
-                onPressed: () => debugPrint('TAPPED'),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(AltaBorderRadius.radius8),
-                ),
-                backgroundColor: AltaColor.tangerine,
-                child: const Icon(Icons.arrow_forward),
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

@@ -11,13 +11,13 @@ class RegisterPage2 extends StatelessWidget {
   final String email;
   const RegisterPage2({Key? key, required this.email}) : super(key: key);
 
-  static final ValueNotifier<String> _name = ValueNotifier('');
-  static final ValueNotifier<String> _pass = ValueNotifier('');
-  static final ValueNotifier<String> _confirmPass = ValueNotifier('');
-  static final ValueNotifier<bool> _isFilled = ValueNotifier(false);
-
   @override
   Widget build(BuildContext context) {
+    final ValueNotifier<String> name = ValueNotifier('');
+    final ValueNotifier<String> pass = ValueNotifier('');
+    final ValueNotifier<String> confirmPass = ValueNotifier('');
+    final ValueNotifier<bool> isFilled = ValueNotifier(false);
+
     return BlocConsumer<RegisterCubit, RegisterState>(
       listener: (context, state) {
         if (state is UserRegisterSuccess) {
@@ -78,24 +78,24 @@ class RegisterPage2 extends StatelessWidget {
                     ),
                     const SizedBox(height: AltaSpacing.space8),
                     ValueListenableBuilder(
-                      valueListenable: _name,
+                      valueListenable: name,
                       builder: (context, nameValue, _) => AltaTextField(
                         hintText: 'Masukkan nama lengkap anda',
                         keyboardType: TextInputType.name,
                         textCapitalization: TextCapitalization.sentences,
                         borderRadius: 8,
                         borderSide: const BorderSide(color: AltaColor.gray),
-                        errorText: _name.value.contains(authValidator.nameRegex)
+                        errorText: name.value.contains(authValidator.nameRegex)
                             ? null
                             : authValidator.errorText(ValidatorType.fullName),
                         onChanged: (value) {
-                          _name.value = value;
-                          if (_name.value.isNotEmpty &&
-                              _pass.value.isNotEmpty &&
-                              _confirmPass.value.isNotEmpty) {
-                            _isFilled.value = true;
+                          name.value = value;
+                          if (name.value.isNotEmpty &&
+                              pass.value.isNotEmpty &&
+                              confirmPass.value.isNotEmpty) {
+                            isFilled.value = true;
                           } else {
-                            _isFilled.value = false;
+                            isFilled.value = false;
                           }
                         },
                       ),
@@ -110,7 +110,7 @@ class RegisterPage2 extends StatelessWidget {
                     ),
                     const SizedBox(height: AltaSpacing.space8),
                     ValueListenableBuilder(
-                      valueListenable: _pass,
+                      valueListenable: pass,
                       builder: (context, passValue, _) => AltaTextField(
                         hintText: 'Masukkan kata sandi',
                         keyboardType: TextInputType.text,
@@ -118,13 +118,13 @@ class RegisterPage2 extends StatelessWidget {
                         borderSide: const BorderSide(color: AltaColor.gray),
                         obscureText: true,
                         onChanged: (value) {
-                          _pass.value = value;
-                          if (_name.value.isNotEmpty &&
-                              _pass.value.isNotEmpty &&
-                              _confirmPass.value.isNotEmpty) {
-                            _isFilled.value = true;
+                          pass.value = value;
+                          if (name.value.isNotEmpty &&
+                              pass.value.isNotEmpty &&
+                              confirmPass.value.isNotEmpty) {
+                            isFilled.value = true;
                           } else {
-                            _isFilled.value = false;
+                            isFilled.value = false;
                           }
                         },
                       ),
@@ -139,25 +139,25 @@ class RegisterPage2 extends StatelessWidget {
                     ),
                     const SizedBox(height: AltaSpacing.space8),
                     ValueListenableBuilder(
-                      valueListenable: _confirmPass,
+                      valueListenable: confirmPass,
                       builder: (context, confirmPassValue, _) => AltaTextField(
                         hintText: 'Masukkan konfirmasi kata sandi',
                         keyboardType: TextInputType.text,
                         borderRadius: 8,
                         borderSide: const BorderSide(color: AltaColor.gray),
                         obscureText: true,
-                        errorText: _confirmPass.value.contains(_pass.value)
+                        errorText: confirmPass.value.contains(pass.value)
                             ? null
                             : authValidator
                                 .errorText(ValidatorType.confirmPassword),
                         onChanged: (value) {
-                          _confirmPass.value = value;
-                          if (_name.value.isNotEmpty &&
-                              _pass.value.isNotEmpty &&
-                              _confirmPass.value.isNotEmpty) {
-                            _isFilled.value = true;
+                          confirmPass.value = value;
+                          if (name.value.isNotEmpty &&
+                              pass.value.isNotEmpty &&
+                              confirmPass.value.isNotEmpty) {
+                            isFilled.value = true;
                           } else {
-                            _isFilled.value = false;
+                            isFilled.value = false;
                           }
                         },
                       ),
@@ -167,7 +167,7 @@ class RegisterPage2 extends StatelessWidget {
                       children: [
                         Expanded(
                           child: ValueListenableBuilder(
-                            valueListenable: _isFilled,
+                            valueListenable: isFilled,
                             builder: (context, isFilledValue, child) =>
                                 AltaPrimaryButton(
                               backgroundColor:
@@ -178,16 +178,15 @@ class RegisterPage2 extends StatelessWidget {
                               ),
                               onPressed: () async => isFilledValue == true &&
                                       authValidator
-                                              .validateFullName(_name.value) ==
+                                              .validateFullName(name.value) ==
                                           true &&
-                                      _confirmPass.value
-                                              .contains(_pass.value) ==
+                                      confirmPass.value.contains(pass.value) ==
                                           true &&
                                       authValidator
-                                              .validatePassword(_pass.value) ==
+                                              .validatePassword(pass.value) ==
                                           true &&
                                       authValidator.validatePassword(
-                                              _confirmPass.value) ==
+                                              confirmPass.value) ==
                                           true
                                   ? await showDialog(
                                       context: context,
@@ -203,8 +202,8 @@ class RegisterPage2 extends StatelessWidget {
                                           .read<RegisterCubit>()
                                           .createUser(
                                             email: email,
-                                            password: _pass.value,
-                                            name: _name.value,
+                                            password: pass.value,
+                                            name: name.value,
                                           ),
                                     )
                                   : null,

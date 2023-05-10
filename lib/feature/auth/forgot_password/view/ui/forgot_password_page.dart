@@ -11,11 +11,11 @@ import 'forgot_password_page_2.dart';
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({Key? key}) : super(key: key);
 
-  static final ValueNotifier<String> _email = ValueNotifier('');
-  static final ValueNotifier<bool> _isFilled = ValueNotifier(false);
-
   @override
   Widget build(BuildContext context) {
+    final ValueNotifier<String> email = ValueNotifier('');
+    final ValueNotifier<bool> isFilled = ValueNotifier(false);
+
     return BlocConsumer<ForgotPasswordCubit, ForgotPasswordState>(
       listener: (context, state) {
         if (state is ForgotPasswordSuccess) {
@@ -24,7 +24,7 @@ class ForgotPasswordPage extends StatelessWidget {
           Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(
                   builder: (context) =>
-                      ForgotPasswordPage2(email: _email.value)),
+                      ForgotPasswordPage2(email: email.value)),
               (route) => false);
         } else if (state is ForgotPasswordFailure) {
           AltaSnackBar.getAltaSnackBar(context, state.errorText, AltaColor.red);
@@ -76,17 +76,17 @@ class ForgotPasswordPage extends StatelessWidget {
                   ),
                   const SizedBox(height: AltaSpacing.space8),
                   ValueListenableBuilder(
-                    valueListenable: _email,
+                    valueListenable: email,
                     builder: (context, emailValue, _) => AltaTextField(
                       hintText: 'Masukkan email anda',
                       borderRadius: 8,
                       borderSide: const BorderSide(color: AltaColor.gray),
                       onChanged: (value) {
-                        _email.value = value;
-                        if (_email.value.isEmpty) {
-                          _isFilled.value = false;
+                        email.value = value;
+                        if (email.value.isEmpty) {
+                          isFilled.value = false;
                         } else {
-                          _isFilled.value = true;
+                          isFilled.value = true;
                         }
                       },
                     ),
@@ -96,7 +96,7 @@ class ForgotPasswordPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: ValueListenableBuilder(
-                          valueListenable: _isFilled,
+                          valueListenable: isFilled,
                           builder: (context, isFilledValue, child) =>
                               AltaPrimaryButton(
                             backgroundColor: MaterialStateProperty.resolveWith(
@@ -108,12 +108,12 @@ class ForgotPasswordPage extends StatelessWidget {
                             paddingVertical: AltaSpacing.space20,
                             paddingHorizontal: AltaSpacing.space28,
                             onPressed: () async => isFilledValue == true &&
-                                    _email.value.isNotEmpty &&
-                                    authValidator.validateEmail(_email.value) ==
+                                    email.value.isNotEmpty &&
+                                    authValidator.validateEmail(email.value) ==
                                         true
                                 ? await context
                                     .read<ForgotPasswordCubit>()
-                                    .resetPassword(_email.value)
+                                    .resetPassword(email.value)
                                 : null,
                             child: AltaText(
                               context: context,

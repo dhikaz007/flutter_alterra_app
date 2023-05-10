@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_alterra_app/feature/home/detail_course_page/view/ui/detail_course_page.dart';
 
 import '../../../../../utils/alta_constant.dart';
 import '../../../../../utils/alta_widgets.dart';
@@ -67,9 +68,12 @@ class UiUxCourseListPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: AltaSpacing.space16),
-                const CourseListCardWidget(
+                CourseListCardWidget(
                   titleLesson: 'Introduction to UI/UX',
                   value: ProgressIndicatorBar.complete,
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) => const DetailCoursePage(),
+                  )),
                 ),
                 const SizedBox(height: AltaSpacing.space16),
                 const CourseListCardWidget(
