@@ -79,7 +79,7 @@ class ForgotPasswordPage extends StatelessWidget {
                     valueListenable: email,
                     builder: (context, emailValue, _) => AltaTextField(
                       hintText: 'Masukkan email anda',
-                      borderRadius: 8,
+                      borderRadius: AltaBorderRadius.radius8,
                       borderSide: const BorderSide(color: AltaColor.gray),
                       onChanged: (value) {
                         email.value = value;

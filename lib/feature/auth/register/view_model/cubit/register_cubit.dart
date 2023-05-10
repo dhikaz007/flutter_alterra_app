@@ -25,7 +25,7 @@ class RegisterCubit extends Cubit<RegisterState> {
       await user.reload();
       user = FirebaseAuth.instance.currentUser;
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
+      if (e.code == 'invalid-email') {
         emit(UserRegisterFailure(
             'Mungkin email atau password yang anda masukkan salah.'));
       } else if (e.code == 'wrong-password') {

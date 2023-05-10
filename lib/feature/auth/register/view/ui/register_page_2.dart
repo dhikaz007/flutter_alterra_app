@@ -40,7 +40,7 @@ class RegisterPage2 extends StatelessWidget {
             leadingAsset: 'assets/icon/login_section/svg/close_icon.svg',
             leadingHeight: 14,
             leadingWidth: 14,
-            onPressed: null,
+            onPressed: () => Navigator.of(context).pop(true),
             body: Padding(
               padding: const EdgeInsets.only(
                 left: AltaSpacing.space16,
@@ -83,7 +83,7 @@ class RegisterPage2 extends StatelessWidget {
                         hintText: 'Masukkan nama lengkap anda',
                         keyboardType: TextInputType.name,
                         textCapitalization: TextCapitalization.sentences,
-                        borderRadius: 8,
+                        borderRadius: AltaBorderRadius.radius8,
                         borderSide: const BorderSide(color: AltaColor.gray),
                         errorText: name.value.contains(authValidator.nameRegex)
                             ? null
@@ -114,9 +114,13 @@ class RegisterPage2 extends StatelessWidget {
                       builder: (context, passValue, _) => AltaTextField(
                         hintText: 'Masukkan kata sandi',
                         keyboardType: TextInputType.text,
-                        borderRadius: 8,
+                        borderRadius: AltaBorderRadius.radius8,
                         borderSide: const BorderSide(color: AltaColor.gray),
                         obscureText: true,
+                        errorText: pass.value
+                                .contains(authValidator.passwordRegex)
+                            ? null
+                            : authValidator.errorText(ValidatorType.password),
                         onChanged: (value) {
                           pass.value = value;
                           if (name.value.isNotEmpty &&
@@ -143,7 +147,7 @@ class RegisterPage2 extends StatelessWidget {
                       builder: (context, confirmPassValue, _) => AltaTextField(
                         hintText: 'Masukkan konfirmasi kata sandi',
                         keyboardType: TextInputType.text,
-                        borderRadius: 8,
+                        borderRadius: AltaBorderRadius.radius8,
                         borderSide: const BorderSide(color: AltaColor.gray),
                         obscureText: true,
                         errorText: confirmPass.value.contains(pass.value)
@@ -152,6 +156,7 @@ class RegisterPage2 extends StatelessWidget {
                                 .errorText(ValidatorType.confirmPassword),
                         onChanged: (value) {
                           confirmPass.value = value;
+
                           if (name.value.isNotEmpty &&
                               pass.value.isNotEmpty &&
                               confirmPass.value.isNotEmpty) {
@@ -178,16 +183,11 @@ class RegisterPage2 extends StatelessWidget {
                               ),
                               onPressed: () async => isFilledValue == true &&
                                       authValidator
-                                              .validateFullName(name.value) ==
-                                          true &&
-                                      confirmPass.value.contains(pass.value) ==
-                                          true &&
+                                          .validateFullName(name.value) == true &&
                                       authValidator
-                                              .validatePassword(pass.value) ==
-                                          true &&
-                                      authValidator.validatePassword(
-                                              confirmPass.value) ==
-                                          true
+                                          .validatePassword(pass.value) == true &&
+                                      authValidator
+                                          .validatePassword(confirmPass.value) == true
                                   ? await showDialog(
                                       context: context,
                                       builder: (_) => AltaPopUpMessage(
@@ -198,7 +198,7 @@ class RegisterPage2 extends StatelessWidget {
                                             Navigator.of(context).pop(true),
                                       ),
                                     ).then(
-                                      (value) => context
+                                      (_) => context
                                           .read<RegisterCubit>()
                                           .createUser(
                                             email: email,
@@ -206,8 +206,11 @@ class RegisterPage2 extends StatelessWidget {
                                             name: name.value,
                                           ),
                                     )
-                                  : null,
-                              borderRadius: 8,
+                                  : AltaSnackBar.getAltaSnackBar(
+                                      context,
+                                      'Semua kolom harus di isi sesuai kriteria',
+                                      AltaColor.red),
+                              borderRadius: AltaBorderRadius.radius8,
                               paddingHorizontal: AltaSpacing.space28,
                               paddingVertical: AltaSpacing.space20,
                               child: AltaText(

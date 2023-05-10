@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/auth/auth_validator.dart';
 import '../../../../../utils/alta_constant.dart';
 import '../../../../../utils/alta_widgets.dart';
 import '../../view_model/cubit/login_cubit.dart';
@@ -120,7 +119,7 @@ class LoginPage extends StatelessWidget {
                           valueListenable: email,
                           builder: (context, emailValue, _) => AltaTextField(
                             hintText: 'Masukkan email anda',
-                            borderRadius: 8,
+                            borderRadius: AltaBorderRadius.radius8,
                             borderSide: const BorderSide(color: AltaColor.gray),
                             onChanged: (value) {
                               email.value = value;
@@ -201,13 +200,7 @@ class LoginPage extends StatelessWidget {
                                   paddingHorizontal: AltaSpacing.space28,
                                   onPressed: () async => isFilledValue ==
                                               true &&
-                                          isValid.value == true &&
-                                          authValidator
-                                                  .validateEmail(email.value) ==
-                                              true &&
-                                          authValidator.validatePassword(
-                                                  pass.value) ==
-                                              true
+                                          isValid.value == true
                                       ? await context.read<LoginCubit>().login(
                                             email: email.value,
                                             password: pass.value,

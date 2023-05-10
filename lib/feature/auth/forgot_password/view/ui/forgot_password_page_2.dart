@@ -34,7 +34,7 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
           builder: (_) => AltaPopUpMessage(
             title: 'Berhasil Ubah Kata Sandi',
             content:
-                'Silahkan melakukan kembali login dengan kata sandi yang baru',
+                'Silahkan cek email anda terlebih dahulu kemudian kembali login dengan kata sandi yang baru',
             onPressed: () => Navigator.of(context).pop(true),
           ),
         ).then((value) => Navigator.of(context).pushAndRemoveUntil(
