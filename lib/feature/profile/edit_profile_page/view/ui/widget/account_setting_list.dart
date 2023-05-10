@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../utils/alta_constants.dart';
+import '../../../../../../utils/alta_constant.dart';
 import '../../../../../../utils/alta_widgets.dart';
-import '../../../../../profile/profile_page/view/ui/widget/alta_divider.dart';
+import '../../../../profile_page/view/ui/widget/alta_divider.dart';
 
 class AccountSettingList extends StatelessWidget {
   final TextEditingController? controller;

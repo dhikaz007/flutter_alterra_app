@@ -5,4 +5,5 @@ class AltaBorderRadius {
   static const radius10 = 10.0;
   static const radius12 = 12.0;
   static const radius14 = 14.0;
+  static const radius20 = 20.0;
 }

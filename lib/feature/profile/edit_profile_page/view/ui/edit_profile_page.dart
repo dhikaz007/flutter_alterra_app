@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_constant.dart';
 import '../../../../../utils/alta_widgets.dart';
-import '../../../home_page/view_model/cubit/homepage_cubit.dart';
+import '../../../../home/home_page/view_model/cubit/homepage_cubit.dart';
 import 'widget/edit_profile_widgets.dart';
 
 class EditProfilePage extends StatelessWidget {
@@ -32,11 +32,12 @@ class EditProfilePage extends StatelessWidget {
               children: [
                 const SizedBox(height: AltaSpacing.space20),
                 AltaText(
-                    context: context,
-                    text: 'Profile',
-                    style: AltaTextStyle.headline2,
-                    color: AltaColor.white,
-                    fontWeight: CustomFontWeight.semiBold),
+                  context: context,
+                  text: 'Profile',
+                  style: AltaTextStyle.headline2,
+                  color: AltaColor.white,
+                  fontWeight: CustomFontWeight.semiBold,
+                ),
                 const SizedBox(height: AltaSpacing.space16),
                 Row(
                   children: [

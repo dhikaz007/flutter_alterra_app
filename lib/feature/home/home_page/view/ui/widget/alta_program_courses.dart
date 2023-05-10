@@ -1,36 +1,38 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../utils/alta_constants.dart';
+import '../../../../../../utils/alta_constant.dart';
 import '../../../../../../utils/alta_widgets.dart';
 
 class AltaProgramCourses extends StatelessWidget {
   final String svgPicture;
   final String text;
   final String sub;
-  const AltaProgramCourses(
-      {super.key,
-      required this.svgPicture,
-      required this.text,
-      required this.sub});
+  const AltaProgramCourses({
+    super.key,
+    required this.svgPicture,
+    required this.text,
+    required this.sub,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 2,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(AltaBorderRadius.radius8),
       ),
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(AltaSpacing.space16),
             child: Row(
               children: [
                 Container(
                   width: 98,
                   height: 98,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius:
+                        BorderRadius.circular(AltaBorderRadius.radius12),
                     image: DecorationImage(
                       image: AssetImage(svgPicture),
                       fit: BoxFit.cover,
@@ -60,7 +62,7 @@ class AltaProgramCourses extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../../../utils/alta_constants.dart';
+import '../../../../../../utils/alta_constant.dart';
 import '../../../../../../utils/alta_widgets.dart';
 
 class AltaFeatureCourses extends StatelessWidget {
@@ -9,30 +8,34 @@ class AltaFeatureCourses extends StatelessWidget {
   final String textDetail;
   final String assetsCourse;
   final VoidCallback onTap;
-  const AltaFeatureCourses(
-      {super.key,
-      required this.textCourse,
-      required this.textDetail,
-      required this.assetsCourse,
-      required this.onTap,});
+  const AltaFeatureCourses({
+    super.key,
+    required this.textCourse,
+    required this.textDetail,
+    required this.assetsCourse,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 2,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(AltaBorderRadius.radius8),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(AltaSpacing.space12),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               width: 202,
               height: 116,
-              child: Image.asset(
-                assetsCourse,
+              child: AltaLogo(
+                imgPath: assetsCourse,
+                width: 204,
+                height: 116,
+                alignment: Alignment.center,
               ),
             ),
             const SizedBox(height: AltaSpacing.space8),
@@ -56,8 +59,11 @@ class AltaFeatureCourses extends StatelessWidget {
                     fontWeight: CustomFontWeight.medium,
                   ),
                   const SizedBox(width: AltaSpacing.space8),
-                  SvgPicture.asset(
-                      'assets/icon/homepage_section/svg/arrow.svg'),
+                  const AltaSvg(
+                    svgPath: 'assets/icon/homepage_section/svg/arrow.svg',
+                    width: 5,
+                    height: 12,
+                  ),
                 ],
               ),
             ),

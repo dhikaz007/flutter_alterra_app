@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../../utils/alta_constant.dart';
 import '../../../../../../utils/alta_widgets.dart';
@@ -14,7 +13,7 @@ class AboutBottomWidget extends StatelessWidget {
       height: 352,
       decoration: const BoxDecoration(color: AltaColor.darkBlue),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: AltaSpacing.space16),
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
           child: Column(
@@ -23,10 +22,15 @@ class AboutBottomWidget extends StatelessWidget {
               const SizedBox(height: AltaSpacing.space16),
               Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 64,
-                    child: Image.asset(
-                        'assets/images/login_section/png/alterra_white_logo.png'),
+                    child: AltaLogo(
+                      imgPath:
+                          'assets/images/login_section/png/alterra_white_logo.png',
+                      width: 64,
+                      height: 40,
+                      alignment: Alignment.center,
+                    ),
                   ),
                   const SizedBox(width: AltaSpacing.space8),
                   AltaText(
@@ -89,8 +93,11 @@ class AboutBottomWidget extends StatelessWidget {
               const SizedBox(height: AltaSpacing.space16),
               Row(
                 children: [
-                  SvgPicture.asset(
-                      'assets/icon/homepage_section/svg/globe_icon.svg'),
+                  const AltaSvg(
+                    svgPath: 'assets/icon/homepage_section/svg/globe_icon.svg',
+                    width: 24,
+                    height: 24,
+                  ),
                   const SizedBox(width: AltaSpacing.space12),
                   AltaText(
                     context: context,
@@ -104,8 +111,11 @@ class AboutBottomWidget extends StatelessWidget {
               const SizedBox(height: AltaSpacing.space12),
               Row(
                 children: [
-                  SvgPicture.asset(
-                      'assets/icon/homepage_section/svg/inbox_icon.svg'),
+                  const AltaSvg(
+                    svgPath: 'assets/icon/homepage_section/svg/inbox_icon.svg',
+                    width: 24,
+                    height: 24,
+                  ),
                   const SizedBox(width: AltaSpacing.space12),
                   AltaText(
                     context: context,
@@ -119,8 +129,12 @@ class AboutBottomWidget extends StatelessWidget {
               const SizedBox(height: AltaSpacing.space12),
               Row(
                 children: [
-                  SvgPicture.asset(
-                      'assets/icon/homepage_section/svg/locationtick.svg'),
+                  const AltaSvg(
+                    svgPath:
+                        'assets/icon/homepage_section/svg/locationtick.svg',
+                    width: 24,
+                    height: 24,
+                  ),
                   const SizedBox(width: AltaSpacing.space12),
                   AltaText(
                     context: context,

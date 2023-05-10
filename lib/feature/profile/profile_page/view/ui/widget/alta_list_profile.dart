@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_alterra_app/utils/alta_constant.dart';
 
 import '../../../../../../utils/alta_widgets.dart';
 import 'profile_widgets.dart';
@@ -20,8 +21,10 @@ class AltaListProfile extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: AltaSpacing.zero,
+            vertical: AltaSpacing.zero,
+          ),
           visualDensity: const VisualDensity(horizontal: 0, vertical: -4),
           dense: true,
           minLeadingWidth: 8,

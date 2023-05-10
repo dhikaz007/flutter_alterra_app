@@ -1,5 +1,5 @@
 export './widgets/alta_circle_widget.dart';
-export '../feature/home/edit_profile_page/view/ui/widget/alta_edit_profile_background.dart';
+export '../feature/profile/edit_profile_page/view/ui/widget/alta_edit_profile_background.dart';
 export './widgets/alta_homepage_background.dart';
 export './widgets/alta_icon_button.dart';
 export './widgets/alta_login_background.dart';

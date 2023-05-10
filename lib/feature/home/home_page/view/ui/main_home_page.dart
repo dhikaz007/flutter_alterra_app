@@ -15,9 +15,9 @@ class MainHomePage extends StatelessWidget {
 
   static final List<Widget> _widgetOptions = [
     HomePage(scrollController: _scrollController),
-    const CoursePage(),
+    CoursePage(scrollController: _scrollController),
     FaqPage(scrollController: _scrollController),
-    const ProfilePage(),
+    ProfilePage(scrollController: _scrollController),
   ];
 
   @override

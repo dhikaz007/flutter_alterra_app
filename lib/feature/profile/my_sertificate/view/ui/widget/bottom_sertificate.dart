@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/feature/home/home_page/view/ui/main_home_page.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../../../../utils/alta_constants.dart';
+import '../../../../../home/home_page/view/ui/main_home_page.dart';
+import '../../../../../../../utils/alta_constant.dart';
 import '../../../../../../../utils/alta_widgets.dart';
 
 class BottomSertificate extends StatelessWidget {

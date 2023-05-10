@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/feature/home/course_list_page/view/ui/flutter_course_list_page.dart';
-import 'package:flutter_alterra_app/feature/home/course_list_page/view/ui/ui_ux_course_list_page.dart';
 
+import '../../../../home/course_list_page/view/ui/flutter_course_list_page.dart';
+import '../../../../home/course_list_page/view/ui/ui_ux_course_list_page.dart';
 import '../../../../../utils/constant/alta_color.dart';
 import '../../../../../utils/constant/alta_spacing.dart';
 import '../../../../../utils/widgets/alta_logo.dart';

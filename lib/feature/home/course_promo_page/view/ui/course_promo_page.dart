@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../../utils/alta_widgets.dart';
-import '../../../../../utils/alta_constants.dart';
+import '../../../../../utils/alta_constant.dart';
 import 'widget/free_class_banner.dart';
 
 class CoursePromoPage extends StatelessWidget {
   const CoursePromoPage({super.key});
 
+  static final ValueNotifier<int> _activeIndex = ValueNotifier(0);
+
   @override
   Widget build(BuildContext context) {
-    final ValueNotifier<int> activeIndex = ValueNotifier(0);
-
     return AltaScaffold(
       isAppbar: AppBarVisibility.on,
       appBarColor: AltaColor.darkBlue,
@@ -50,7 +50,7 @@ class CoursePromoPage extends StatelessWidget {
               height: 163,
               width: MediaQuery.of(context).size.width,
               child: ValueListenableBuilder(
-                valueListenable: activeIndex,
+                valueListenable: _activeIndex,
                 builder: (context, activeIndexValue, _) => CarouselSlider(
                   options: CarouselOptions(
                     // viewportFraction: 1,
@@ -59,7 +59,8 @@ class CoursePromoPage extends StatelessWidget {
                     enlargeCenterPage: true,
                     autoPlay: true,
                     scrollPhysics: const BouncingScrollPhysics(),
-                    onPageChanged: (index, reason) => activeIndex.value = index,
+                    onPageChanged: (index, reason) =>
+                        _activeIndex.value = index,
                   ),
                   items: const [
                     AltaLogo(
@@ -93,7 +94,7 @@ class CoursePromoPage extends StatelessWidget {
             const SizedBox(height: AltaSpacing.space12),
             Center(
               child: ValueListenableBuilder(
-                valueListenable: activeIndex,
+                valueListenable: _activeIndex,
                 builder: (context, activeIndexValue, _) =>
                     AnimatedSmoothIndicator(
                   activeIndex: activeIndexValue,

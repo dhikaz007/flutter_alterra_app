@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../../utils/alta_constants.dart';
+import '../../../../../../../utils/alta_constant.dart';
 import '../../../../../../../utils/alta_widgets.dart';
 
 class AccountSertificate extends StatelessWidget {
@@ -38,18 +38,19 @@ class AccountSertificate extends StatelessWidget {
         const SizedBox(width: AltaSpacing.space4),
         const Spacer(flex: 1),
         AltaPrimaryButton(
-            backgroundColor: MaterialStateProperty.all(AltaColor.darkBlue),
-            borderRadius: 14,
-            paddingVertical: 6,
-            paddingHorizontal: 8,
-            onPressed: () {},
-            child: AltaText(
-              context: context,
-              text: 'Lanjut Belajar',
-              style: AltaTextStyle.body2,
-              color: AltaColor.white,
-              fontWeight: CustomFontWeight.semiBold,
-            )),
+          backgroundColor: MaterialStateProperty.all(AltaColor.darkBlue),
+          borderRadius: AltaBorderRadius.radius14,
+          paddingVertical: AltaSpacing.space8,
+          paddingHorizontal: AltaSpacing.space8,
+          onPressed: () {},
+          child: AltaText(
+            context: context,
+            text: 'Lanjut Belajar',
+            style: AltaTextStyle.body2,
+            color: AltaColor.white,
+            fontWeight: CustomFontWeight.semiBold,
+          ),
+        ),
       ],
     );
   }

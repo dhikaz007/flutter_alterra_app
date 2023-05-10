@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../../utils/alta_widgets.dart';
-import '../../../../../../utils/alta_constants.dart';
+import '../../../../../../utils/alta_constant.dart';
 
 class FreeClassBanner extends StatelessWidget {
   final String imgAssets;

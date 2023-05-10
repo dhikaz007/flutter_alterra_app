@@ -2,7 +2,7 @@
     package="com.alterra.app.flutter_alterra_app">
      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
    <application
-        android:label="flutter_alterra_app"
+        android:label="Alterra App"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

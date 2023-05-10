@@ -20,10 +20,6 @@ class CoursePage extends StatelessWidget {
       isAppbar: AppBarVisibility.on,
       scaffoldColor: AltaColor.white,
       appBarColor: AltaColor.darkBlue,
-      leadingAsset: 'assets/icon/homepage_section/svg/back_icon.svg',
-      leadingWidth: 24,
-      leadingHeight: 24,
-      onPressed: () => Navigator.of(context).pop(true),
       title: AltaText(
         context: context,
         text: 'Course',

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../utils/alta_constant.dart';
 import '../../../../../utils/alta_widgets.dart';
@@ -32,15 +31,23 @@ class AboutAlterraPage extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.only(
-                  left: 20, bottom: 11, top: 30, right: 20),
+                left: AltaSpacing.space20,
+                bottom: AltaSpacing.space12,
+                top: AltaSpacing.space28,
+                right: AltaSpacing.space20,
+              ),
               child: Row(
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pop();
+                      Navigator.of(context).pop(true);
                     },
-                    child: SvgPicture.asset(
-                        'assets/icon/homepage_section/svg/arrow_left_blue.svg'),
+                    child: const AltaSvg(
+                      svgPath:
+                          'assets/icon/homepage_section/svg/arrow_left_blue.svg',
+                      width: 24,
+                      height: 24,
+                    ),
                   ),
                   const SizedBox(width: AltaSpacing.space16),
                   AltaText(
@@ -56,19 +63,25 @@ class AboutAlterraPage extends StatelessWidget {
           ),
           Expanded(
             child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    padding: const EdgeInsets.only(
+                      left: AltaSpacing.space20,
+                      right: AltaSpacing.space20,
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(height: AltaSpacing.space28),
-                        Center(
-                          child: Image.asset(
-                            'assets/images/login_section/png/alterra_blue_logo.png',
+                        const Center(
+                          child: AltaLogo(
+                            imgPath:
+                                'assets/images/login_section/png/alterra_blue_logo.png',
                             width: 280,
                             height: 169,
+                            alignment: Alignment.center,
                           ),
                         ),
                         const SizedBox(height: AltaSpacing.space28),
@@ -94,10 +107,11 @@ class AboutAlterraPage extends StatelessWidget {
                         const SizedBox(height: AltaSpacing.space16),
                         AltaPrimaryButton(
                           backgroundColor: const MaterialStatePropertyAll(
-                              AltaColor.tangerine),
-                          borderRadius: 8,
-                          paddingVertical: 10,
-                          paddingHorizontal: 10,
+                            AltaColor.tangerine,
+                          ),
+                          borderRadius: AltaBorderRadius.radius8,
+                          paddingVertical: AltaSpacing.space12,
+                          paddingHorizontal: AltaSpacing.space12,
                           onPressed: () {},
                           child: AltaText(
                             context: context,
@@ -122,17 +136,22 @@ class AboutAlterraPage extends StatelessWidget {
                         const SizedBox(height: AltaSpacing.space28),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            const SizedBox(
+                          children: const [
+                            SizedBox(
                               width: 131,
                               child: ContributeWidget(
                                 title: '20K+',
                                 sub: 'Pendaftar Program',
                               ),
                             ),
-                            Image.asset(
-                                'assets/icon/homepage_section/png/line.png'),
-                            const SizedBox(
+                            AltaLogo(
+                              imgPath:
+                                  'assets/icon/homepage_section/png/line.png',
+                              width: 1,
+                              height: 105,
+                              alignment: Alignment.center,
+                            ),
+                            SizedBox(
                               width: 131,
                               child: ContributeWidget(
                                 title: '250+',
@@ -145,9 +164,12 @@ class AboutAlterraPage extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.only(left: 16, right: 11),
+                          children: const [
+                            Padding(
+                              padding: EdgeInsets.only(
+                                left: AltaSpacing.space16,
+                                right: AltaSpacing.space12,
+                              ),
                               child: SizedBox(
                                 width: 104,
                                 child: ContributeWidget(
@@ -157,9 +179,14 @@ class AboutAlterraPage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Image.asset(
-                                'assets/icon/homepage_section/png/line.png'),
-                            const SizedBox(
+                            AltaLogo(
+                              imgPath:
+                                  'assets/icon/homepage_section/png/line.png',
+                              width: 1,
+                              height: 105,
+                              alignment: Alignment.center,
+                            ),
+                            SizedBox(
                               width: 131,
                               child: ContributeWidget(
                                 title: '1.82x UMP',
@@ -185,7 +212,7 @@ class AboutAlterraPage extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

@@ -1,13 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../view_model/cubit/forgot_password_cubit.dart';
 import '../../../../../utils/alta_constant.dart';
 import '../../../../../utils/alta_widgets.dart';
 import '../../../login/view/ui/splash_page.dart';
 import '../../../login/view/ui/login_page.dart';
-
-import 'forgot_password_page_3.dart';
 
 class ForgotPasswordPage2 extends StatefulWidget {
   final String email;
@@ -146,9 +146,9 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
                       paddingVertical: AltaSpacing.space20,
                       paddingHorizontal: AltaSpacing.space28,
                       onPressed: () => secondsValue == 0
-                          ? Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => const ForgotPasswordPage3(),
-                            ))
+                          ? context
+                              .read<ForgotPasswordCubit>()
+                              .resetPassword(widget.email)
                           : null,
                       child: AltaText(
                         context: context,

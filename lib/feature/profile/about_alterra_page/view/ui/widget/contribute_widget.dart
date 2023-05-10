@@ -13,19 +13,21 @@ class ContributeWidget extends StatelessWidget {
     return Column(
       children: [
         AltaText(
-            context: context,
-            text: title,
-            style: AltaTextStyle.headline2,
-            fontWeight: CustomFontWeight.medium,
-            color: AltaColor.darkBlue),
+          context: context,
+          text: title,
+          style: AltaTextStyle.headline2,
+          fontWeight: CustomFontWeight.medium,
+          color: AltaColor.darkBlue,
+        ),
         const SizedBox(height: AltaSpacing.space20),
         AltaText(
-            context: context,
-            text: sub,
-            style: AltaTextStyle.body2,
-            fontWeight: CustomFontWeight.light,
-            color: AltaColor.darkBlue,
-            textAlign: TextAlign.center),
+          context: context,
+          text: sub,
+          style: AltaTextStyle.body2,
+          fontWeight: CustomFontWeight.light,
+          color: AltaColor.darkBlue,
+          textAlign: TextAlign.center,
+        ),
       ],
     );
   }

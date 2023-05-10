@@ -54,7 +54,7 @@ class RegisterPage2 extends StatelessWidget {
                     const SizedBox(height: AltaSpacing.space28),
                     AltaText(
                       context: context,
-                      text: 'Langkah 2/3',
+                      text: 'Langkah 2/2',
                       style: AltaTextStyle.title3,
                       fontWeight: CustomFontWeight.semiBold,
                       color: AltaColor.black.withOpacity(0.5),

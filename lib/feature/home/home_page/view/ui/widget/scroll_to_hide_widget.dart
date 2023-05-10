@@ -41,17 +41,9 @@ class _ScrollToHideWidgetState extends State<ScrollToHideWidget> {
     }
   }
 
-  void _show() {
-    if (!isVisible.value) {
-      isVisible.value = true;
-    }
-  }
+  void _show() => !isVisible.value ? isVisible.value = true : null;
 
-  void _hide() {
-    if (isVisible.value) {
-      isVisible.value = false;
-    }
-  }
+  void _hide() => isVisible.value ? isVisible.value = false : null;
 
   @override
   Widget build(BuildContext context) {

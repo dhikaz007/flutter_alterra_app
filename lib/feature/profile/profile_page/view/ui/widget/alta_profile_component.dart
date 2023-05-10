@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../utils/alta_constants.dart';
+import '../../../../../../utils/alta_constant.dart';
 import '../../../../../../utils/alta_widgets.dart';
 
 class AltaProfileComponent extends StatelessWidget {
@@ -8,12 +8,13 @@ class AltaProfileComponent extends StatelessWidget {
   final AltaTextStyle style;
   final String iconArrowBlue;
   final VoidCallback? onTap;
-  const AltaProfileComponent(
-      {super.key,
-      required this.text,
-      required this.style,
-      required this.iconArrowBlue,
-      this.onTap});
+  const AltaProfileComponent({
+    super.key,
+    required this.text,
+    required this.style,
+    required this.iconArrowBlue,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {

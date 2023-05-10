@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/utils/alta_widgets.dart';
 
+import '../../../../../../utils/alta_widgets.dart';
 import '../../../../../../utils/alta_constant.dart';
 
 class DetailText extends StatelessWidget {

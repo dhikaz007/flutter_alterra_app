@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../../../utils/alta_constants.dart';
+import '../../../../../../utils/alta_constant.dart';
 import '../../../../../../utils/alta_widgets.dart';
 import 'widget/sertificate_widgets.dart';
 
@@ -10,27 +9,26 @@ class MySertificate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AltaColor.darkBlue,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          icon: SvgPicture.asset(
-              'assets/icon/homepage_section/svg/arrow_white.svg'),
-        ),
-        titleSpacing: 0,
-        title: AltaText(
-          context: context,
-          text: 'Sertifikat Saya',
-          style: AltaTextStyle.title1,
-          color: AltaColor.white,
-          fontWeight: CustomFontWeight.veryBold,
-        ),
+    return AltaScaffold(
+      isAppbar: AppBarVisibility.on,
+      appBarColor: AltaColor.darkBlue,
+      scaffoldColor: AltaColor.white,
+      leadingAsset: 'assets/icon/homepage_section/svg/arrow_white.svg',
+      leadingWidth: 24,
+      leadingHeight: 24,
+      onPressed: () => Navigator.of(context).pop(true),
+      title: AltaText(
+        context: context,
+        text: 'Sertifikat Saya',
+        style: AltaTextStyle.title1,
+        color: AltaColor.white,
+        fontWeight: CustomFontWeight.veryBold,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 16, right: 16),
+        padding: const EdgeInsets.only(
+          left: AltaSpacing.space16,
+          right: AltaSpacing.space16,
+        ),
         child: Column(
           children: [
             Column(
@@ -40,8 +38,12 @@ class MySertificate extends StatelessWidget {
               ],
             ),
             const Spacer(flex: 3),
-            Image.asset(
-                'assets/images/homepage_section/png/no_sertificate.png'),
+            const AltaLogo(
+              imgPath: 'assets/images/homepage_section/png/no_sertificate.png',
+              width: 180,
+              height: 160,
+              alignment: Alignment.center,
+            ),
             const SizedBox(height: AltaSpacing.space20),
             AltaText(
               context: context,
