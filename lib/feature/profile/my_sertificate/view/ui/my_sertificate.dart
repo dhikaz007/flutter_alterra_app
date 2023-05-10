@@ -10,6 +10,7 @@ class MySertificate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
+      isLeading: LeadingVisibility.on,
       isAppbar: AppBarVisibility.on,
       appBarColor: AltaColor.darkBlue,
       scaffoldColor: AltaColor.white,

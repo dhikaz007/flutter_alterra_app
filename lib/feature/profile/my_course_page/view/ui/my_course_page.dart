@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
 import '../../../../home/course_list_page/view/ui/flutter_course_list_page.dart';
 import '../../../../home/course_list_page/view/ui/ui_ux_course_list_page.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_logo.dart';
-import '../../../../../utils/widgets/alta_scaffold.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/constant/alta_border_radius.dart';
 
 class MyCoursePage extends StatelessWidget {
   const MyCoursePage({Key? key}) : super(key: key);
@@ -15,9 +11,15 @@ class MyCoursePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
+      isLeading: LeadingVisibility.on,
       isAppbar: AppBarVisibility.on,
       scaffoldColor: AltaColor.white,
       appBarColor: AltaColor.darkBlue,
+      centerTitle: true,
+      leadingHeight: 24,
+      leadingWidth: 24,
+      leadingAsset: 'assets/icon/homepage_section/svg/back_icon.svg',
+      onPressed: () => Navigator.of(context).pop(true),
       title: AltaText(
         context: context,
         text: 'Kursus anda saat ini',
@@ -25,11 +27,6 @@ class MyCoursePage extends StatelessWidget {
         fontWeight: CustomFontWeight.semiBold,
         color: AltaColor.white,
       ),
-      centerTitle: true,
-      leadingHeight: 24,
-      leadingWidth: 24,
-      leadingAsset: 'assets/icon/homepage_section/svg/back_icon.svg',
-      onPressed: () => Navigator.of(context).pop(true),
       body: Padding(
         padding: const EdgeInsets.all(AltaSpacing.space16),
         child: Column(

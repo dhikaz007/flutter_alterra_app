@@ -134,6 +134,6 @@ class AltaText extends StatelessWidget {
       }
     }
 
-    return Text(text??'', style: getAltaTextStyle(), textAlign: textAlign);
+    return Text(text ?? '', style: getAltaTextStyle(), textAlign: textAlign);
   }
 }

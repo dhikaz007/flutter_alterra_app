@@ -14,6 +14,7 @@ class CoursePromoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
+      isLeading: LeadingVisibility.on,
       isAppbar: AppBarVisibility.on,
       appBarColor: AltaColor.darkBlue,
       leadingAsset: 'assets/icon/homepage_section/svg/arrow_white.svg',

@@ -59,6 +59,7 @@ class _ForgotPasswordPage2State extends State<ForgotPasswordPage2> {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
+      isLeading: LeadingVisibility.on,
       scaffoldColor: AltaColor.white,
       appBarColor: AltaColor.white,
       isAppbar: AppBarVisibility.on,

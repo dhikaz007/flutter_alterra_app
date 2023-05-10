@@ -22,6 +22,7 @@ class HomePage extends StatelessWidget {
         children: [
           const AltaHomePageBackground(),
           AltaScaffold(
+            isLeading: LeadingVisibility.off,
             isAppbar: AppBarVisibility.off,
             scaffoldColor: Colors.transparent,
             body: Column(

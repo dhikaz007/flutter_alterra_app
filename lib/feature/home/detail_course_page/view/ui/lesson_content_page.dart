@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-import '../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_primary_button.dart';
-import '../../../../../utils/widgets/alta_text.dart';
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
 
 class LessonContentPage extends StatefulWidget {
   const LessonContentPage({super.key});
@@ -15,14 +12,11 @@ class LessonContentPage extends StatefulWidget {
 }
 
 class _LessonContentPageState extends State<LessonContentPage> {
-  final videoURL =
-      "https://www.youtube.com/watch?v=RuxJslog_iE&pp=ygUZbWF0ZXJpIHVpIHV4IHByZXNlbnRhdGlvbg%3D%3D";
-
   late YoutubePlayerController _controller;
 
   @override
   void initState() {
-    final videoID = YoutubePlayer.convertUrlToId(videoURL);
+    final videoID = YoutubePlayer.convertUrlToId(AltaURL().firstVideoURL);
     _controller = YoutubePlayerController(
       initialVideoId: videoID!,
       flags: const YoutubePlayerFlags(autoPlay: false),
@@ -33,18 +27,19 @@ class _LessonContentPageState extends State<LessonContentPage> {
   @override
   Widget build(BuildContext context) {
     return YoutubePlayerBuilder(
-        player: YoutubePlayer(
-          aspectRatio: 16 / 9,
-          controller: _controller,
-        ),
-        builder: (context, player) {
-          return Column(
-            children: [
-              // some widgets
-              player,
-              //some other widgets
-              const SizedBox(height: AltaSpacing.space36),
-              Row(children: [
+      player: YoutubePlayer(
+        aspectRatio: 16 / 9,
+        controller: _controller,
+      ),
+      builder: (context, player) {
+        return Column(
+          children: [
+            // some widgets
+            player,
+            //some other widgets
+            const SizedBox(height: AltaSpacing.space36),
+            Row(
+              children: [
                 Expanded(
                   child: AltaPrimaryButton(
                     backgroundColor: MaterialStateProperty.resolveWith(
@@ -62,9 +57,11 @@ class _LessonContentPageState extends State<LessonContentPage> {
                     ),
                   ),
                 ),
-              ]),
-            ],
-          );
-        });
+              ],
+            ),
+          ],
+        );
+      },
+    );
   }
 }

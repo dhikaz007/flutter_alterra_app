@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/utils/constant/alta_border_radius.dart';
-import 'package:flutter_alterra_app/utils/constant/alta_color.dart';
+
+import '../alta_constant.dart';
 
 class AltaPrimaryIconButton extends StatelessWidget {
   final VoidCallback onPressed;

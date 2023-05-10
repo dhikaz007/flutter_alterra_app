@@ -17,6 +17,7 @@ class EditProfilePage extends StatelessWidget {
       children: [
         const AltaEditProfileBackground(),
         AltaScaffold(
+          isLeading: LeadingVisibility.on,
           isAppbar: AppBarVisibility.on,
           appBarColor: Colors.transparent,
           scaffoldColor: Colors.transparent,

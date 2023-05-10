@@ -10,6 +10,7 @@ class AboutAlterraPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
+      isLeading: LeadingVisibility.off,
       isAppbar: AppBarVisibility.off,
       scaffoldColor: AltaColor.white,
       body: Column(

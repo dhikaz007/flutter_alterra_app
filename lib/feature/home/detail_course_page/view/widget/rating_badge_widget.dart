@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_text.dart';
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
 
 class RatingBadgeWidget extends StatelessWidget {
   final String title;
@@ -16,14 +14,14 @@ class RatingBadgeWidget extends StatelessWidget {
     required this.height,
   });
 
+  static final ValueNotifier<bool> _isSelected = ValueNotifier(false);
+
   @override
   Widget build(BuildContext context) {
-    final ValueNotifier<bool> isSelected = ValueNotifier(false);
-
     return ValueListenableBuilder(
-      valueListenable: isSelected,
+      valueListenable: _isSelected,
       builder: (context, isSelectedValue, child) => InkWell(
-        onTap: () => isSelected.value = !isSelected.value,
+        onTap: () => _isSelected.value = !_isSelected.value,
         child: Container(
           width: width,
           height: height,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constant/alta_color.dart';
+import '../alta_constant.dart';
 import 'alta_circle_widget.dart';
 
 class AltaSplashBackground extends StatelessWidget {

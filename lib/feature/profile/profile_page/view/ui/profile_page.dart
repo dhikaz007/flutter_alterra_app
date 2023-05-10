@@ -18,6 +18,7 @@ class ProfilePage extends StatelessWidget {
       children: [
         const AltaHomePageBackground(),
         AltaScaffold(
+          isLeading: LeadingVisibility.on,
           isAppbar: AppBarVisibility.on,
           appBarColor: Colors.transparent,
           scaffoldColor: Colors.transparent,
@@ -80,15 +81,15 @@ class ProfilePage extends StatelessWidget {
                     iconProfiles:
                         'assets/icon/homepage_section/svg/class_icon.svg',
                     text: 'Kelas Saya',
-                    onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => const MyCoursePage())),
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (_) => const MyCoursePage())),
                   ),
                   AltaListProfile(
                     iconProfiles:
                         'assets/icon/homepage_section/svg/sertificate_icon.svg',
                     text: 'Sertifikat Saya',
-                    onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => const MySertificate())),
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (_) => const MySertificate())),
                   ),
                   AltaListProfile(
                     iconProfiles:

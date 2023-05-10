@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_alterra_app/utils/alta_widgets.dart';
 
 class AltaIconButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -24,8 +24,8 @@ class AltaIconButton extends StatelessWidget {
       color: color,
       splashRadius: splashRadius,
       onPressed: onPressed,
-      icon: SvgPicture.asset(
-        svgAsset,
+      icon: AltaSvg(
+        svgPath: svgAsset,
         width: iconWidth,
         height: iconHeight,
       ),

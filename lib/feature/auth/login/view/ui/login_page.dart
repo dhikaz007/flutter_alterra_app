@@ -39,6 +39,7 @@ class LoginPage extends StatelessWidget {
             children: [
               const AltaLoginBackground(),
               AltaScaffold(
+                isLeading: LeadingVisibility.off,
                 scaffoldColor: Colors.transparent,
                 isAppbar: AppBarVisibility.off,
                 body: Padding(

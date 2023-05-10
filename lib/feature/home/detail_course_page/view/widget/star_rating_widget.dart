@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/widgets/alta_svg.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
 
 class StarRatingWidget extends StatelessWidget {
   final MainAxisAlignment? mainAxisAlignment;
   const StarRatingWidget({super.key, this.mainAxisAlignment});
 
+  static final ValueNotifier<int> _ratingSelected = ValueNotifier(0);
+
   @override
   Widget build(BuildContext context) {
-    final ValueNotifier<int> ratingSelected = ValueNotifier(0);
-
     return Row(
       mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
       children: List.generate(
@@ -18,9 +18,9 @@ class StarRatingWidget extends StatelessWidget {
         (index) => Padding(
           padding: const EdgeInsets.only(right: AltaSpacing.space8),
           child: ValueListenableBuilder(
-            valueListenable: ratingSelected,
+            valueListenable: _ratingSelected,
             builder: (context, ratingSelectedValue, child) => InkWell(
-              onTap: () => ratingSelected.value = index,
+              onTap: () => _ratingSelected.value = index,
               child: index <= ratingSelectedValue
                   ? const AltaSvg(
                       svgPath:

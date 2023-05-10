@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constant/alta_color.dart';
-import '../constant/alta_spacing.dart';
+import '../alta_constant.dart';
 
 class AltaTextField extends StatelessWidget {
   final TextEditingController? controller;

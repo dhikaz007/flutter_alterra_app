@@ -16,9 +16,9 @@ class ScrollToHideWidget extends StatefulWidget {
   State<ScrollToHideWidget> createState() => _ScrollToHideWidgetState();
 }
 
-class _ScrollToHideWidgetState extends State<ScrollToHideWidget> {
-  final ValueNotifier<bool> isVisible = ValueNotifier(true);
+final ValueNotifier<bool> _isVisible = ValueNotifier(true);
 
+class _ScrollToHideWidgetState extends State<ScrollToHideWidget> {
   @override
   void initState() {
     widget.scrollController.addListener(_listen);
@@ -41,14 +41,14 @@ class _ScrollToHideWidgetState extends State<ScrollToHideWidget> {
     }
   }
 
-  void _show() => !isVisible.value ? isVisible.value = true : null;
+  void _show() => !_isVisible.value ? _isVisible.value = true : null;
 
-  void _hide() => isVisible.value ? isVisible.value = false : null;
+  void _hide() => _isVisible.value ? _isVisible.value = false : null;
 
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
-      valueListenable: isVisible,
+      valueListenable: _isVisible,
       builder: (context, isVisibleValue, child) => AnimatedContainer(
         duration: widget.duration,
         height: isVisibleValue ? kBottomNavigationBarHeight : 0,

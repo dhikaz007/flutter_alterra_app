@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../../utils/constant/alta_color.dart';
-
+import '../../../../../../utils/alta_constant.dart';
 import 'content_card_large_widget.dart';
 
 class CourseCardLargeWidget extends StatelessWidget {

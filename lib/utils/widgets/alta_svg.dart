@@ -3,8 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class AltaSvg extends StatelessWidget {
   final String svgPath;
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final ColorFilter? colorFilter;
   const AltaSvg({
     super.key,

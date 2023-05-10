@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/widgets/alta_svg.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/constant/alta_border_radius.dart';
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
 
 enum ProgressIndicatorBar { none, complete, aThreeQuarter, aHalf, aQuarter }
 

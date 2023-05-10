@@ -33,6 +33,7 @@ class RegisterPage2 extends StatelessWidget {
         return GestureDetector(
           onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
           child: AltaScaffold(
+            isLeading: LeadingVisibility.on,
             scaffoldColor: AltaColor.white,
             appBarColor: AltaColor.white,
             isAppbar: AppBarVisibility.on,

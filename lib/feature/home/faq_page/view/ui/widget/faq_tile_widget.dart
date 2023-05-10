@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../utils/widgets/alta_svg.dart';
-import '../../../../../../utils/constant/alta_spacing.dart';
+import '../../../../../../utils/alta_constant.dart';
+import '../../../../../../utils/alta_widgets.dart';
 
 class FaqTileWidget extends StatelessWidget {
   final Widget title;

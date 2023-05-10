@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../utils/widgets/alta_logo.dart';
-import '../../../../../../utils/widgets/alta_primary_button.dart';
-import '../../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../../utils/widgets/alta_text.dart';
-import '../../../../../../utils/constant/alta_color.dart';
+import '../../../../../../utils/alta_constant.dart';
+import '../../../../../../utils/alta_widgets.dart';
 
 class ContentCardLargeWidget extends StatelessWidget {
   final String headtitle;
@@ -24,7 +20,9 @@ class ContentCardLargeWidget extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(
-              vertical: AltaSpacing.space20, horizontal: AltaSpacing.space24),
+            vertical: AltaSpacing.space20,
+            horizontal: AltaSpacing.space24,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

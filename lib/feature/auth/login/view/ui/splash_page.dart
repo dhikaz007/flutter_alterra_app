@@ -44,6 +44,7 @@ class _SplashPageState extends State<SplashPage> {
       children: [
         const AltaSplashBackground(),
         AltaScaffold(
+          isLeading: LeadingVisibility.off,
           scaffoldColor: Colors.transparent,
           isAppbar: AppBarVisibility.off,
           body: Column(

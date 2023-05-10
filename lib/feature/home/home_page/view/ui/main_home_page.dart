@@ -12,6 +12,7 @@ class MainHomePage extends StatelessWidget {
   const MainHomePage({super.key});
 
   static final ScrollController _scrollController = ScrollController();
+  static final ValueNotifier<int> _selectedIndex = ValueNotifier(0);
 
   static final List<Widget> _widgetOptions = [
     HomePage(scrollController: _scrollController),
@@ -22,10 +23,10 @@ class MainHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ValueNotifier<int> selectedIndex = ValueNotifier(0);
     return ValueListenableBuilder(
-      valueListenable: selectedIndex,
+      valueListenable: _selectedIndex,
       builder: (context, selectedIndexValue, _) => AltaScaffold(
+        isLeading: LeadingVisibility.off,
         isAppbar: AppBarVisibility.off,
         scaffoldColor: Colors.transparent,
         body: _widgetOptions.elementAt(selectedIndexValue),
@@ -87,7 +88,7 @@ class MainHomePage extends StatelessWidget {
             selectedItemColor: AltaColor.darkBlue,
             unselectedItemColor: AltaColor.darkBlue,
             showUnselectedLabels: true,
-            onTap: (index) => selectedIndex.value = index,
+            onTap: (index) => _selectedIndex.value = index,
           ),
         ),
       ),

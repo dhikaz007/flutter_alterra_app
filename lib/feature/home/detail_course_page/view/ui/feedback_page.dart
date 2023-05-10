@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/constant/alta_border_radius.dart';
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_primary_button.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-import '../../../../../utils/widgets/alta_text_field.dart';
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
 import '../widget/rating_badge_widget.dart';
 import '../widget/star_rating_widget.dart';
 
@@ -15,11 +11,10 @@ class FeedbackPage extends StatelessWidget {
   const FeedbackPage({super.key});
 
   static String? feedback;
+  static final ValueNotifier<bool> _isDone = ValueNotifier(false);
 
   @override
   Widget build(BuildContext context) {
-    final ValueNotifier<bool> isDone = ValueNotifier(false);
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -147,9 +142,9 @@ class FeedbackPage extends StatelessWidget {
           onChanged: (value) {
             feedback = value;
             if (value.isEmpty) {
-              isDone.value = false;
+              _isDone.value = false;
             } else {
-              isDone.value = true;
+              _isDone.value = true;
             }
           },
         ),
@@ -158,7 +153,7 @@ class FeedbackPage extends StatelessWidget {
           children: [
             Expanded(
               child: ValueListenableBuilder(
-                valueListenable: isDone,
+                valueListenable: _isDone,
                 builder: (context, isDoneValue, _) => AltaPrimaryButton(
                   backgroundColor: MaterialStateProperty.resolveWith(
                     (states) => isDoneValue == true

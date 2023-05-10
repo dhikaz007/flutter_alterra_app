@@ -1,11 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/constant/alta_color.dart';
-import '../../../../../utils/constant/alta_spacing.dart';
-import '../../../../../utils/widgets/alta_scaffold.dart';
-import '../../../../../utils/widgets/alta_text.dart';
-
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
 import 'widget/card_schedule_widget.dart';
 import 'widget/course_card_large_widget.dart';
 import 'widget/course_card_small_widget.dart';
@@ -17,6 +14,7 @@ class CoursePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AltaScaffold(
+      isLeading: LeadingVisibility.off,
       isAppbar: AppBarVisibility.on,
       scaffoldColor: AltaColor.white,
       appBarColor: AltaColor.darkBlue,
