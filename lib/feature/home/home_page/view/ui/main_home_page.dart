@@ -13,16 +13,16 @@ class MainHomePage extends StatelessWidget {
 
   static final ScrollController _scrollController = ScrollController();
 
+  static final List<Widget> _widgetOptions = [
+    HomePage(scrollController: _scrollController),
+    CoursePage(scrollController: _scrollController),
+    FaqPage(scrollController: _scrollController),
+    ProfilePage(scrollController: _scrollController),
+  ];
+
   @override
   Widget build(BuildContext context) {
     final ValueNotifier<int> selectedIndex = ValueNotifier(0);
-
-    final List<Widget> widgetOptions = [
-      HomePage(scrollController: _scrollController),
-      CoursePage(scrollController: _scrollController),
-      FaqPage(scrollController: _scrollController),
-      ProfilePage(scrollController: _scrollController),
-    ];
 
     return ValueListenableBuilder(
       valueListenable: selectedIndex,
@@ -30,7 +30,7 @@ class MainHomePage extends StatelessWidget {
         isLeading: LeadingVisibility.off,
         isAppbar: AppBarVisibility.off,
         scaffoldColor: Colors.transparent,
-        body: widgetOptions.elementAt(selectedIndexValue),
+        body: _widgetOptions.elementAt(selectedIndexValue),
         bottomNavigationBar: ScrollToHideWidget(
           scrollController: _scrollController,
           child: BottomNavigationBar(

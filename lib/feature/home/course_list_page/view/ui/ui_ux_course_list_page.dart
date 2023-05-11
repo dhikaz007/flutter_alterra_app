@@ -25,7 +25,7 @@ class UiUxCourseListPage extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  padding: const EdgeInsets.all(AltaSpacing.space16),
+                  padding: const EdgeInsets.all(AltaSpacing.space12),
                   width: 368,
                   height: 108,
                   decoration: BoxDecoration(

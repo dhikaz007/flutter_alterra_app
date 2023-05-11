@@ -18,13 +18,10 @@ class ProfilePage extends StatelessWidget {
       children: [
         const AltaHomePageBackground(),
         AltaScaffold(
-          isLeading: LeadingVisibility.on,
-          isAppbar: AppBarVisibility.on,
+          isLeading: LeadingVisibility.off,
+          isAppbar: AppBarVisibility.off,
           appBarColor: Colors.transparent,
           scaffoldColor: Colors.transparent,
-          leadingAsset: 'assets/icon/homepage_section/svg/arrow_white.svg',
-          leadingWidth: 24,
-          leadingHeight: 24,
           body: Padding(
             padding: const EdgeInsets.only(
               right: AltaSpacing.space16,
@@ -33,101 +30,104 @@ class ProfilePage extends StatelessWidget {
             child: SingleChildScrollView(
               controller: scrollController,
               physics: const BouncingScrollPhysics(),
-              child: Column(
-                children: [
-                  const AltaHeaderProfile(),
-                  const SizedBox(height: AltaSpacing.space44),
-                  Card(
-                    elevation: 1,
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(AltaBorderRadius.radius12),
-                      side: const BorderSide(width: 1, color: AltaColor.gray),
-                    ),
-                    child: Container(
-                      padding: const EdgeInsets.all(AltaSpacing.space16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          AltaProfileComponent(
-                            text: 'Edit Profile',
-                            style: AltaTextStyle.title3,
-                            iconArrowBlue:
-                                'assets/icon/homepage_section/svg/arrow_blue.svg',
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (_) => const EditProfilePage(),
-                                ),
-                              );
-                            },
-                          ),
-                          const SizedBox(height: AltaSpacing.space12),
-                          const AltaDivider(),
-                          const SizedBox(height: AltaSpacing.space12),
-                          AltaText(
-                            context: context,
-                            text: 'Lengkapi data diri Anda',
-                            style: AltaTextStyle.body1,
-                            color: AltaColor.darkGray,
-                            fontWeight: CustomFontWeight.medium,
-                          ),
-                        ],
+              child: SafeArea(
+                child: Column(
+                  children: [
+                    const SizedBox(height: AltaSpacing.space56),
+                    const AltaHeaderProfile(),
+                    const SizedBox(height: AltaSpacing.space44),
+                    Card(
+                      elevation: 1,
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(AltaBorderRadius.radius12),
+                        side: const BorderSide(width: 1, color: AltaColor.gray),
                       ),
-                    ),
-                  ),
-                  const SizedBox(height: AltaSpacing.space32),
-                  AltaListProfile(
-                    iconProfiles:
-                        'assets/icon/homepage_section/svg/class_icon.svg',
-                    text: 'Kelas Saya',
-                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                        builder: (_) => const MyCoursePage())),
-                  ),
-                  AltaListProfile(
-                    iconProfiles:
-                        'assets/icon/homepage_section/svg/sertificate_icon.svg',
-                    text: 'Sertifikat Saya',
-                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                        builder: (_) => const MySertificate())),
-                  ),
-                  AltaListProfile(
-                    iconProfiles:
-                        'assets/icon/homepage_section/svg/about_icon.svg',
-                    text: 'Tentang Alterra',
-                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                        builder: (_) => const AboutAlterraPage())),
-                  ),
-                  const SizedBox(height: AltaSpacing.space96),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: AltaPrimaryButton(
-                          backgroundColor:
-                              MaterialStateProperty.all(AltaColor.tangerine),
-                          onPressed: () async {
-                            await showDialog(
-                              context: context,
-                              builder: (context) {
-                                return const AltaDialogs();
+                      child: Container(
+                        padding: const EdgeInsets.all(AltaSpacing.space16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AltaProfileComponent(
+                              text: 'Edit Profile',
+                              style: AltaTextStyle.title3,
+                              iconArrowBlue:
+                                  'assets/icon/homepage_section/svg/arrow_blue.svg',
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (_) => const EditProfilePage(),
+                                  ),
+                                );
                               },
-                            );
-                          },
-                          borderRadius: AltaBorderRadius.radius10,
-                          paddingHorizontal: AltaSpacing.space28,
-                          paddingVertical: AltaSpacing.space16,
-                          child: AltaText(
-                            context: context,
-                            text: 'Keluar',
-                            style: AltaTextStyle.title2,
-                            color: AltaColor.white,
-                            fontWeight: CustomFontWeight.bold,
-                          ),
+                            ),
+                            const SizedBox(height: AltaSpacing.space12),
+                            const AltaDivider(),
+                            const SizedBox(height: AltaSpacing.space12),
+                            AltaText(
+                              context: context,
+                              text: 'Lengkapi data diri Anda',
+                              style: AltaTextStyle.body1,
+                              color: AltaColor.darkGray,
+                              fontWeight: CustomFontWeight.medium,
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                ],
+                    ),
+                    const SizedBox(height: AltaSpacing.space32),
+                    AltaListProfile(
+                      iconProfiles:
+                          'assets/icon/homepage_section/svg/class_icon.svg',
+                      text: 'Kelas Saya',
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                          builder: (_) => const MyCoursePage())),
+                    ),
+                    AltaListProfile(
+                      iconProfiles:
+                          'assets/icon/homepage_section/svg/sertificate_icon.svg',
+                      text: 'Sertifikat Saya',
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                          builder: (_) => const MySertificate())),
+                    ),
+                    AltaListProfile(
+                      iconProfiles:
+                          'assets/icon/homepage_section/svg/about_icon.svg',
+                      text: 'Tentang Alterra',
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                          builder: (_) => const AboutAlterraPage())),
+                    ),
+                    const SizedBox(height: AltaSpacing.space128),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: AltaPrimaryButton(
+                            backgroundColor:
+                                MaterialStateProperty.all(AltaColor.tangerine),
+                            onPressed: () async {
+                              await showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return const AltaDialogs();
+                                },
+                              );
+                            },
+                            borderRadius: AltaBorderRadius.radius10,
+                            paddingHorizontal: AltaSpacing.space28,
+                            paddingVertical: AltaSpacing.space16,
+                            child: AltaText(
+                              context: context,
+                              text: 'Keluar',
+                              style: AltaTextStyle.title2,
+                              color: AltaColor.white,
+                              fontWeight: CustomFontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
