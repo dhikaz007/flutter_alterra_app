@@ -10,8 +10,8 @@ class AltaLoginBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: AltaColor.white,
-      child: Stack(
-        children: const [
+      child: const Stack(
+        children:  [
           AltaCircleWidget(
             left: -84,
             top: -84,

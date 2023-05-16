@@ -32,8 +32,8 @@ class MySertificate extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Column(
-              children: const [
+            const Column(
+              children:  [
                 SizedBox(height: AltaSpacing.space28),
                 AccountSertificate(),
               ],

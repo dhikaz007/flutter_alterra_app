@@ -72,8 +72,8 @@ class FeedbackPage extends StatelessWidget {
           color: AltaColor.darkBlue,
         ),
         const SizedBox(height: AltaSpacing.space16),
-        Row(
-          children: const [
+        const Row(
+          children:  [
             RatingBadgeWidget(
               title: 'Excellent',
               width: 100,
@@ -94,8 +94,8 @@ class FeedbackPage extends StatelessWidget {
           ],
         ),
         const SizedBox(height: AltaSpacing.space20),
-        Row(
-          children: const [
+        const Row(
+          children:  [
             RatingBadgeWidget(
               title: 'Good!',
               width: 72,
@@ -110,8 +110,8 @@ class FeedbackPage extends StatelessWidget {
           ],
         ),
         const SizedBox(height: AltaSpacing.space20),
-        Row(
-          children: const [
+        const Row(
+          children:  [
             RatingBadgeWidget(
               title: 'Helpful',
               width: 80,

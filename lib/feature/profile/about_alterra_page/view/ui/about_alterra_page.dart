@@ -135,9 +135,9 @@ class AboutAlterraPage extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: AltaSpacing.space28),
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: const [
+                          children:  [
                             SizedBox(
                               width: 131,
                               child: ContributeWidget(
@@ -162,10 +162,10 @@ class AboutAlterraPage extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: AltaSpacing.space20),
-                        Row(
+                        const Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: const [
+                          children:  [
                             Padding(
                               padding: EdgeInsets.only(
                                 left: AltaSpacing.space16,

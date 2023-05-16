@@ -110,9 +110,9 @@ class ImmersivePage extends StatelessWidget {
                 alignment: Alignment.center,
               ),
               const SizedBox(height: AltaSpacing.space24),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
+                children:  [
                   OutputImmersive(
                     title: '100+',
                     subtitle: 'Alumni \nProfessional',
