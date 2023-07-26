@@ -11,18 +11,17 @@ import 'home_page.dart';
 class MainHomePage extends StatelessWidget {
   const MainHomePage({super.key});
 
-  static final ScrollController _scrollController = ScrollController();
-
-  static final List<Widget> _widgetOptions = [
-    HomePage(scrollController: _scrollController),
-    CoursePage(scrollController: _scrollController),
-    FaqPage(scrollController: _scrollController),
-    ProfilePage(scrollController: _scrollController),
-  ];
-
   @override
   Widget build(BuildContext context) {
     final ValueNotifier<int> selectedIndex = ValueNotifier(0);
+    final ScrollController scrollController = ScrollController();
+
+    final List<Widget> widgetOptions = [
+      HomePage(scrollController: scrollController),
+      CoursePage(scrollController: scrollController),
+      FaqPage(scrollController: scrollController),
+      ProfilePage(scrollController: scrollController),
+    ];
 
     return ValueListenableBuilder(
       valueListenable: selectedIndex,
@@ -30,9 +29,9 @@ class MainHomePage extends StatelessWidget {
         isLeading: LeadingVisibility.off,
         isAppbar: AppBarVisibility.off,
         scaffoldColor: Colors.transparent,
-        body: _widgetOptions.elementAt(selectedIndexValue),
+        body: widgetOptions.elementAt(selectedIndexValue),
         bottomNavigationBar: ScrollToHideWidget(
-          scrollController: _scrollController,
+          scrollController: scrollController,
           child: BottomNavigationBar(
             backgroundColor: AltaColor.white,
             type: BottomNavigationBarType.fixed,

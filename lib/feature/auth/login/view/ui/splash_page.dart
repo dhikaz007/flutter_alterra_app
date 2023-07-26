@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 import '../../../../../utils/alta_constant.dart';
 import '../../../../../utils/alta_widgets.dart';
 import '../../../../home/home_page/view/ui/main_home_page.dart';
-
-import 'login_page.dart';
+import 'login_main.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -23,7 +22,7 @@ class _SplashPageState extends State<SplashPage> {
       if (FirebaseAuth.instance.currentUser?.uid == null) {
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
-              builder: (_) => const LoginPage(),
+              builder: (_) => const LoginMain(),
             ),
             (route) => false);
       } else {

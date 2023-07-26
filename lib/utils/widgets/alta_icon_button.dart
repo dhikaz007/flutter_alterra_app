@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/utils/alta_widgets.dart';
+
+import '../alta_widgets.dart';
 
 class AltaIconButton extends StatelessWidget {
   final VoidCallback? onPressed;

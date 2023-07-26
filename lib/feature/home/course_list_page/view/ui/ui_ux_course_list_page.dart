@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/feature/home/detail_course_page/view/ui/detail_course_page.dart';
 
 import '../../../../../utils/alta_constant.dart';
 import '../../../../../utils/alta_widgets.dart';
+import '../../../detail_course_page/view/ui/detail_course_page.dart';
 import '../widget/course_list_card_widget.dart';
 
 class UiUxCourseListPage extends StatelessWidget {

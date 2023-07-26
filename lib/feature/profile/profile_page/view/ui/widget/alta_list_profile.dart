@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alterra_app/utils/alta_constant.dart';
 
+import '../../../../../../utils/alta_constant.dart';
 import '../../../../../../utils/alta_widgets.dart';
 import 'profile_widgets.dart';
 

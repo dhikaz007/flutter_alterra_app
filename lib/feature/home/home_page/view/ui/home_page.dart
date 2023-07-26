@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../../utils/alta_constant.dart';
+import '../../../../../utils/alta_widgets.dart';
 import '../../../course_list_page/view/ui/flutter_course_list_page.dart';
 import '../../../course_list_page/view/ui/ui_ux_course_list_page.dart';
 import '../../../course_promo_page/view/ui/course_promo_page.dart';
-import '../../../../../utils/alta_constant.dart';
-import '../../../../../utils/alta_widgets.dart';
 import '../../view_model/cubit/homepage_cubit.dart';
 import 'widget/homepage_widgets.dart';
 
